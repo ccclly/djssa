@@ -15,6 +15,7 @@ export default {
 	<div id="main">
 		<earth></earth>
     <div>yes</div>
+	<div>no</div>
 	</div>
 </template>
 
