@@ -1,33 +1,47 @@
+<script>
+import earth from './components/earth.vue'
+export default {
+  data () {
+    return {
+
+    }
+  },
+  components: {
+    earth
+  }
+}
+</script>
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+	<div id="main">
+		<earth></earth>
+	</div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-  dadsa
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style scoped lang="less">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#main {
+		cursor:url('./assets/f2.png'),auto;
+		background: url(./assets/bj.jpg);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		min-width: 1000px;
+		z-index: -10;
+		zoom: 1;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-o-background-size: cover;
+		background-position: center 0;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		min-height: 70vh;
+	}
 </style>
