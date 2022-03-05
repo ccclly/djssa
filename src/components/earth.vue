@@ -124,7 +124,7 @@ export default {
         globe: {
           baseTexture: baseTexture,
           globeOuterRadius: 10,
-          globeRadius: 50,
+          globeRadius: 70,
           displacementScale: 0.1,
           shading: 'color',
 
@@ -167,29 +167,13 @@ export default {
 		padding: 0;
 	}
 #main {
-	// background: url(./assets/bj.jpg);
-	  position:fixed;
-	  top: 0;
-	  left: 0;
-	  width:100%;
-	  height:100%;
-	  min-width: 1000px;
-	  z-index:-10;
-	  zoom: 1;
-	  background-color: #fff;
-	  background-repeat: no-repeat;
-	  background-size: cover;
-	  -webkit-background-size: cover;
-	  -o-background-size: cover;
-	  background-position: center 0;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 70vh;
+	
   #container {
-    width: 600px;
-    height: 600px;
+	margin-top: -50px;
+	background-color: rgba(236, 249, 255, 0.4);
+	border-radius: 12px;
+    width: 450px;
+    height: 450px;
   }
 }
 

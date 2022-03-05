@@ -1,5 +1,6 @@
 <script>
 import earth from './components/earth.vue'
+import topbar from './components/topbar.vue'
 export default {
   data () {
     return {
@@ -7,12 +8,19 @@ export default {
     }
   },
   components: {
-    earth
+    earth,
+	topbar
   }
 }
 </script>
 <template>
 	<div id="main">
+<!-- 		<div class="topbar">
+		<img src="./assets/2022冬奥会.png">
+		<text>北京冬奥会可视化</text>
+		<img src="./assets/wuhuan.png" >
+		</div> -->
+		<topbar></topbar>
 		<earth></earth>
     <div>yes</div>
 	<div>no</div>
@@ -25,8 +33,7 @@ export default {
 		padding: 0;
 	}
 	#main {
-		cursor:url('./assets/f2.png'),auto;
-		background: url(./assets/bj.jpg);
+		background: url(./assets/bj5.jpg);
 		position: fixed;
 		top: 0;
 		left: 0;
