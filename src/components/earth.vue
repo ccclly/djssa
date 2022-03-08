@@ -1,180 +1,236 @@
 <script>
-import * as echarts from 'echarts'
-import 'echarts-gl'
-import { onMounted } from 'vue'
-import world from '../assets/world.json'
+	import * as echarts from 'echarts'
+	import 'echarts-gl'
+	import {
+		onMounted
+	} from 'vue'
+	import world from '../assets/world.json'
+	import medalrank from './medalrank.vue'
+	export default {
+		components: {
+			medalrank
+		},
+		setup() {
+			// https://zh.wikipedia.org/wiki/%E5%86%AC%E5%AD%A3%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%BF%90%E5%8A%A8%E4%BC%9A
+			const placeData = [{
+					name: '北京',
+					value: [116.4, 40]
+				},
+				{
+					name: '平昌',
+					value: [128.4, 37.36]
+				},
+				{
+					name: '索契',
+					value: [40, 44]
+				},
+				{
+					name: '温哥华',
+					value: [-123, 50]
+				},
 
-export default {
-  setup () {
-    // https://zh.wikipedia.org/wiki/%E5%86%AC%E5%AD%A3%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%BF%90%E5%8A%A8%E4%BC%9A
-    const placeData = [
-      { name: '北京', value: [116.4, 40] },
-      { name: '平昌', value: [128.4, 37.36] },
-      { name: '索契', value: [40, 44] },
-      { name: '温哥华', value: [-123, 50] },
+				{
+					name: '都灵',
+					value: [7.7, 45.07]
+				},
+				{
+					name: '盐湖城',
+					value: [-112, 40.75]
+				},
+				{
+					name: '长野',
+					value: [138.19, 36.6]
+				},
+				{
+					name: '利勒哈默尔',
+					value: [10.467, 61.114]
+				},
+				{
+					name: '阿尔贝维尔',
+					value: [6.39, 45.676]
+				},
+				{
+					name: '卡尔加里',
+					value: [-114.05, 51.0333]
+				},
+				{
+					name: '萨拉热窝',
+					value: [18.413, 43.856]
+				},
+				{
+					name: '普莱西德湖',
+					value: [-73.985, 44.285]
+				}
+			]
 
-      { name: '都灵', value: [7.7, 45.07] },
-      { name: '盐湖城', value: [-112, 40.75] },
-      { name: '长野', value: [138.19, 36.6] },
-      { name: '利勒哈默尔', value: [10.467, 61.114] },
-      { name: '阿尔贝维尔', value: [6.39, 45.676] },
-      { name: '卡尔加里', value: [-114.05, 51.0333] },
-      { name: '萨拉热窝', value: [18.413, 43.856] },
-      { name: '普莱西德湖', value: [-73.985, 44.285] }
-    ]
+			const initTexture = () => {
+				const canvas = document.createElement('canvas')
+				const baseTexture = echarts.init(canvas, null, {
+					width: 4096,
+					height: 2048
+				})
+				echarts.registerMap('world', world)
 
-    const initTexture = () => {
-      const canvas = document.createElement('canvas')
-      const baseTexture = echarts.init(canvas, null, {
-        width: 4096,
-        height: 2048
-      })
-      echarts.registerMap('world', world)
+				baseTexture.setOption({
+					// 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
+					series: [{
+						type: 'scatter',
+						coordinateSystem: 'geo',
+						symbolSize: [20, 20],
+						itemStyle: {
+							color: 'red'
+						},
+						label: {
+							show: true,
+							color: 'red',
+							fontSize: 32,
+							formatter: '{b}',
+							position: 'top'
+						},
 
-      baseTexture.setOption({
-        // 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
-        series: [
-          {
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            symbolSize: [20, 20],
-            itemStyle: {
-              color: 'red'
-            },
-            label: {
-              show: true,
-              color: 'red',
-              fontSize: 32,
-              formatter: '{b}',
-              position: 'top'
-            },
+						data: placeData
+					}],
 
-            data: placeData
-          }
-        ],
+					// 地图设置 https://echarts.apache.org/zh/option-gl.html#geo3D
+					geo: {
+						type: 'map',
+						map: 'world',
+						left: 0,
+						top: 0,
+						right: 0,
+						bottom: 0,
+						boundingCoords: [
+							[-180, 90],
+							[180, -90]
+						],
 
-        // 地图设置 https://echarts.apache.org/zh/option-gl.html#geo3D
-        geo: {
-          type: 'map',
-          map: 'world',
-          left: 0,
-          top: 0,
-          right: 0,
-          bottom: 0,
-          boundingCoords: [
-            [-180, 90],
-            [180, -90]
-          ],
+						tooltip: {
+							show: false
+						},
 
-          tooltip: {
-            show: false
-          },
+						itemStyle: {
+							areaColor: '#419dfb',
+							borderColor: '#564fc2',
+							borderWidth: '1'
+						},
 
-          itemStyle: {
-            areaColor: '#419dfb',
-            borderColor: '#564fc2',
-            borderWidth: '1'
-          },
+						// 鼠标放到地球上的高亮显示
+						emphasis: {
+							itemStyle: {
+								areaColor: '#4976fe'
+							},
+							label: {
+								show: true,
+								color: 'black',
+								fontSize: 28
+							}
+						}
+					}
+				})
 
-          // 鼠标放到地球上的高亮显示
-          emphasis: {
-            itemStyle: {
-              areaColor: '#4976fe'
-            },
-            label: {
-              show: true,
-              color: 'black',
-              fontSize: 28
-            }
-          }
-        }
-      })
+				return baseTexture
+			}
 
-      return baseTexture
-    }
+			const initEarth = () => {
+				const baseTexture = initTexture()
 
-    const initEarth = () => {
-      const baseTexture = initTexture()
+				// 飞线设置 https://echarts.apache.org/zh/option-gl.html#series-lines3D
+				const lines = []
+				for (let i = 0; i < placeData.length - 1; i++) {
+					lines.push({
+						type: 'lines3D',
+						coordinateSystem: 'globe',
+						data: [
+							[placeData[i + 1].value, placeData[i].value]
+						],
+						lineStyle: {
+							color: 'rgb(50, 50, 150)',
+							width: 5,
+							opacity: 0.6
+						},
+						effect: {
+							show: true,
+							period: 5,
+							trailWidth: 5,
+							trailLength: 0.3
+						}
+					})
+				}
 
-      // 飞线设置 https://echarts.apache.org/zh/option-gl.html#series-lines3D
-      const lines = []
-      for (let i = 0; i < placeData.length - 1; i++) {
-        lines.push({
-          type: 'lines3D',
-          coordinateSystem: 'globe',
-          data: [
-            [placeData[i + 1].value, placeData[i].value]
-          ],
-          lineStyle: {
-            color: 'rgb(50, 50, 150)',
-            width: 5,
-            opacity: 0.6
-          },
-          effect: {
-            show: true,
-            period: 5,
-            trailWidth: 5,
-            trailLength: 0.3
-          }
-        })
-      }
+				// 地球设置 https://echarts.apache.org/zh/option-gl.html#globe
+				const option = {
+					globe: {
+						baseTexture: baseTexture,
+						globeOuterRadius: 10,
+						globeRadius: 80,
+						displacementScale: 0.1,
+						shading: 'color',
 
-      // 地球设置 https://echarts.apache.org/zh/option-gl.html#globe
-      const option = {
-        globe: {
-          baseTexture: baseTexture,
-          globeOuterRadius: 10,
-          globeRadius: 70,
-          displacementScale: 0.1,
-          shading: 'color',
+						viewControl: {
+							autoRotate: true,
+							autoRotateAfterStill: 5,
+							autoRotateSpeed: 5,
+							// rotateSensitivity: [1, 0],
+							zoomSensitivity: 0,
+							beta: 200,
+							alpha: 22,
+							distance: 120
+						}
+					},
 
-          viewControl: {
-            autoRotate: true,
-            autoRotateAfterStill: 5,
-            autoRotateSpeed: 5,
-            // rotateSensitivity: [1, 0],
-            zoomSensitivity: 0,
-            beta: 200,
-            alpha: 22,
-            distance: 120
-          }
-        },
+					// series: lines
+				}
 
-        series: lines
-      }
+				const myChart = echarts.init(document.getElementById('container'))
+				myChart.clear()
+				myChart.setOption(option, true)
+			}
 
-      const myChart = echarts.init(document.getElementById('container'))
-      myChart.clear()
-      myChart.setOption(option, true)
-    }
-
-    onMounted(() => {
-      initEarth()
-    })
-  }
-}
+			onMounted(() => {
+				initEarth()
+			})
+		}
+	}
 </script>
 
 <template>
-  <div id="main">
-    <div id="container"></div>
-  </div>
+	<div id="main">
+		<div id="mr">
+			<medalrank></medalrank>
+		</div>
+		<div id="et">
+			<div id="container">
+			</div>
+		</div>
+	</div>
 </template>
 
 <style scoped lang="less">
-	*{
+	* {
 		margin: 0;
 		padding: 0;
 	}
-#main {
-	
-  #container {
-	margin-top: -50px;
-	background-color: rgba(236, 249, 255, 0.4);
-	border-radius: 12px;
-    width: 450px;
-    height: 450px;
-  }
-}
 
+	#main {
+		// margin-top: -90px;
+		margin-top: 130px;
+		width: 770px;
+		height: 400px;
+		background-color: rgba(236, 249, 255, 0.4);
+		border-radius: 12px;
+		display: flex;
+         #mr{
+			 margin-top: 40px;
+			 width: 400px;
+			 height: 400px;
+		 }
+		#et {
+			width: 500px;
+			height: 400px;
+			#container{
+				width: 400px;
+				height: 400px;
+			}
+		}
+	}
 </style>
