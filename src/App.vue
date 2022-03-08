@@ -28,9 +28,13 @@
 			</div>
 		</div>
 		<div class="min">
-			<topbar></topbar>
-			<earth></earth>
-			<div class="bottom">
+			<div class="min_one">
+				<topbar></topbar>
+			</div>
+			<div class="min_two">
+				<earth></earth>
+			</div>
+			<div class="min_three">
 				7
 			</div>
 		</div>
@@ -45,12 +49,11 @@
 				6
 			</div>
 		</div>
-		
+
 	</div>
 </template>
 
 <style scoped lang="less">
-	
 	* {
 		margin: 0;
 		padding: 0;
@@ -77,66 +80,103 @@
 		justify-content: space-around;
 		align-items: center;
 		min-height: 70vh;
-		.left{
+
+		.left {
 			height: 100%;
 			flex: 1;
 			display: flex;
 			flex-direction: column;
-			.left_one{
+
+			.left_one {
 				flex: 1;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
 				margin-bottom: 0;
 			}
-			.left_two{
+
+			.left_two {
 				flex: 1;
 				margin: 10px;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin-bottom: 0;
 			}
-			.left_three{
+
+			.left_three {
 				flex: 1;
 				margin: 10px;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 			}
 		}
-		.min{
+
+		.min {
 			width: 100%;
 			height: 100%;
-			flex: 1;
-			.bottom{
-				width: 100%;
-				height: 26.2vh;
+			flex: 1.5;
+			display: flex;
+			flex-direction: column;
+
+			.min_one {
+				margin-top: 10px;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
+				height: 100%;
+				flex: 1.8;
+				display: flex;
+				justify-content: center;
+			}
+
+			.min_two {
+				margin-top: 10px;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				display: flex;
+				justify-content: center;
+				height: 100%;
+				flex: 6;
+			}
+
+			.min_three {
+				height: 100%;
+				background-color: green;
+				flex: 3;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				width: 100%;
+				height: 26.2vh;
+				// background-color: rgba(236, 249, 255, 0.4);
+				// border-radius: 12px;
 				margin-top: 10px;
 				margin-bottom: 10px;
 			}
 		}
-		.right{
+
+		.right {
 			height: 100%;
 			flex: 1;
 			display: flex;
 			flex-direction: column;
-			.right_one{
-				flex:1;
-				background-color: rgba(236, 249, 255, 0.4);
-				border-radius: 12px;
-				margin: 10px;
-				margin-bottom: 0;				
-			}
-			.right_two{
-				flex:5;
+
+			.right_one {
+				flex: 1;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
 				margin-bottom: 0;
 			}
-			.right_three{
-				flex:3;
+
+			.right_two {
+				flex: 5;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				margin: 10px;
+				margin-bottom: 0;
+			}
+
+			.right_three {
+				flex: 3;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;

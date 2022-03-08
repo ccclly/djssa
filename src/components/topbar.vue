@@ -28,10 +28,9 @@
 	.topbar {
 		position: absolute;
 		top: 10px;
-		width: 50%;
 		height: 15vh;
-		background-color: rgba(236, 249, 255, 0.4);
-		border-radius: 12px;
+		// background-color: rgba(236, 249, 255, 0.4);
+		// border-radius: 12px;
 		display: flex;
 		justify-content: center;
 		img {
