@@ -2,6 +2,7 @@
 	import earth from './components/earth.vue'
 	import topbar from './components/topbar.vue'
 	import * as snow from '../snow.js'
+  import game from './components/question-game.vue'
 	export default {
 		data() {
 			return {
@@ -10,7 +11,8 @@
 		},
 		components: {
 			earth,
-			topbar
+			topbar,
+      game
 		}
 	}
 </script>
@@ -43,7 +45,7 @@
 				4
 			</div>
 			<div class="right_two">
-				5
+				  <game></game>
 			</div>
 			<div class="right_three">
 				6
