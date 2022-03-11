@@ -1,13 +1,17 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Game from '@/components/question-game'
+import scrolling from '@/components/scrolling'
 
-Vue.use(VueRouter)
+const routes = [{
+  path: '/game',
+  component: Game
+},{
+  path: '/scrolling',
+  component: scrolling
+}]
 
-const routes = [
-
-]
-
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes
 })
 
