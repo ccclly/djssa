@@ -10,11 +10,8 @@
 	"dependencies": {
 		"echarts": "^5.3.0",
 		"echarts-gl": "^2.0.9",
-<<<<<<< HEAD
 		"echarts-wordcloud": "^2.0.0",
-=======
 		"jquery": "^3.6.0",
->>>>>>> 786ec73922dbbff4638637833cd865454618eaa7
 		"less": "^3.0.0",
 		"less-loader": "^5.0.0",
 		"vue": "^3.2.13",
