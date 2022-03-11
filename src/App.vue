@@ -15,7 +15,6 @@ export default {
 </script>
 <template>
   <div id="app">
-	  <div>123123<div>
     <router-view></router-view>
     <div id="contain">
       <div class="left">
