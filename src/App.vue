@@ -1,6 +1,11 @@
 <script>
 	import earth from './components/earth.vue'
 	import topbar from './components/topbar.vue'
+	import cost from './components/cost.vue'
+	import sex from './components/sex.vue'
+	import radar from './components/radar.vue'
+	import cloudword from './components/cloudword.vue'
+	import favour from './components/favour.vue'
 	import * as snow from '../snow.js'
 	export default {
 		data() {
@@ -10,7 +15,12 @@
 		},
 		components: {
 			earth,
-			topbar
+			topbar,
+			cost,
+			sex,
+			radar,
+			cloudword,
+			favour
 		}
 	}
 </script>
@@ -18,13 +28,13 @@
 	<div id="contain">
 		<div class="left">
 			<div class="left_one">
-				1
+				<sex></sex>
 			</div>
 			<div class="left_two">
-				2
+				<radar></radar>
 			</div>
 			<div class="left_three">
-				3
+				<favour></favour>
 			</div>
 		</div>
 		<div class="min">
@@ -35,18 +45,17 @@
 				<earth></earth>
 			</div>
 			<div class="min_three">
-				7
+					<cost></cost>
 			</div>
 		</div>
 		<div class="right">
 			<div class="right_one">
-				4
 			</div>
 			<div class="right_two">
 				5
 			</div>
 			<div class="right_three">
-				6
+				<cloudword></cloudword>
 			</div>
 		</div>
 
@@ -93,14 +102,20 @@
 				border-radius: 12px;
 				margin: 10px;
 				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 
 			.left_two {
-				flex: 1;
+				flex: 2;
 				margin: 10px;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 
 			.left_three {
@@ -108,6 +123,9 @@
 				margin: 10px;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 
@@ -123,7 +141,7 @@
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				height: 100%;
-				flex: 1.8;
+				flex: 1.5;
 				display: flex;
 				justify-content: center;
 			}
@@ -134,14 +152,15 @@
 				border-radius: 12px;
 				display: flex;
 				justify-content: center;
+				align-items: center;
 				height: 100%;
-				flex: 6;
+				flex: 5.2;
 			}
 
 			.min_three {
 				height: 100%;
 				background-color: green;
-				flex: 3;
+				flex: 3.4;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				width: 100%;
@@ -150,6 +169,9 @@
 				// border-radius: 12px;
 				margin-top: 10px;
 				margin-bottom: 10px;
+				// display: flex;
+				// justify-content: center;
+				// align-items: center;
 			}
 		}
 
@@ -160,7 +182,7 @@
 			flex-direction: column;
 
 			.right_one {
-				flex: 1;
+				flex: 0.8;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
@@ -180,6 +202,9 @@
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 	}

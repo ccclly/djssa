@@ -1,11 +1,11 @@
 <template>
 	<div class="topbar">
-		<img class="img1" src="../assets/dah3.png">
+		<img class="img1" :src="leftimg" @mouseenter="mouseenter1" @mouseleave="mouseleave1">
 		<div class="txt">
 			<text class="txt1">北京冬奥会可视化</text>
 			<text class="txt2">更高 更快 更强 更团结</text>
 		</div>
-		<img src="../assets/wuhuan2.png">
+		<img :src="rightimg" @mouseenter="mouseenter2" @mouseleave="mouseleave2">
 	</div>
 </template>
 
@@ -13,9 +13,28 @@
 	export default {
 		data() {
 			return {
-
+            leftimg:require('../assets/dah3.png'),
+			rightimg:require('../assets/wuhuan2.png')
 			}
-		}
+		},
+		methods: {
+		    // 2、进入元素
+		    mouseenter1 () {
+		      this.leftimg=require('../assets/dah.png')
+		    },
+			   // 5、离开元素
+			    mouseleave1 () {
+			     this.leftimg=require('../assets/dah3.png')
+			    },
+				// 2、进入元素
+				mouseenter2 () {
+				  this.rightimg=require('../assets/wuhuan.png')
+				},
+				   // 5、离开元素
+				    mouseleave2 () {
+				     this.rightimg=require('../assets/wuhuan2.png')
+				    }
+		  }
 	}
 </script>
 

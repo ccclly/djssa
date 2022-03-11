@@ -212,25 +212,21 @@
 	}
 
 	#main {
-		// margin-top: -90px;
-		// margin-top: 130px;
 		width: 770px;
-		height: 400px;
-		// background-color: #42B983;
-		// background-color: rgba(236, 249, 255, 0.4);
-		// border-radius: 12px;
+		height: 360px;
 		display: flex;
+		justify-content: center;
+		align-items: center;
          #mr{
-			 margin-top: 40px;
 			 width: 400px;
-			 height: 400px;
+			 height: 380px;
 		 }
 		#et {
 			width: 500px;
-			height: 400px;
+			height: 380px;
 			#container{
 				width: 400px;
-				height: 400px;
+				height: 380px;
 			}
 		}
 	}

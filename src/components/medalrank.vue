@@ -30,7 +30,7 @@
 				grid: {
 					left: '3%',
 					right: '4%',
-					bottom: '15%',
+					bottom: '18%',
 					top: '8%',
 					containLabel: true
 				},
@@ -103,7 +103,8 @@
 
 <style>
 	#medalrank {
+		margin-top: 50px;
 		width: 350px;
-		height: 400px;
+		height: 385px;
 	}
 </style>
