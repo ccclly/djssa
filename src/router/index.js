@@ -1,14 +1,13 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Game from '@/components/question-game'
-Vue.use(VueRouter)
 
 const routes = [{
   path: '/game',
   component: Game
 }]
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes
 })
 
