@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <div @mousemove="testMove" @mouseleave="testMend" >
-            <div class="roll" ref="roll">
-                <div v-for="item in listData" :key="item.id">
-                    <div class="comments">{{item.name}}</div>
-                </div>
-            </div>
+  <div>
+    <div @mousemove="testMove" @mouseleave="testMend">
+      <div class="roll" ref="roll">
+        <div v-for="item in listData" :key="item.id">
+          <div class="comments">{{ item.name }}</div>
         </div>
       </div>
     </div>
@@ -13,35 +11,46 @@
 </template>
 
 <script setup>
-    import {ref,reactive,onBeforeUnmount,onUnmounted,onMounted,nextTick} from 'vue'
-	//定时器初始化
-    let timer = ref(null)
-    //ref绑定初始化
-    let roll = ref(null)
-    //列表数据初始化
-    const listData = reactive([
-        {name:'中国健儿加油！！！！生在中国，我骄傲！！！'},
-        {name:'预祝祖国冬奥圆满成功！'},
-        {name:'为世界所有奥运选手加油！不要受伤！'},
-        {name:'运动健儿们YYDS，加油呀'},
-        {name:'欢迎各位运动健儿，赛出成绩，赛出风格~'},
-        {name:'中国加油，真想去现场看，加油加油加油'},
-        {name:'世界相信中国，这将是一届绿色环保的奥运会中国做好了准备。'},
-        {name:'做好防疫！让全世界看到一个不一样的成功冬奥会！'},
-        {name:'全球截至目前没有哪个城市同时举办过夏季和冬季奥运会，我们要做世界第一。'},
-        {name:'张艺谋YYDS，开幕式太棒了！！！'},
-		
-		{name:'中国健儿加油！！！！生在中国，我骄傲！！！'},
-		{name:'预祝祖国冬奥圆满成功！'},
-		{name:'为世界所有奥运选手加油！不要受伤！'},
-		{name:'运动健儿们YYDS，加油呀'},
-		{name:'欢迎各位运动健儿，赛出成绩，赛出风格~'},
-		{name:'中国加油，真想去现场看，加油加油加油'},
-		{name:'世界相信中国，这将是一届绿色环保的奥运会中国做好了准备。'},
-		{name:'做好防疫！让全世界看到一个不一样的成功冬奥会！'},
-		{name:'全球截至目前没有哪个城市同时举办过夏季和冬季奥运会，我们要做世界第一。'},
-		{name:'张艺谋YYDS，开幕式太棒了！！！'}
-    ])
+import {
+  ref,
+  reactive,
+  onBeforeUnmount,
+  onUnmounted,
+  onMounted,
+  nextTick,
+} from "vue";
+//定时器初始化
+let timer = ref(null);
+//ref绑定初始化
+let roll = ref(null);
+//列表数据初始化
+const listData = reactive([
+  { name: "中国健儿加油！！！！生在中国，我骄傲！！！" },
+  { name: "预祝祖国冬奥圆满成功！" },
+  { name: "为世界所有奥运选手加油！不要受伤！" },
+  { name: "运动健儿们YYDS，加油呀" },
+  { name: "欢迎各位运动健儿，赛出成绩，赛出风格~" },
+  { name: "中国加油，真想去现场看，加油加油加油" },
+  { name: "世界相信中国，这将是一届绿色环保的奥运会中国做好了准备。" },
+  { name: "做好防疫！让全世界看到一个不一样的成功冬奥会！" },
+  {
+    name: "全球截至目前没有哪个城市同时举办过夏季和冬季奥运会，我们要做世界第一。",
+  },
+  { name: "张艺谋YYDS，开幕式太棒了！！！" },
+
+  { name: "中国健儿加油！！！！生在中国，我骄傲！！！" },
+  { name: "预祝祖国冬奥圆满成功！" },
+  { name: "为世界所有奥运选手加油！不要受伤！" },
+  { name: "运动健儿们YYDS，加油呀" },
+  { name: "欢迎各位运动健儿，赛出成绩，赛出风格~" },
+  { name: "中国加油，真想去现场看，加油加油加油" },
+  { name: "世界相信中国，这将是一届绿色环保的奥运会中国做好了准备。" },
+  { name: "做好防疫！让全世界看到一个不一样的成功冬奥会！" },
+  {
+    name: "全球截至目前没有哪个城市同时举办过夏季和冬季奥运会，我们要做世界第一。",
+  },
+  { name: "张艺谋YYDS，开幕式太棒了！！！" },
+]);
 
 //等同于vue2中的beforeDestroy
 onBeforeUnmount(() => {
@@ -118,18 +127,18 @@ nextTick(() => {
 
 
 <style lang="less">
-.roll{
-	height:300px;
-	overflow: hidden;
-	width:300px;
-	// background-color: antiquewhite;
-	.comments{
-		background-color: rgba(236, 249, 255, 0.4);
-		margin-top: 15px;
-		padding: 4px;
-		border: 1px solid rgba(236, 249, 255, 0.4);
-		border-radius: 10px;
-        align-items: center;
-	}
+.roll {
+  height: 300px;
+  overflow: hidden;
+  width: 300px;
+  // background-color: antiquewhite;
+  .comments {
+    background-color: rgba(236, 249, 255, 0.4);
+    margin-top: 15px;
+    padding: 4px;
+    border: 1px solid rgba(236, 249, 255, 0.4);
+    border-radius: 10px;
+    align-items: center;
+  }
 }
 </style>
