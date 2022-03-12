@@ -6,6 +6,7 @@
 	import radar from './components/radar.vue'
 	import cloudword from './components/cloudword.vue'
 	import favour from './components/favour.vue'
+	import scroll from './components/scroll.vue'
 	import game from "./components/question-game.vue";
 	import * as snow from '../snow.js'
 	export default {
@@ -21,7 +22,8 @@
 			sex,
 			radar,
 			cloudword,
-			favour
+			favour,
+			scroll
 		}
 	}
 </script>
@@ -56,7 +58,7 @@
 			<div class="right_one">
 			</div>
 			<div class="right_two">
-				5
+			<scroll></scroll>
 			</div>
 			<div class="right_three">
 				<cloudword></cloudword>
@@ -74,7 +76,7 @@
 
 	#contain {
 		width: 100%;
-		background: url(../src/assets/bj2.jpg);
+		background: url(../src/assets/bj8.png);
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -101,28 +103,54 @@
 			flex-direction: column;
 
 			.left_one {
+				border:1px solid white;
 				flex: 1;
-				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
 				margin-bottom: 0;
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				
+				 background: linear-gradient(white, white) left top,
+						linear-gradient(white, white) left top,
+						linear-gradient(white, white) right top,
+						linear-gradient(white, white) right top,
+						linear-gradient(white, white) left bottom,
+						linear-gradient(white, white) left bottom,
+						linear-gradient(white, white) right bottom,
+						linear-gradient(white, white) right bottom;
+					background-repeat: no-repeat;
+					background-color: rgba(236, 249, 255, 0.2);
+				  background-size: 5px 20px, 20px 5px;
+
 			}
 
 			.left_two {
+				border:1px solid white;
 				flex: 2;
 				margin: 10px;
-				background-color: rgba(236, 249, 255, 0.4);
+				// background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin-bottom: 0;
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 
 			.left_three {
+				border:1px solid white;
 				flex: 1;
 				margin: 10px;
 				background-color: rgba(236, 249, 255, 0.4);
@@ -130,6 +158,17 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 		}
 
@@ -148,6 +187,18 @@
 				flex: 1.5;
 				display: flex;
 				justify-content: center;
+				border:1px solid white;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 
 			.min_two {
@@ -159,9 +210,22 @@
 				align-items: center;
 				height: 100%;
 				flex: 5.2;
+				border:1px solid white;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 
 			.min_three {
+				border:1px solid white;
 				height: 100%;
 				background-color: green;
 				flex: 3.4;
@@ -176,6 +240,17 @@
 				// display: flex;
 				// justify-content: center;
 				// align-items: center;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 		}
 
@@ -186,22 +261,50 @@
 			flex-direction: column;
 
 			.right_one {
-				flex: 0.8;
+				border:1px solid white;
+				flex: 0.9;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
 				margin-bottom: 0;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 
 			.right_two {
+				border:1px solid white;
 				flex: 5;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
 				margin: 10px;
 				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 
 			.right_three {
+				border:1px solid white;
 				flex: 3;
 				background-color: rgba(236, 249, 255, 0.4);
 				border-radius: 12px;
@@ -209,6 +312,17 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				background: linear-gradient(white, white) left top,
+										linear-gradient(white, white) left top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) right top,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) left bottom,
+										linear-gradient(white, white) right bottom,
+										linear-gradient(white, white) right bottom;
+									background-repeat: no-repeat;
+									background-color: rgba(236, 249, 255, 0.2);
+				 background-size: 5px 20px, 20px 5px;
 			}
 		}
 	}

@@ -69,8 +69,11 @@
 					width: 4096,
 					height: 2048
 				})
+        // TODO 地球的贴图地图点击事件
+        baseTexture.on('geoselectchanged', function (e) {
+          console.log(e.name)
+        });
 				echarts.registerMap('world', world)
-
 				baseTexture.setOption({
 					// 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
 					series: [{
