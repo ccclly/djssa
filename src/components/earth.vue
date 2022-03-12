@@ -70,99 +70,128 @@
 					height: 2048
 				})
         // TODO 地球的贴图地图点击事件
-        baseTexture.on('geoselectchanged', function (e) {
-          console.log(e.name)
-        });
+        // baseTexture.on('geoselectchanged', function (e) {
+        //   console.log(e)
+        // });
+        // baseTexture.on('geoselected', (e) => {
+        //   console.log(e)
+        // });
 				echarts.registerMap('world', world)
 				baseTexture.setOption({
 					// 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
-					series: [{
-						type: 'scatter',
-						coordinateSystem: 'geo',
-						symbolSize: [20, 20],
-						itemStyle: {
-							color: 'red'
-						},
-						label: {
-							show: true,
-							color: 'red',
-							fontSize: 32,
-							formatter: '{b}',
-							position: 'top'
-						},
 
-						data: placeData
-					}],
 
 					// 地图设置 https://echarts.apache.org/zh/option-gl.html#geo3D
-					geo: {
-						type: 'map',
-						map: 'world',
-						left: 0,
-						top: 0,
-						right: 0,
-						bottom: 0,
-						boundingCoords: [
-							[-180, 90],
-							[180, -90]
-						],
+					// geo: {
+					// 	type: 'map',
+					// 	map: 'world',
+					// 	left: 0,
+					// 	top: 0,
+					// 	right: 0,
+					// 	bottom: 0,
+					// 	boundingCoords: [
+					// 		[-180, 90],
+					// 		[180, -90]
+					// 	],
+          //
+					// 	tooltip: {
+					// 		show: false
+					// 	},
+          //
+					// 	itemStyle: {
+					// 		areaColor: '#419dfb',
+					// 		borderColor: '#564fc2',
+					// 		borderWidth: '1'
+					// 	},
+          //
+					// 	// 鼠标放到地球上的高亮显示
+					// 	emphasis: {
+					// 		itemStyle: {
+					// 			areaColor: '#4976fe'
+					// 		},
+					// 		label: {
+					// 			show: true,
+					// 			color: 'black',
+					// 			fontSize: 28
+					// 		}
+					// 	}
+					// },
+          visualMap: {
+            left: 'right',
+            min: 0,
+            max: 50,
+            inRange: {
+              color: [
+                '#e0f3f8',
+                '#ffffbf',
+                '#fee090',
+                '#fdae61',
+                '#f46d43',
+                '#d73027',
+                '#a50026'
+              ]
+            },
+            text: ['High', 'Low'],
+            calculable: true
+          },
 
-						tooltip: {
-							show: false
-						},
-
-						itemStyle: {
-							areaColor: '#419dfb',
-							borderColor: '#564fc2',
-							borderWidth: '1'
-						},
-
-						// 鼠标放到地球上的高亮显示
-						emphasis: {
-							itemStyle: {
-								areaColor: '#4976fe'
-							},
-							label: {
-								show: true,
-								color: 'black',
-								fontSize: 28
-							}
-						}
-					}
+          series: [
+            {
+              type: 'map',
+              name: '世界地图',
+              map: 'world',
+              geoIndex: 0,
+              data: [
+                {
+                  name: 'China',
+                  value: 32
+                },
+                {
+                  name: 'Russia',
+                  value: 13
+                }
+              ],
+              left: 0,
+              top: 0,
+              right: 0,
+              bottom: 0,
+              boundingCoords: [
+                [-180, 90],
+                [180, -90]
+              ],
+            }
+            //   {
+            // 	type: 'scatter',
+            // 	coordinateSystem: 'geo',
+            // 	symbolSize: [20, 20],
+            // 	itemStyle: {
+            // 		color: 'red'
+            // 	},
+            // 	label: {
+            // 		show: true,
+            // 		color: 'red',
+            // 		fontSize: 32,
+            // 		formatter: '{b}',
+            // 		position: 'top'
+            // 	},
+            //
+            // 	data: placeData
+            // }
+          ],
 				})
-
+        baseTexture.on('click', (e) => {
+          console.log(e.data)
+        });
 				return baseTexture
 			}
 
 			const initEarth = () => {
 				const baseTexture = initTexture()
 
-				// 飞线设置 https://echarts.apache.org/zh/option-gl.html#series-lines3D
-				const lines = []
-				for (let i = 0; i < placeData.length - 1; i++) {
-					lines.push({
-						type: 'lines3D',
-						coordinateSystem: 'globe',
-						data: [
-							[placeData[i + 1].value, placeData[i].value]
-						],
-						lineStyle: {
-							color: 'rgb(50, 50, 150)',
-							width: 5,
-							opacity: 0.6
-						},
-						effect: {
-							show: true,
-							period: 5,
-							trailWidth: 5,
-							trailLength: 0.3
-						}
-					})
-				}
 
 				// 地球设置 https://echarts.apache.org/zh/option-gl.html#globe
 				const option = {
-					globe: {
+        globe: {
 						baseTexture: baseTexture,
 						globeOuterRadius: 10,
 						globeRadius: 80,
@@ -181,13 +210,12 @@
 						}
 					},
 
-					// series: lines
 				}
 
 				const myChart = echarts.init(document.getElementById('container'))
 				myChart.clear()
 				myChart.setOption(option, true)
-			}
+      }
 
 			onMounted(() => {
 				initEarth()
