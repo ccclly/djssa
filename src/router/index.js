@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Game from '@/components/question-game'
-import scrolling from '@/components/scrolling'
+import scrolling from '@/components/scroll'
 
 const routes = [{
   path: '/game',
