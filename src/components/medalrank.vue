@@ -24,32 +24,16 @@ export default {
       grid: {
         left: "3%",
         right: "4%",
-        bottom: "15%",
+        bottom: "18%",
         top: "8%",
         containLabel: true,
       },
       xAxis: {
         type: "value",
-        // 不显示y轴的线
-        axisLine: {
-          show: false,
-        },
-        // 不显示刻度
-        axisTick: {
-          show: false,
-        },
       },
       yAxis: {
         type: "category",
         data: ["奥地利", "荷兰", "瑞典", "美国", "中国", "德国", "挪威"],
-		// 不显示y轴的线
-        axisLine: {
-          show: false
-        },
-        // 不显示刻度
-        axisTick: {
-          show: false
-        },
       },
       series: [
         {
@@ -93,7 +77,6 @@ export default {
           itemStyle: {
             normal: {
               color: "#EE6666",
-              barBorderRadius: [1, 5, 5, 1],
             },
           },
           label: {
@@ -113,7 +96,8 @@ export default {
 
 <style>
 #medalrank {
+  margin-top: 50px;
   width: 350px;
-  height: 400px;
+  height: 385px;
 }
 </style>
