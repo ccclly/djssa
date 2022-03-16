@@ -87,6 +87,7 @@ export default {
 }
 
 #contain {
+  overflow: scroll;
   width: 100%;
   background: url(@/assets/bj4.jpg);
   position: fixed;
@@ -105,7 +106,7 @@ export default {
   background-position: center 0;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
   min-height: 70vh;
 
   .left {
