@@ -15,6 +15,7 @@ const routes = [{
     component: mainPage
   },
   {
+    name:'page1',
     path: '/page1',
     component: page1
   },
