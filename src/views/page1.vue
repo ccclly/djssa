@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<div class="body">
 		<div class="stars" ref="starsRef">
 			<div class="star" v-for="(item, index) in starsCount" :key="index"></div>
@@ -100,3 +101,35 @@
 
 </style>
 
+=======
+  <div>page1</div>
+  <div>
+    {{ this.$route.params.name }}
+  </div>
+  <iframe
+    src="//player.bilibili.com/player.html?aid=766806459&bvid=BV1Vr4y1z7Up&cid=515136446&page=1"
+    scrolling="no"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+  >
+  </iframe>
+  <iframe
+    src="https://720yun.com/t/1bvkceryz2q?scene_id=60561123"
+    scrolling="no"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+  >
+  </iframe>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+</style>
+>>>>>>> 0ce6b0cd741378283d45134b86bc2238087d4554

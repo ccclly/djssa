@@ -1,31 +1,3 @@
-<script>
-import earth from "../components/earth.vue";
-import topbar from "../components/topbar.vue";
-import cost from "../components/cost.vue";
-import sex from "../components/sex.vue";
-import radar from "../components/radar.vue";
-import cloudword from "../components/cloudword.vue";
-import favour from "../components/favour.vue";
-import scroll from "../components/scroll.vue";
-import game from "../components/question-game.vue";
-import * as snow from "@/assets/js/snow.js";
-
-export default {
-  data() {
-    return {};
-  },
-  components: {
-    earth,
-    topbar,
-    cost,
-    sex,
-    radar,
-    cloudword,
-    favour,
-    scroll
-  },
-};
-</script>
 <template>
   <div id="contain">
     <div class="left">
@@ -50,12 +22,15 @@ export default {
         <cost></cost>
       </div>
     </div>
+
     <div class="right">
       <div class="right_one">
-        <router-link to="/page1">Page1</router-link>
-        <!-- <span><router-link to="/page1">Page2</router-link></span>
-        <span><router-link to="/page1">Page3</router-link></span>
-        <span><router-link to="/page1">Page4</router-link></span> -->
+        <div class="router_link">
+          <router-link to="/page1"> page1 </router-link>
+          <router-link to="/page2"> page2 </router-link>
+          <router-link to="/page3"> page3 </router-link>
+          <router-link to="/page4"> page4 </router-link>
+        </div>
       </div>
       <div class="right_two">
         <scroll></scroll>
@@ -66,11 +41,49 @@ export default {
     </div>
   </div>
 </template>
+<script>
+import earth from "../components/earth.vue";
+import topbar from "../components/topbar.vue";
+import cost from "../components/cost.vue";
+import sex from "../components/sex.vue";
+import radar from "../components/radar.vue";
+import cloudword from "../components/cloudword.vue";
+import favour from "../components/favour.vue";
+import scroll from "../components/scroll.vue";
+import * as snow from "@/assets/js/snow.js";
+
+export default {
+  data() {
+    return {};
+  },
+  components: {
+    earth,
+    topbar,
+    cost,
+    sex,
+    radar,
+    cloudword,
+    favour,
+    scroll,
+  },
+  methods: {
+    // toHome() {
+    //   this.$router.push("/page2");
+    // },
+  },
+};
+</script>
+
 
 <style scoped lang="less">
 * {
   margin: 0;
   padding: 0;
+}
+
+.router_link {
+  z-index: 99;
+  position: absolute;
 }
 
 #contain {
