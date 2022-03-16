@@ -75,7 +75,7 @@ export default {
 
 #contain {
   width: 100%;
-  background: url(@/assets/bj8.png);
+  background: url(@/assets/bj4.jpg);
   position: fixed;
   top: 0;
   left: 0;
@@ -143,7 +143,7 @@ export default {
         linear-gradient(white, white) right bottom,
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0);
       background-size: 5px 20px, 20px 5px;
     }
 
