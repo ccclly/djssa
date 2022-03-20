@@ -121,7 +121,7 @@ export default {
           max: 50,
           inRange: {
             color: [
-              "#e0f3f8",
+              "#89f7fe",
               "#ffffbf",
               "#fee090",
               "#fdae61",

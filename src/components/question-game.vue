@@ -1,10 +1,17 @@
 <template>
   <div class="welcomePage">
-    <div class="input">
+    <!-- <div class="input">
       <input type="text" placeholder="输入您的姓名" />
-    </div>
-    <div class="start">开始游戏</div>
-    <div class="foot">© 2022-现在 C & C 版权所有</div>
+    </div> -->
+    <div class="snow4"></div>
+    <div class="snow1"></div>
+    <div class="snow2"></div>
+    <div class="snow3"></div>
+    <div class="snow4"></div>
+    <div class="ice">冰雪知识问答</div>
+   
+    <div class="start">开始答题</div>
+    <!-- <div class="foot">© 2019-现在 C & C 版权所有</div> -->
   </div>
   <div class="mainPage">
     <div class="timeout"></div>
@@ -16,7 +23,7 @@
       <h3>您的分数为:</h3>
       <h1></h1>
     </div>
-    <div class="rank">
+    <!-- <div class="rank">
       <h2>排行榜</h2>
       <div class="player1 list"></div>
       <div class="player2 list"></div>
@@ -28,8 +35,8 @@
       <div class="player8 list"></div>
       <div class="player9 list"></div>
       <div class="player10 list"></div>
-    </div>
-    <div class="again">再试一次</div>
+    </div> -->
+    <!-- <div class="again">再试一次</div> -->
   </div>
 </template>
 
@@ -42,8 +49,14 @@ export default {
   mounted() {
     let player = null;
     let score = 0;
-    // 问答题题目（10道）
-    let quizList = [
+    let quizList = null;
+
+    let timeleft = 15;
+    let quizleft = 10;
+    let rank = localStorage.rank ? JSON.parse(localStorage.rank) : [];
+    let status = true;
+
+    quizList = [
       {
         no: 1,
         answer: 1,
@@ -110,10 +123,6 @@ export default {
         quiz: "人民币的货币代码是？",
       },
     ];
-    let timeleft = 15;
-    let quizleft = 10;
-    let rank = localStorage.rank ? JSON.parse(localStorage.rank) : [];
-    let status = true;
 
     //输入框浮动效果
     $(".welcomePage .input input").focus(function () {
@@ -126,13 +135,13 @@ export default {
     //开始游戏，转场
     //点击转场
     $(".welcomePage .start").click("ontouchstart", function () {
-      if ($(".welcomePage .input input").val() != "" && status) {
+      if ($(".welcomePage .input input").val() != "1" && status) {
         status = false;
         $(".welcomePage .start").css("box-shadow", "none");
         setTimeout(function () {
           $(".welcomePage").fadeOut(500);
           $(".mainPage").fadeIn(500);
-          player = $(".welcomePage .input input").val();
+          player = "1";
           refresh();
           delayDone();
         }, 300);
@@ -141,7 +150,7 @@ export default {
     //按键转场
     $(".welcomePage .input input").keypress(function (e) {
       if (
-        $(".welcomePage .input input").val() != "" &&
+        $(".welcomePage .input input").val() != "1" &&
         e.key == "Enter" &&
         status
       ) {
@@ -150,7 +159,7 @@ export default {
         setTimeout(function () {
           $(".welcomePage").fadeOut(500);
           $(".mainPage").fadeIn(500);
-          player = $(".welcomePage .input input").val();
+          player = "1";
           refresh();
           delayDone();
         }, 300);
@@ -175,22 +184,73 @@ export default {
         //开始新题目时重置时间
         timeleft = 15;
         $(".mainPage .timeout").html("15");
-
-        //答题页面的样式不显示，提升为class为定义不知道为啥
         $(".mainPage .qno").html(`
-		<div class="question">Q${10 - quizleft}: ${question.quiz}</div>
-\t\t\t\t<div class="answer" data-index="1" id="a1">1、${
-          question.options[0]
-        }</div>
-\t\t\t\t<div class="answer" data-index="2" id="a2">2、${
-          question.options[1]
-        }</div>
-\t\t\t\t<div class="answer" data-index="3" id="a3">3、${
-          question.options[2]
-        }</div>
-\t\t\t\t<div class="answer" data-index="4" id="a4">4、${
-          question.options[3]
-        }</div>
+		<div class="question"
+  style="
+  width: 330px;
+  margin: 30px auto;
+  background-color: #ffc000;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  font-weight: bold;
+  animation: spin 0.6s 1;"
+    >Q${10 - quizleft}: ${question.quiz}</div>
+\t\t\t\t<div class="answer" data-index="1" id="a1" 
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+  >1、${question.options[0]}</div>
+\t\t\t\t<div class="answer" data-index="2" id="a2"
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+  >2、${question.options[1]}</div>
+\t\t\t\t<div class="answer" data-index="3" id="a3"
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+>3、${question.options[2]}</div>
+\t\t\t\t<div class="answer" data-index="4" id="a4"
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+>4、${question.options[3]}</div>
 		`);
         let countDown = setInterval(function () {
           timeleft--;
@@ -252,6 +312,7 @@ export default {
       if (rank.length > 10) {
         rank.splice(10, rank.length - 9);
       }
+
       rank.forEach(function (item, index) {
         $(".scorePage .rank .player" + (index + 1)).html(
           item.name + "&nbsp&nbsp" + item.score + "分"
@@ -301,14 +362,17 @@ export default {
   align-content: center;
   align-items: center;
   justify-content: center;
-  left: 0;
+  left: 0%;
   top: 0;
-  background-color: deepskyblue;
-  background-image: url("@/assets/img/Quiz-Time.png"),
-    url("@/assets/img/sun.png");
-  background-size: 375px auto;
+  //  rgb(5, 48, 63)
+  background-color: #ddf6f2;
+  background-image: url("@/assets/img/aa.png");
+
+  // background-image: url("@/assets/img/Quiz-Time.png"),
+  // ,url("@/assets/img/sun.png");
+  // background-size: 375px auto;
   background-repeat: no-repeat;
-  background-position: center 50px, 160px bottom;
+  // background-position: center 50px, 160px bottom;
   z-index: 2;
 }
 .welcomePage .input {
@@ -331,6 +395,16 @@ export default {
   line-height: 40px;
   color: white;
 }
+
+.welcomePage .ice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: KJ;
+  color: white;
+  font-size: 45px;
+}
+
 .welcomePage .start {
   height: 50px;
   width: 180px;
@@ -345,6 +419,7 @@ export default {
   border: 2px solid white;
   box-shadow: 0px 6px 10px dimgrey;
   transition: box-shadow 0.3s;
+  
 }
 .welcomePage .foot {
   position: fixed;
@@ -360,8 +435,8 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: deepskyblue;
-  background-image: url("@/assets/img/background.png");
+  background-color: rgb(0, 191, 255,0.5);
+  background-image: url("@/assets/bdd.png");
   background-repeat: no-repeat;
   background-size: 375px auto;
   background-position: bottom;
@@ -428,16 +503,19 @@ export default {
   z-index: 0;
 }
 .scorePage .score h3 {
-  margin-top: 70px;
+  margin-top: 120px;
   text-align: center;
+  font-family: KJ;
   font-weight: bold;
   color: white;
   font-size: 25px;
 }
 .scorePage .score h1 {
+    margin-top: 220px;
   text-align: center;
   font-weight: bold;
-  color: red;
+  font-family: KJ;
+  color: rgb(230, 16, 16);
   font-size: 60px;
   text-shadow: 0 0 8px white;
 }
@@ -482,5 +560,76 @@ export default {
   border: 2px solid white;
   box-shadow: 0px 6px 10px dimgrey;
   transition: box-shadow 0.3s;
+}
+
+.snow1 {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 0 0;
+  -webkit-animation: snow1 3s linear 0s infinite;
+}
+
+.snow2 {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 50 0;
+  -webkit-animation: snow2 2s linear 0s infinite;
+}
+
+.snow3 {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 20 0;
+  -webkit-animation: snow3 3s linear 0s infinite;
+}
+
+.snow4 {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 50 0;
+  -webkit-animation: snow4 2s linear 0s infinite;
+}
+@-webkit-keyframes snow1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 500px, 0) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes snow2 {
+  0% {
+    transform: translate3d(100px, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(100px, 500px, 0) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes snow3 {
+  0% {
+    transform: translate3d(300px, 20, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(300px, 500px, 0) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes snow4 {
+  0% {
+    transform: translate3d(100px, 100px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(100px, 500px, 0) rotate(360deg);
+  }
 }
 </style>
