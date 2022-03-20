@@ -25,12 +25,15 @@
 				legend: {
 					data: ['Show', 'Click', 'Visit', 'Inquiry', 'Order']
 				},
+				
+	    color: ['#8ecfea', '#93daa4', '#fbd0a9', '#f0a8b5', '#cca3be', ],
+
 				series: [{
 					name: '热度值：',
 					type: 'funnel',
 					left: '10%',
-					top: 40,
-					bottom: 40,
+					top: 30,
+					bottom: 10,
 					width: '80%',
 					min: 20000,
 					max: 90000,
@@ -90,6 +93,9 @@
 <style>
 	#favour {
 		width: 360px;
-		height: 300px;
+		height:100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 </style>

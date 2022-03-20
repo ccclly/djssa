@@ -5,8 +5,13 @@
 		</div>
 		<div class="bigsnow">
 			<img src="../assets/bs.png" >
-<!-- 			<img src="../assets/2022冬奥会.png" > -->
+			<div class="hj" @click="dianhuo">
+				<img :src="isfire" >
+			</div>
 		</div>
+		 <div>
+		    {{ this.$route.params.name }}
+		  </div>
 	</div>
 </template>
 
@@ -16,6 +21,7 @@
 			return {
 				starsCount: 800, //星星数量
 				distance: 900, //间距
+				isfire:require('../assets/hj2.png'),
 			}
 		},
 		mounted() {
@@ -32,13 +38,18 @@
 		        rotateX(${Math.random() * -50}deg)
 		        scale(${speed},${speed})`;
 			});
+		},
+		methods:{
+			dianhuo(){
+				this.isfire=require('../assets/hy.gif')
+			}
 		}
 	}
 </script>
 
 <style lang="less">
 	.body {
-		cursor: url(../assets/f2.png), auto;
+		cursor: url(../assets/f22.png), auto;
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -50,7 +61,7 @@
 		// 	#050e74);
 		// background: radial-gradient(200% 105% at top center,
 		// 	#030840 10%,
-		// 	#040b5d 40%,
+		// 	#040b5d 40%,                                       
 		// 	#050e74 65%,
 		// 	#06118b);
 		background: url(../assets/bjbj.jpg);
@@ -84,6 +95,18 @@
 			margin-left: -400px;
 			img{
 				width: 100%;
+			}
+			.hj{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -18px;
+				margin-left: -47px;
+				img{
+					width: 100%;
+				}
 			}
 		}
 	}

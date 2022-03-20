@@ -1,341 +1,443 @@
-<template>
-  <div id="contain">
-    <div class="left">
-      <div class="left_one">
-        <sex></sex>
-      </div>
-      <div class="left_two">
-        <radar></radar>
-      </div>
-      <div class="left_three">
-        <favour></favour>
-      </div>
-    </div>
-    <div class="min">
-      <div class="min_one">
-        <topbar></topbar>
-      </div>
-      <div class="min_two">
-        <earth></earth>
-      </div>
-      <div class="min_three">
-        <cost></cost>
-      </div>
-    </div>
-
-    <div class="right">
-      <div class="right_one">
-        <div class="router_link">
-          <router-link to="/page1"> page1 </router-link>
-          <router-link to="/page2"> page2 </router-link>
-          <router-link to="/page3"> page3 </router-link>
-          <router-link to="/page4"> page4 </router-link>
-        </div>
-      </div>
-      <div class="right_two">
-        <scroll></scroll>
-      </div>
-      <div class="right_three">
-        <cloudword></cloudword>
-      </div>
-    </div>
-  </div>
-</template>
 <script>
-import earth from "../components/earth.vue";
-import topbar from "../components/topbar.vue";
-import cost from "../components/cost.vue";
-import sex from "../components/sex.vue";
-import radar from "../components/radar.vue";
-import cloudword from "../components/cloudword.vue";
-import favour from "../components/favour.vue";
-import scroll from "../components/scroll.vue";
-import * as snow from "@/assets/js/snow.js";
+	import earth from "../components/earth.vue";
+	import topbar from "../components/topbar.vue";
+	import cost from "../components/cost.vue";
+	import sex from "../components/sex.vue";
+	import radar from "../components/radar.vue";
+	import cloudword from "../components/cloudword.vue";
+	import favour from "../components/favour.vue";
+	import scroll from "../components/scroll.vue";
+	import first from "../components/first.vue";
+	import game from "../components/question-game.vue";
+	import {
+		goSnow
+	} from "@/assets/js/snow.js";
 
-export default {
-  data() {
-    return {};
-  },
-  components: {
-    earth,
-    topbar,
-    cost,
-    sex,
-    radar,
-    cloudword,
-    favour,
-    scroll,
-  },
-  methods: {
-    // toHome() {
-    //   this.$router.push("/page2");
-    // },
-  },
-};
+	export default {
+		data() {
+			return {};
+		},
+		components: {
+			earth,
+			topbar,
+			cost,
+			sex,
+			radar,
+			cloudword,
+			favour,
+			first,
+			scroll
+		},
+		watch: {
+			'$route': 'getPathFun'
+		},
+		methods: {
+			getPathFun() {
+				if (this.$route.path === '/') {
+					var snowBox = 'contain', //雪花容器
+						src = "/img/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
+						num = 40, //雪花数量
+						style = 2; //图片种类数
+					goSnow(snowBox, src, num, style);
+				}
+			}
+		},
+		mounted() {
+			this.getPathFun()
+		}
+	};
 </script>
-
+<template>
+	<div id="contain">
+		<div class="left">
+			<div class="left_one">
+				<div class="left_one_title">
+					运动员性别比例
+				</div>
+				<sex></sex>
+			</div>
+			<div class="left_two">
+				<div class="left_two_title">
+					中国队冬奥强项
+				</div>
+				<radar></radar>
+			</div>
+			<div class="left_three">
+				<div class="left_three_title">
+					民众最关注的比赛项目
+				</div>
+				<favour></favour>
+			</div>
+		</div>
+		<div class="min">
+			<div class="min_one">
+				<topbar></topbar>
+			</div>
+			<div class="min_two">
+				<div class="min_two_title">
+					冬奥奖牌榜排名
+				</div>
+				<div class="min_two_title2">
+				    历届冬奥国家分布
+				</div>
+				<earth></earth>
+			</div>
+			<div class="min_three">
+				<div class="min_three_title">
+					历届冬奥比赛项目数量及花费
+				</div>
+				<cost></cost>
+			</div>
+		</div>
+		<div class="right">
+			<div class="right_one">
+				<div class="right_one_title">
+					北京冬奥亮眼数据
+				</div>
+				<first></first>
+			</div>
+			<div class="right_two">
+				<div class="right_two_title">
+					冬奥网友热评
+				</div>
+				<scroll></scroll>
+			</div>
+			<div class="right_three">
+				<div class="right_three_title">
+					冬奥网友热评词云图
+				</div>
+				<cloudword></cloudword>
+			</div>
+		</div>
+	</div>
+</template>
 
 <style scoped lang="less">
-* {
-  margin: 0;
-  padding: 0;
-}
+	* {
+		margin: 0;
+		padding: 0;
+	}
 
-.router_link {
-  z-index: 99;
-  position: absolute;
-}
+	#contain {
+		background: url(@/assets/bj4.jpg);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		min-width: 1000px;
+		z-index: -10;
+		zoom: 1;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-o-background-size: cover;
+		background-position: center 0;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		min-height: 70vh;
 
-#contain {
-  overflow: scroll;
-  width: 100%;
-  background: url(@/assets/bj4.jpg);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-width: 1000px;
-  z-index: -10;
-  zoom: 1;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-position: center 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  min-height: 70vh;
+		.left {
+			height: 100%;
+			flex: 0.7;
+			display: flex;
+			flex-direction: column;
 
-  .left {
-    height: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+			.left_one {
+				border: 1px solid white;
+				flex: 0.9;
+				border-radius: 12px;
+				margin: 10px;
+				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
-    .left_one {
-      border: 1px solid white;
-      flex: 1;
-      border-radius: 12px;
-      margin: 10px;
-      margin-bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.left_one_title{
+					font-size: 15px;
+					position: absolute;
+					left: 30px;
+					top: 18px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+			}
 
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
+			.left_two {
+				border: 1px solid white;
+				flex: 1;
+				margin: 10px;
+				// background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.left_two_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+			}
 
-    .left_two {
-      border: 1px solid white;
-      flex: 2;
-      margin: 10px;
-      // background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      margin-bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0);
-      background-size: 5px 20px, 20px 5px;
-    }
+			.left_three {
+				border: 1px solid white;
+				flex: 1;
+				margin: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				position: relative;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.left_three_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+			}
+		}
 
-    .left_three {
-      border: 1px solid white;
-      flex: 1;
-      margin: 10px;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
-  }
+		.min {
+			width: 100%;
+			height: 100%;
+			flex: 1.5;
+			display: flex;
+			flex-direction: column;
 
-  .min {
-    width: 100%;
-    height: 100%;
-    flex: 1.5;
-    display: flex;
-    flex-direction: column;
+			.min_one {
+				// background-color: #42B983;
+				margin-top: 10px;
+				height: 100%;
+				flex: 1.5;
+				display: flex;
+				justify-content: center;
+				background-image: url(../assets/top1.png);
+				background-repeat: no-repeat;
+				background-size: 100% 104%;
+				-moz-background-size: 100% 100%;
+			}
 
-    .min_one {
-      margin-top: 10px;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      height: 100%;
-      flex: 1.5;
-      display: flex;
-      justify-content: center;
-      border: 1px solid white;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
+			.min_two {
+				margin-top: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				flex: 4;
+				border: 1px solid white;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				position: relative;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.min_two_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+				.min_two_title2{
+					font-size: 15px;
+					position: absolute;
+					right: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+			}
 
-    .min_two {
-      margin-top: 10px;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      flex: 5.2;
-      border: 1px solid white;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
+			.min_three {
+				border: 1px solid white;
+				height: 100%;
+				background-color: green;
+				flex: 3.4;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				width: 100%;
+				height: 26.2vh;
+				// background-color: rgba(236, 249, 255, 0.4);
+				// border-radius: 12px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.min_three_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+				
+			}
+		}
 
-    .min_three {
-      border: 1px solid white;
-      height: 100%;
-      background-color: green;
-      flex: 3.4;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      width: 100%;
-      height: 26.2vh;
-      // background-color: rgba(236, 249, 255, 0.4);
-      // border-radius: 12px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
-  }
+		.right {
+			height: 100%;
+			flex: 0.7;
+			display: flex;
+			flex-direction: column;
 
-  .right {
-    height: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+			.right_one {
+				border: 1px solid white;
+				flex: 1;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				margin: 10px;
+				margin-bottom: 0;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				position: relative;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.right_one_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
 
-    .right_one {
-      border: 1px solid white;
-      flex: 0.9;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      margin: 10px;
-      margin-bottom: 0;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
+			}
 
-    .right_two {
-      border: 1px solid white;
-      flex: 5;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      margin: 10px;
-      margin-bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
+			.right_two {
+				border: 1px solid white;
+				flex: 1;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				margin: 10px;
+				margin-bottom: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				position: relative;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.right_two_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+			}
 
-    .right_three {
-      border: 1px solid white;
-      flex: 3;
-      background-color: rgba(236, 249, 255, 0.4);
-      border-radius: 12px;
-      margin: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(white, white) left top,
-        linear-gradient(white, white) left top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) right top,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) left bottom,
-        linear-gradient(white, white) right bottom,
-        linear-gradient(white, white) right bottom;
-      background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
-      background-size: 5px 20px, 20px 5px;
-    }
-  }
-}
+			.right_three {
+				border: 1px solid white;
+				flex: 1.2;
+				background-color: rgba(236, 249, 255, 0.4);
+				border-radius: 12px;
+				margin: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient(white, white) left top,
+					linear-gradient(white, white) left top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) right top,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) left bottom,
+					linear-gradient(white, white) right bottom,
+					linear-gradient(white, white) right bottom;
+				background-repeat: no-repeat;
+				position: relative;
+				background-color: rgba(236, 249, 255, 0.2);
+				background-size: 5px 20px, 20px 5px;
+				.right_three_title{
+					font-size: 15px;
+					position: absolute;
+					left: 20px;
+					top: 5px;
+					font-family: KJ;
+					color:#5470C6;
+				}
+			}
+		}
+	}
 </style>

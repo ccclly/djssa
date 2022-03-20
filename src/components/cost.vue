@@ -31,17 +31,18 @@
 					data: ['比赛项目数量', '花费']
 				},
 				grid: {
-				  top: '15%',
+				// top: '15%',
+				 bottom: '10%',
 				},
 				xAxis: [{
 					type: 'category',
-					data: ['十四届', '十五届', '十六届', '十七届', '十八届', '十九届', '二十届', '二十一届', '二十二届', '二十三届', '二十四届'],
+					data: ['14届', '15届', '16届', '17届', '158届', '19届', '20届', '21届', '22届', '23届', '24届'],
 					axisPointer: {
 						type: 'shadow'
 					},
 					axisLabel: {
 						interval: 0,
-						rotate: 40
+						// rotate: 40
 					}
 				}],
 				yAxis: [{
@@ -112,8 +113,10 @@
 
 <style>
 	#cost {
-	   margin-top: 30px;
 		width: 100%;
-		height: 280px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 </style>

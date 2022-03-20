@@ -18,10 +18,12 @@
 			var option;
 			option = {
 				radar: {
-					shape: 'circle',
+					center: ['50%', '50%'],
+					nameGap: 10,
+					shape: 'radar',
 					axisLine: {
 						lineStyle: {
-					 	color: '#6BD3F2',
+							color: '#6BD3F2',
 						},
 					},
 					triggerEvent: true,
@@ -67,6 +69,7 @@
 						textStyle: {
 							color: '#fff',
 							backgroundColor: 'rgba(11,89,140,0.4)',
+							fontSize: 10,
 							borderRadius: 3,
 							padding: [3, 5]
 						}
@@ -75,14 +78,14 @@
 				series: [{
 					name: 'Budget vs spending',
 					type: 'radar',
-					                itemStyle: {
-					                    normal: {
-					                        color: 'white',
-					                        lineStyle: {
-					                            color: 'white',
-					                        },
-					                    },
-					                },
+					itemStyle: {
+						normal: {
+							color: 'white',
+							lineStyle: {
+					   color: 'white',
+							},
+						},
+					},
 					data: [{
 							value: [6, 6, 1, 1, 1, 5],
 							name: '中国队强项',
@@ -101,9 +104,12 @@
 	}
 </script>
 
-<style>
+<style lang="less">
 	#radar {
-		width: 360px;
-		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width:100%;
+		height: 100%;
 	}
 </style>

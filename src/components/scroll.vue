@@ -128,15 +128,16 @@ nextTick(() => {
 
 <style lang="less">
 .roll {
-  height: 300px;
+  height: 22vh;
   overflow: hidden;
   width: 300px;
-  // background-color: antiquewhite;
+  position: relative;
+  top: 10px;
   .comments {
-    background-color: rgba(236, 249, 255, 0.4);
+    background-color: #FFFFFF;
     margin-top: 15px;
     padding: 4px;
-    border: 1px solid rgba(236, 249, 255, 0.4);
+    border: 1px solid #FFFFFF;
     border-radius: 10px;
     align-items: center;
   }
