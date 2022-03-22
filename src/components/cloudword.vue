@@ -107,7 +107,7 @@ export default {
             type: "wordCloud",
 			shape: 'circle',
             //用来调整词之间的距离
-            gridSize: 7,
+            gridSize: 3,
             //用来调整字的大小范围
             // Text size range which the value in data will be mapped to.
             // Default to have minimum 12px and maximum 60px size.
@@ -142,8 +142,14 @@ export default {
 </script>
 <style lang="less" scoped>
 	#chart{
+		position: relative;
+		top: 10px;
 		width: 300px; 
-		height:200px; 
+		height:27vh; 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
 

@@ -4,7 +4,7 @@
 		<div class="txt">
 			<text class="txt1">北京冬奥会可视化</text>
 			<text class="txt2">
-				<router-link to="/page1">首页</router-link>
+				<router-link to="/mainPage">首页</router-link>
 				<router-link to="/page2">中国数据</router-link>
 				<router-link to="/page3">场馆介绍</router-link>
 				<router-link to="/page4">科普答题</router-link>
@@ -58,7 +58,9 @@
 		display: flex;
 		justify-content: center;
 
-		img {}
+		img {
+			
+		}
 
 		.txt {
 			margin-top: 13px;

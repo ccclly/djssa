@@ -12,12 +12,12 @@ import page4 from '@/views/page4'
 
 const routes = [{
     path: '/',
-    component: mainPage
+    component: page1
   },
   {
-    name:'page1',
-    path: '/page1',
-    component: page1
+    name:'mainPage',
+    path: '/mainPage',
+    component: mainPage
   },
   {
     path: '/page2',

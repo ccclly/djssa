@@ -134,10 +134,9 @@ nextTick(() => {
   position: relative;
   top: 10px;
   .comments {
-    background-color: #FFFFFF;
+    background-color: rgba(26, 128, 235, 0.2);
     margin-top: 15px;
     padding: 4px;
-    border: 1px solid #FFFFFF;
     border-radius: 10px;
     align-items: center;
   }

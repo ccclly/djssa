@@ -164,7 +164,7 @@ export default {
               show: false
             },
             itemStyle:{
-              areaColor: '#89c0fa'
+              areaColor: '#6AABFB'
             },
             select: {
               // itemStyle: {

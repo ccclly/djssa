@@ -19,9 +19,10 @@
 	export default {
 		data() {
 			return {
+				 count:"",//倒计时
 				starsCount: 800, //星星数量
 				distance: 900, //间距
-				isfire:require('../assets/hj2.png'),
+				isfire:require('../assets/hynull.png'),
 			}
 		},
 		mounted() {
@@ -42,6 +43,22 @@
 		methods:{
 			dianhuo(){
 				this.isfire=require('../assets/hy.gif')
+				       const timejump = 1;
+				        if(!this.timer){
+				            this.count = timejump ;
+				            this.show = false;
+				            this.timer = setInterval(()=>{
+				            if(this.count > 0 && this.count <= timejump ){
+				                this.count--;
+				            }else{
+				                this.show = true;
+				                clearInterval(this.timer);
+				                this.timer = null;
+				                //跳转的页面写在此处
+				                this.$router.push({path: '/mainPage'});
+				            }
+				          },1000)
+				        }
 			}
 		}
 	}
@@ -49,21 +66,11 @@
 
 <style lang="less">
 	.body {
-		cursor: url(../assets/f22.png), auto;
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		// background: radial-gradient(200% 100% at bottom center,
-		// 	#1e73ce,
-		// 	#061294,
-		// 	#050e74);
-		// background: radial-gradient(200% 105% at top center,
-		// 	#030840 10%,
-		// 	#040b5d 40%,                                       
-		// 	#050e74 65%,
-		// 	#06118b);
 		background: url(../assets/bjbj.jpg);
 		background-attachment: fixed;
 		overflow: hidden;
@@ -97,6 +104,7 @@
 				width: 100%;
 			}
 			.hj{
+				cursor: url(../assets/hj22.png), auto;
 				width: 100px;
 				height: 100px;
 				position: absolute;

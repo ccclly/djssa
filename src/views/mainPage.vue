@@ -104,7 +104,7 @@
 			</div>
 			<div class="right_three">
 				<div class="right_three_title">
-					冬奥网友热评词云图
+					冬奥网友热搜词云图
 				</div>
 				<cloudword></cloudword>
 			</div>
@@ -342,7 +342,7 @@
 
 		.right {
 			height: 100%;
-			flex: 0.7;
+			flex: 0.9;
 			display: flex;
 			flex-direction: column;
 

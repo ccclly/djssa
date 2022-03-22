@@ -3,19 +3,19 @@
 		<ul>
 			<li>
 				<div class="yq">45%</div>
-				<span>性别比例最均衡</span>
+				<span>女性参赛比例</span>
 			</li>
 			<li>
-				<div class="yq">20亿</div>
-				<span>收视率最高</span>
+				<div class="yq">27亿</div>
+				<span>参与冬奥话题讨论人数</span>
 			</li>
 			<li>
-				<div class="yq">15岁</div>
-				<span>运动员最小年龄</span>
+				<div class="yq">100%</div>
+				<span>绿色供电率</span>
 			</li>
 			<li>
-				<div class="yq">0</div>
-				<span>疫情防控最好</span>
+				<div class="yq">0.01%</div>
+				<span>闭环内阳性病率</span>
 			</li>
 		</ul>
 	</div>
@@ -26,6 +26,11 @@
 
 <style lang="less">
 	.yqlist {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		ul{
 			padding-top: 20px;
 		li {
