@@ -122,11 +122,13 @@ export default {
           max: 40,
           inRange: {
             color: [
-              '#79b3fc',
-              '#5faef8',
-              '#419dfb',
-              '#1f86f1',
-              '#0669d2',
+              "#89f7fe",
+              "#ffffbf",
+              "#fee090",
+              "#fdae61",
+              "#f46d43",
+              "#d73027",
+              "#a50026",
             ],
           },
           text: ['High', 'Low'],
