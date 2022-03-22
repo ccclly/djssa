@@ -4,40 +4,34 @@
 
           <div class="daohang">
               <ul>
-                  <li>个人介绍</li>
-                  <li>喜欢的音乐</li>
-                  <li>喜欢的动漫</li>
-                  <li>喜欢的生活</li>
-                  <li>更换背景</li>
+                  <li>中国滑雪场分布</li>
+                  <li>中国冬奥设计</li>
+                  <li>中国冬奥防疫</li>
+                  <li>中国冬奥黑科技</li>
+                  <li>中国冬奥成绩</li>
               </ul>
           </div>
       </div>
       <div class="content">
           <div class="item">
               <div class="oneself">
-                  <p>昵称: A</p>
-                  <p>生日: 1月1日</p>
-                  <p>爱好: 唱，跳，rap，篮球，刷最右，敲代码</p>
+                 <china></china>
               </div>
           </div>
           <div class="item">
               <div class="music">
+				  <div class="medal">
+				  	<img src="../assets/medal.png" >
+				  </div>
               </div>
           </div>
           <div class="item">
               <div class="cartoon">
-                  <ul>
-                      <li>《火影忍者》</li>
-                      <li>《鬼灭之刃》</li>
-                      <li>《斗破苍穹》</li>
-                      <li>《斗罗大陆》</li>
-                      <li>《国王排名》</li>
-                  </ul>
+				  99999999999999999999999
              </div>  
           </div>
           <div class="item">
               <div class="life">
-
               </div>
           </div>
           <div class="item">
@@ -50,13 +44,13 @@
 </template>
 
 <script>
-	import earth from "../components/earth.vue";
+	import china from "../components/china.vue";
 export default {
 		data() {
 			return {};
 		},
 		components: {
-			earth,
+			china,
 
 		},
 mounted() {
@@ -82,7 +76,7 @@ mounted() {
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 *{
     margin: 0;
     padding: 0;
@@ -94,14 +88,15 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
-	background-color: #96C4FD;
 }
 .Box{
+	margin: 0 auto;
     width: 1000px;
-    height: 500px;
-    background-color: rgba(236, 249, 255, 0.4);
+    height: 520px;
+	background-color: rgba(236, 249, 255, 0.4);
     margin: 0 auto;
-    margin-top: 70px;
+    // margin-top: 70px;
+	margin-bottom: 50px;
     border-radius: 10px;
 	.search{
 	    float: left;
@@ -109,10 +104,12 @@ body{
 	    height: 600px;
 		.daohang{
 		    width: 150px;
-		    height:500px;
-		    background-color: #3E74B4;
+		    height:520px;
+		    background-color:#6199dd;
+			border-top-left-radius:10px;
+			border-bottom-left-radius:10px;
 			ul{
-			    padding-top: 10px;
+			    // padding-top: 10px;
 				li{
 				    width: 150px;
 				    height: 30px;
@@ -133,27 +130,27 @@ body{
 		.item{
 		    display: none;
 			.oneself{
-			    margin-top: 20px;
-			    margin-left: 30px;
-				p{
-				    font-size: 20px;
-				}
+                width: 800px;
+			     height: 400px;
+				 left:0px;
+				 top: 15px;
+				 position:relative;
 				}
 				.music{
-				    float: left;
-				    width: 850px;
-				    height: 600px;
-					img{
-					    width: 100%;
-					    height: 100%;
-					    border-radius: 10px;
-					}
+	      .medal{
+				// position: absolute;
+				// left: 0;
+				// top: 0;
+				img{
+					width: 50%;
+				}
+			}
 				}
 				.cartoon{
 				    float: left;
-				    background-color: pink;
 				    margin-top: 30px;
 				    margin-left: 30px;
+					background-color: black;
 					ul{
 						li {
 						    float: left;
@@ -168,13 +165,10 @@ body{
 				    margin-left: 30px;
 				}
 				.bj{
-                    position: relative;
-				    width: 450px;
-				    height: 300px;
-					top: 50px;
-					left: 150px;
-				    background-color: red;
-					
+				    float: left;
+				    font-size: 20px;
+				    margin-top: 30px;
+				    margin-left: 30px;
 				}
 		}
 	}
