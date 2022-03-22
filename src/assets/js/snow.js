@@ -36,7 +36,7 @@
 			//设置雪花尺寸
 			var img = this.ele;
 			image.onload = function() {
-				imgW = image.width;
+			   var	imgW = image.width;
 				img.setAttribute('width', Math.ceil(imgW * (0.1 + Math.random())));
 				if (isIE()) { //如果旧IE，设置高度
 					imgH = image.height;
@@ -77,11 +77,14 @@
 			}
 		}, 40);
 	};
+	
+ export { goSnow }
 	//初始化加载
 	window.onload = function() {
 		var snowBox = 'contain', //雪花容器
 			src = "/img/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
-			num = 16, //雪花数量
+			num = 40, //雪花数量
 			style = 2; //图片种类数
 		goSnow(snowBox, src, num, style);
 	};
+	

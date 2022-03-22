@@ -3,7 +3,12 @@
 		<img class="img1" :src="leftimg" @mouseenter="mouseenter1" @mouseleave="mouseleave1">
 		<div class="txt">
 			<text class="txt1">北京冬奥会可视化</text>
-			<text class="txt2">更高 更快 更强 更团结</text>
+			<text class="txt2">
+				<router-link to="/page1">首页</router-link>
+				<router-link to="/page2">中国数据</router-link>
+				<router-link to="/page3">场馆介绍</router-link>
+				<router-link to="/page4">科普答题</router-link>
+			</text>
 		</div>
 		<img :src="rightimg" @mouseenter="mouseenter2" @mouseleave="mouseleave2">
 	</div>
@@ -13,28 +18,28 @@
 	export default {
 		data() {
 			return {
-            leftimg:require('../assets/dah3.png'),
-			rightimg:require('../assets/wuhuan2.png')
+				leftimg: require('../assets/dah3.png'),
+				rightimg: require('../assets/wuhuan2.png')
 			}
 		},
 		methods: {
-		    // 2、进入元素
-		    mouseenter1 () {
-		      this.leftimg=require('../assets/dah.png')
-		    },
-			   // 5、离开元素
-			    mouseleave1 () {
-			     this.leftimg=require('../assets/dah3.png')
-			    },
-				// 2、进入元素
-				mouseenter2 () {
-				  this.rightimg=require('../assets/wuhuan.png')
-				},
-				   // 5、离开元素
-				    mouseleave2 () {
-				     this.rightimg=require('../assets/wuhuan2.png')
-				    }
-		  }
+			// 2、进入元素
+		 mouseenter1() {
+				this.leftimg = require('../assets/dah.png')
+			},
+			// 5、离开元素
+			mouseleave1() {
+				this.leftimg = require('../assets/dah3.png')
+			},
+			// 2、进入元素
+			mouseenter2() {
+				this.rightimg = require('../assets/wuhuan.png')
+			},
+			// 5、离开元素
+			mouseleave2() {
+				this.rightimg = require('../assets/wuhuan2.png')
+			}
+		}
 	}
 </script>
 
@@ -52,15 +57,16 @@
 		// border-radius: 12px;
 		display: flex;
 		justify-content: center;
-		img {
-			
-		}
+
+		img {}
+
 		.txt {
 			margin-top: 13px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-            align-items: center;
+			align-items: center;
+
 			.txt1 {
 				display: flex;
 				flex-direction: column;
@@ -73,12 +79,18 @@
 			.txt2 {
 				display: flex;
 				margin-top: 5px;
-				flex-direction: column;
+				// flex-direction: column;
 				justify-content: center;
 				font-family: KJ;
 				color: white;
 				// font-weight: bold;
-				font-size: 18px;
+				font-size: 14px;
+                // text-decoration: none;
+				a {
+					text-decoration: none;
+					color: white;
+					margin: 0 5px;
+				}
 			}
 		}
 	}

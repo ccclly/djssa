@@ -1,7 +1,6 @@
 <template>
-	<div id="sex" ref="sex">
-	
-	</div>
+		<div id="sex" ref="sex">
+		</div>
 </template>
 
 <script>
@@ -146,6 +145,9 @@
 <style>
 	#sex {
 		width: 300px;
-		height: 230px;
+		height:100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 </style>
