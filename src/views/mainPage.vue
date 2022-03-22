@@ -8,7 +8,7 @@
 	import favour from "../components/favour.vue";
 	import scroll from "../components/scroll.vue";
 	import first from "../components/first.vue";
-	import game from "../components/question-game.vue";
+	// import game from "../components/question-game.vue";
 	import {
 		goSnow
 	} from "@/assets/js/snow.js";

@@ -1,10 +1,17 @@
 <template>
   <div class="welcomePage">
-    <div class="input">
+    <!-- <div class="input">
       <input type="text" placeholder="输入您的姓名" />
-    </div>
-    <div class="start">开始游戏</div>
-    <div class="foot">© 2022-现在 C & C 版权所有</div>
+    </div> -->
+    <div class="snow4"></div>
+    <div class="snow1"></div>
+    <div class="snow2"></div>
+    <div class="snow3"></div>
+    <div class="snow4"></div>
+    <div class="ice">冰雪知识问答</div>
+
+    <div class="start">开始答题</div>
+    <!-- <div class="foot">© 2019-现在 C & C 版权所有</div> -->
   </div>
   <div class="mainPage">
     <div class="timeout"></div>
@@ -16,7 +23,7 @@
       <h3>您的分数为:</h3>
       <h1></h1>
     </div>
-    <div class="rank">
+    <!-- <div class="rank">
       <h2>排行榜</h2>
       <div class="player1 list"></div>
       <div class="player2 list"></div>
@@ -28,7 +35,7 @@
       <div class="player8 list"></div>
       <div class="player9 list"></div>
       <div class="player10 list"></div>
-    </div>
+    </div> -->
     <div class="again">再试一次</div>
   </div>
 </template>
@@ -42,78 +49,185 @@ export default {
   mounted() {
     let player = null;
     let score = 0;
-    // 问答题题目（10道）
-    let quizList = [
-      {
-        no: 1,
-        answer: 1,
-        options: ["官名", "人名", "地名", "食材"],
-        quiz: "名菜「宫保鸡丁」中的「宫保」是什么东西？",
-      },
-      {
-        no: 2,
-        answer: 4,
-        options: ["库里", "奥尼尔", "詹姆斯", "科比"],
-        quiz: "有着「黑曼巴」之称的篮球明星是？",
-      },
-      {
-        no: 3,
-        answer: 3,
-        options: ["1945", "1941", "1942", "1944"],
-        quiz: "二战中美国第一次轰炸日本本土是哪一年？",
-      },
-      {
-        no: 4,
-        answer: 1,
-        options: [
-          "文章写得好",
-          "女子美丽的样子",
-          "事情的来龙去脉",
-          "画画画的好",
-        ],
-        quiz: "「取青妃白」所指的意思是？",
-      },
-      {
-        no: 5,
-        answer: 2,
-        options: ["悠悠我心", "在水一方", "与子偕老", "君子好逑"],
-        quiz: "「蒹葭苍苍，白露为霜。所谓伊人」的下一句是？",
-      },
-      {
-        no: 6,
-        answer: 4,
-        options: ["银", "铁", "铜", "铅"],
-        quiz: "松花蛋吃多了容易导致哪种重金属元素中毒？",
-      },
-      {
-        no: 7,
-        answer: 3,
-        options: ["莫愁湖", "西湖", "青海湖", "洞庭湖"],
-        quiz: "古代称为「西海」，蒙古语称为「库库诺尔」的地方是？",
-      },
-      {
-        no: 8,
-        answer: 2,
-        options: ["企业价值", "市盈率", "净利润", "市净值"],
-        quiz: "金融业常说的「P/E」是指？",
-      },
-      {
-        no: 9,
-        answer: 4,
-        options: ["巴西", "中国", "俄罗斯", "加拿大"],
-        quiz: "世界上国土面积第二大的国家是？",
-      },
-      {
-        no: 10,
-        answer: 4,
-        options: ["CAD", "CHF", "RMB", "CNY"],
-        quiz: "人民币的货币代码是？",
-      },
-    ];
+    let quizList = null;
+
     let timeleft = 15;
     let quizleft = 10;
     let rank = localStorage.rank ? JSON.parse(localStorage.rank) : [];
     let status = true;
+
+    quizList = [
+      {
+        no: 1,
+        answer: 1,
+        options: [
+          "简约、安全、精彩",
+          "简约、绿色、精彩",
+          "简约、绿色、和谐",
+          "简约、安全、和谐",
+        ],
+        quiz: "中方将竭诚为世界奉献一届（ ）的奥运盛会，践行“更快、更高、更强——更团结”的奥林匹克格言。",
+      },
+      {
+        no: 2,
+        answer: 4,
+        options: [
+          "更快、更高、更强——更和谐",
+          "更快、更高、更远——更团结",
+          "更快、更高、更远——更和谐",
+          "更快、更高、更强——更团结",
+        ],
+        quiz: "中方将竭诚为世界奉献一届简约、安全、精彩的奥运盛会，践行“（ ）”的奥林匹克格言。",
+      },
+      {
+        no: 3,
+        answer: 3,
+        options: ["22", "23", "24", "25"],
+        quiz: "2022年北京冬奥会是第（ ）届冬奥会",
+      },
+      {
+        no: 4,
+        answer: 3,
+        options: ["东京", "纽约", "北京", "希腊"],
+        quiz: "世界上举办过夏奥运会又举办过冬奥会的城市有？",
+      },
+      {
+        no: 5,
+        answer: 1,
+        options: ["1", "2", "3", "4"],
+        quiz: "北京是全球第（ ）个双奥会城市",
+      },
+      {
+        no: 6,
+        answer: 1,
+        options: ["意大利", "希腊", "英国", "挪威"],
+        quiz: "迄今为止，同时举办过夏奥和冬奥的国家有9个国家，下列国家同时举办过夏奥和冬奥的是？",
+      },
+      {
+        no: 7,
+        answer: 4,
+        options: ["6", "7", "8", "9"],
+        quiz: "在北京成为世界首座“双奥之城”的同时，中国也将成为全球第几个同时举办冬夏两季奥运会的国家？",
+      },
+      {
+        no: 8,
+        answer: 2,
+        options: ["6", "7", "8", "9"],
+        quiz: "北京2022年冬奥会新增几个比赛小项？",
+      },
+      {
+        no: 9,
+        answer: 3,
+        options: ["10", "62", "109", "160"],
+        quiz: "整个冬奥会共将产生几枚金牌？",
+      },
+      {
+        no: 10,
+        answer: 4,
+        options: ["首都体育馆", "五棵松体育中心", "北京工人体育馆", "鸟巢"],
+        quiz: "北京2022年冬奥会和冬残奥会的开、闭幕式,将在国家体育场哪里举办？",
+      },
+      {
+        no: 7,
+        answer: 2,
+        options: ["中国", "日本", "泰国", "越南"],
+        quiz: "亚洲第一个参加冬奥会的国家是？",
+      },
+      {
+        no: 8,
+        answer: 3,
+        options: ["1996 ", "1988 ", "1992", "1990"],
+        quiz: "中国实现冬奥会奖牌零突破的时间？",
+      },
+      {
+        no: 9,
+        answer: 1,
+        options: ["亨利. 迪东", "顾拜旦", "索尼娅. 海泥", "维凯拉斯"],
+        quiz: "奥林匹克格言的提出者是？",
+      },
+      {
+        no: 10,
+        answer: 2,
+        options: ["李坚柔", "杨杨", "张虹", "王濛"],
+        quiz: "中国第一枚冬奥会金牌获得者是?",
+      },
+      {
+        answer: 2,
+        options: ["法国", "美国", "英国", "加拿大"],
+        quiz: "顾拜日是哪国人?",
+      },
+      {
+        answer: 1,
+        options: ["冰墩墩", "雪融融", "冰多多", "海宝"],
+        quiz: "冬奥会吉祥物是？",
+      },
+      {
+        answer: 3,
+        options: [
+          "第一名",
+          "第二名",
+          "第三名",
+          "第四名",
+        ],
+        quiz: "中国队在北京冬奥会中获得第几名？",
+      },
+      {
+        answer: 2,
+        options: ["5", "9", "13", "8"],
+        quiz: "中国队在北京冬奥会中获得几枚金牌？",
+      },
+      {
+        answer: 4,
+        options: ["10", "11", "14", "15"],
+        quiz: "中国队在北京冬奥会中一共获得多少枚奖牌？",
+      },
+      {
+        answer: 4,
+        options: ["沈阳", "张家口", "北京", "北京和张家口"],
+        quiz: "2022年冬季奥林匹克运动会将在(城市)举行?",
+      },
+      {
+        answer: 3,
+        options: ["短道速滑", "跳水", "冰壶", "滑雪"],
+        quiz: "以下哪个项目不属于冬奥会的比赛项目?",
+      },
+      {
+        answer: 4,
+        options: ["1", "2", "3", "4"],
+        quiz: "现代冬奥会几年举行一次?",
+      },
+      {
+        answer: 1,
+        options: ["美国普菜西德湖冬奥会", "韩国平昌冬奥会", "法国阿尔贝维尔冬奥会", "加拿大温哥华冬季奥运会"],
+        quiz: "中国第一次参加冬奥会是哪一届?",
+      },
+      {
+        answer: 3,
+        options: ["5", "6", "7", "8"],
+        quiz: "2022年冬奥会有几个大项？",
+      },
+      {
+        answer: 1,
+        options: ["冰壶", "滑雪", "短道速滑", "冰球"],
+        quiz: "国家游泳中心水立方在2022年将承担哪个项目的比赛?",
+      },
+      {
+        answer: 4,
+        options: ["刘翔", "田亮", "刘翔", "申雪"],
+        quiz: "从下面选项中哪位是2022年冬奥会形象大使?",
+      },
+      {
+        answer: 3,
+        options: ["5", "10", "15", "20"],
+        quiz: "2022年冬奥会中预计从奥运村到比赛场馆用时最多不超过几分钟?",
+      },
+      {
+        answer: 1,
+        options: ["张艺谋", "徐峥", "陈凯歌", "郑晓龙"],
+        quiz: "北京申办2022年冬奥会宣传片总导演是?",
+      },
+      
+    ];
 
     //输入框浮动效果
     $(".welcomePage .input input").focus(function () {
@@ -126,13 +240,13 @@ export default {
     //开始游戏，转场
     //点击转场
     $(".welcomePage .start").click("ontouchstart", function () {
-      if ($(".welcomePage .input input").val() != "" && status) {
+      if ($(".welcomePage .input input").val() != "1" && status) {
         status = false;
         $(".welcomePage .start").css("box-shadow", "none");
         setTimeout(function () {
           $(".welcomePage").fadeOut(500);
           $(".mainPage").fadeIn(500);
-          player = $(".welcomePage .input input").val();
+          player = "1";
           refresh();
           delayDone();
         }, 300);
@@ -141,7 +255,7 @@ export default {
     //按键转场
     $(".welcomePage .input input").keypress(function (e) {
       if (
-        $(".welcomePage .input input").val() != "" &&
+        $(".welcomePage .input input").val() != "1" &&
         e.key == "Enter" &&
         status
       ) {
@@ -150,7 +264,7 @@ export default {
         setTimeout(function () {
           $(".welcomePage").fadeOut(500);
           $(".mainPage").fadeIn(500);
-          player = $(".welcomePage .input input").val();
+          player = "1";
           refresh();
           delayDone();
         }, 300);
@@ -175,22 +289,73 @@ export default {
         //开始新题目时重置时间
         timeleft = 15;
         $(".mainPage .timeout").html("15");
-
-        //答题页面的样式不显示，提升为class为定义不知道为啥
         $(".mainPage .qno").html(`
-		<div class="question">Q${10 - quizleft}: ${question.quiz}</div>
-\t\t\t\t<div class="answer" data-index="1" id="a1">1、${
-          question.options[0]
-        }</div>
-\t\t\t\t<div class="answer" data-index="2" id="a2">2、${
-          question.options[1]
-        }</div>
-\t\t\t\t<div class="answer" data-index="3" id="a3">3、${
-          question.options[2]
-        }</div>
-\t\t\t\t<div class="answer" data-index="4" id="a4">4、${
-          question.options[3]
-        }</div>
+		<div class="question"
+  style="
+  width: 330px;
+  margin: 30px auto;
+  background-color: #ffc000;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  font-weight: bold;
+  animation: spin 0.6s 1;"
+    >Q${10 - quizleft}: ${question.quiz}</div>
+\t\t\t\t<div class="answer" data-index="1" id="a1" 
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+  >1、${question.options[0]}</div>
+\t\t\t\t<div class="answer" data-index="2" id="a2"
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+  >2、${question.options[1]}</div>
+\t\t\t\t<div class="answer" data-index="3" id="a3"
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+>3、${question.options[2]}</div>
+\t\t\t\t<div class="answer" data-index="4" id="a4"
+style=" width: 330px;
+  margin: 20px auto;
+  background-color: #b3a2c7;
+  color: white;
+  font-size: 22px;
+  line-height: 28px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px dimgrey;
+  animation: spin 0.6s 1;
+  transition: box-shadow 0.7s;"
+>4、${question.options[3]}</div>
 		`);
         let countDown = setInterval(function () {
           timeleft--;
@@ -252,6 +417,7 @@ export default {
       if (rank.length > 10) {
         rank.splice(10, rank.length - 9);
       }
+
       rank.forEach(function (item, index) {
         $(".scorePage .rank .player" + (index + 1)).html(
           item.name + "&nbsp&nbsp" + item.score + "分"
@@ -301,14 +467,17 @@ export default {
   align-content: center;
   align-items: center;
   justify-content: center;
-  left: 0;
+  left: 0%;
   top: 0;
-  background-color: deepskyblue;
-  background-image: url("@/assets/img/Quiz-Time.png"),
-    url("@/assets/img/sun.png");
-  background-size: 375px auto;
+  //  rgb(5, 48, 63)
+  background-color: #ddf6f2;
+  background-image: url("@/assets/img/aa.png");
+
+  // background-image: url("@/assets/img/Quiz-Time.png"),
+  // ,url("@/assets/img/sun.png");
+  // background-size: 375px auto;
   background-repeat: no-repeat;
-  background-position: center 50px, 160px bottom;
+  // background-position: center 50px, 160px bottom;
   z-index: 2;
 }
 .welcomePage .input {
@@ -331,6 +500,16 @@ export default {
   line-height: 40px;
   color: white;
 }
+
+.welcomePage .ice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: KJ;
+  color: white;
+  font-size: 45px;
+}
+
 .welcomePage .start {
   height: 50px;
   width: 180px;
@@ -360,8 +539,8 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: deepskyblue;
-  background-image: url("@/assets/img/background.png");
+  background-color: rgb(0, 191, 255, 0.5);
+  background-image: url("@/assets/bdd.png");
   background-repeat: no-repeat;
   background-size: 375px auto;
   background-position: bottom;
@@ -428,16 +607,19 @@ export default {
   z-index: 0;
 }
 .scorePage .score h3 {
-  margin-top: 70px;
+  margin-top: 120px;
   text-align: center;
+  font-family: KJ;
   font-weight: bold;
   color: white;
   font-size: 25px;
 }
 .scorePage .score h1 {
+  margin-top: 180px;
   text-align: center;
   font-weight: bold;
-  color: red;
+  font-family: KJ;
+  color: rgb(230, 16, 16);
   font-size: 60px;
   text-shadow: 0 0 8px white;
 }
@@ -482,5 +664,76 @@ export default {
   border: 2px solid white;
   box-shadow: 0px 6px 10px dimgrey;
   transition: box-shadow 0.3s;
+}
+
+.snow1 {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 0 0;
+  -webkit-animation: snow1 3s linear 0s infinite;
+}
+
+.snow2 {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 50 0;
+  -webkit-animation: snow2 2s linear 0s infinite;
+}
+
+.snow3 {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 20 0;
+  -webkit-animation: snow3 3s linear 0s infinite;
+}
+
+.snow4 {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  transform-origin: 50 0;
+  -webkit-animation: snow4 2s linear 0s infinite;
+}
+@-webkit-keyframes snow1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 500px, 0) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes snow2 {
+  0% {
+    transform: translate3d(100px, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(100px, 500px, 0) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes snow3 {
+  0% {
+    transform: translate3d(300px, 20, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(300px, 500px, 0) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes snow4 {
+  0% {
+    transform: translate3d(100px, 100px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(100px, 500px, 0) rotate(360deg);
+  }
 }
 </style>
