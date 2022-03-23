@@ -410,6 +410,7 @@ var convertData = function (data) {
             });
         }
     }
+		console.log(res)
     return res;
 };
 
@@ -440,7 +441,7 @@ option = {
     },
     series : [
         {
-            name: '标题名称',
+            name: '标题名',
             type: 'scatter',
             coordinateSystem: 'geo',
             data: convertData(data),
@@ -449,18 +450,35 @@ option = {
             },
             label: {
                 normal: {
-                    formatter: '{b}',
+                    // formatter: '{b}',
+					                formatter: function(params) {
+					                  return (
+					                    "{fline|位置：" +
+					                    params.data.name +
+					                    "}\n{tline|总数：" +
+					                    params.data.value[2] +
+					                    "个" +
+					                    "}"
+					                  )
+									  },
+
                     position: 'right',
-                    show: false
+                    show: false,
+					               // backgroundColor: "rgba(254,174,33,1)", // 背景色
+					               //  padding: [0, 0], // 左右间距
+					               //  borderRadius: 3, //  圆角
+					               //  lineHeight: 32, //  行高
+					               //  color: "#f7fafb", //  颜色
+								   areaColor: 'rgba(2,37,101,.5)',
+								   borderColor: 'rgba(112,187,252,.5)'
+	
                 },
                 emphasis: {
                     show: true
                 }
             },
             itemStyle: {
-                normal: {
                     color: '#ffeb7b'
-                }
             }
         }
 
