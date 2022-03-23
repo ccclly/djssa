@@ -3,6 +3,7 @@ import {
   createWebHashHistory
 } from 'vue-router'
 import game from '@/components/question-game'
+
 import mainPage from '@/views/mainPage'
 import page1 from '@/views/page1'
 import page2 from '@/views/page2'
