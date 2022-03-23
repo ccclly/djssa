@@ -96,7 +96,6 @@ body{
 	background-color: rgba(236, 249, 255, 0.4);
     margin: 0 auto;
 	box-shadow: 0 0 15px #7cb7fd;
-    // margin-top: 70px;
 	margin-bottom: 50px;
     border-radius: 10px;
 	.search{
@@ -110,7 +109,7 @@ body{
 			border-top-left-radius:10px;
 			border-bottom-left-radius:10px;
 			ul{
-			    // padding-top: 10px;
+			    padding-top: 10px;
 				li{
 				    width: 150px;
 				    height: 30px;
