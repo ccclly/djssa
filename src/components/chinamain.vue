@@ -95,6 +95,7 @@ body{
     height: 520px;
 	background-color: rgba(236, 249, 255, 0.4);
     margin: 0 auto;
+	box-shadow: 0 0 15px #7cb7fd;
     // margin-top: 70px;
 	margin-bottom: 50px;
     border-radius: 10px;
@@ -118,6 +119,7 @@ body{
 				    margin-top: 10px;
 				    text-align: center;
 				    cursor: pointer;
+					color: white;
 				}
 				li:hover{
 				    background-color: rgb(163, 161, 161);
