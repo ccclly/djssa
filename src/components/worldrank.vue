@@ -1,153 +1,114 @@
 <template>
-		<div id="worldrank" ref="worldrank">
-		</div>
+  <!-- <div>123123</div>
+  {{ this.$route.params.name }} -->
+  <div id="worldrank" ref="worldrank"></div>
 </template>
 
 <script>
-	import * as echarts from 'echarts'
-	export default {
-	
-		data() {
-			return {
-	
-			}
-		},
-		mounted() {
-			let worldrank = echarts.init(this.$refs.worldrank)
-			var option;
-			option = {
-			  color:['#189dfe','#f0c219'],
-			  tooltip: {
-			    trigger: 'axis',
-			    axisPointer: {
-			      type: 'shadow'
-			    },
-			     formatter: function (params) {
-			         let res = '';
-			          params.forEach((v,i)=>{
-			            res+=`${i==0?v.name:''}<div style="display:flex;align-items:center">
-			                    <span
-			                      style="display:inline-block;
-			                        margin-right:5px;
-			                        border-radius:10px;
-			                        width:10px;
-			                        height:10px;
-			                        background-color:${v.color}"
-			                    ></span>
-			                    <span>${v.seriesName}: ${Math.abs(v.value)}%</span>
-			                  </div>`
-			          })
-					return (res)
-					}
-			  },
-			 legend: {
-				top:'10%'
-				},
-			  grid: {
-			    left: '3%',
-			    right: '4%',
-			    bottom: '10%',
-			    containLabel: true
-			  },
-			 xAxis:[
-					{
-					name: '(%)',
-					type: 'value',
-					axisLabel: {
-					formatter: value => {
-							if (value < 0) return -value;
-							//这里是针对取负值
-							else return value;
-						}
-					}
-				}
-			],
-			  yAxis: [
-			    {
-			      type: 'category',
-			      // name:'单位',
-			      axisTick: {
-			        show: false
-			      },
-			      data: ['中国获奖', '中国参赛', '全球参赛']
-			    }
-			  ],
-			  series: [
-			    {
-			      name: '男',
-			      type: 'bar',
-			      stack: 'Total',
-			       label: {
-							normal: {//正常情况
-							show: false, //是否显示标签
-							position: 'inside',
-							formatter: function(params){return Math.abs(params.value)}  //返回绝对值
-						}
-				},
-			 emphasis: {
-			        focus: 'series'
-			      },
-                itemStyle: {
-                    emphasis: {
-                        // barBorderRadius: 7
-                    },
-                    normal: {
-                        barBorderRadius: 50,
-                        color: new echarts.graphic.LinearGradient(
-                            0, 0, 1, 0,
-                            [
-                                {offset: 0, color: '#3977E6'},
-                                {offset: 1, color: '#37BBF8'}
+import * as echarts from "echarts";
+export default {
+  data() {
+    return {};
+  },
+  mounted() {
+    var nob = this.$route.params.num;
+    // console.log("这里收到了：" + nob);
+    var name = this.$route.params.name;
+    var yearData = [
+      {
+        nation: "中国", // 国家
+        num: 1,
+        data: [
+          [320, 332, 301, 334, 390],
+          [150, 232, 201, 154, 190],
+          [234, 221, 201, 456, 333],
+          [820, 932, 901, 934, 1290],
+        ],
+      },
+      {
+        nation: "美国", // 国家
+        num: 2,
+        data: [
+          [150, 232, 201, 154, 190],
+          [234, 221, 201, 456, 333],
+          [820, 932, 901, 934, 1290],
+          [320, 332, 301, 334, 390],
+        ],
+      },
+    ];
 
-                            ]
-                        )
-                    }
-                },
-			      data: [-53, -50.6, -55]
-			    },
-			    {
-			      name: '女',
-			      type: 'bar',
-			      stack: 'Total',
-			      label: {
-							normal: {//正常情况
-							show: false, //是否显示标签
-							position: 'inside'
-						}
-				},
-			 emphasis: {
-			       focus: 'series'
-			     },
-                itemStyle: {
+    let worldrank = echarts.init(this.$refs.worldrank);
+    var option;
+    option = {
+      title: {
+        text: name,
+      },
+      tooltip: {
+        trigger: "axis",
+      },
+      legend: {
+        data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"],
+      },
+      grid: {
+        top: "20%",
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        show: true, // 显示边框
+        borderColor: "#012f4a", // 边框颜色
+        containLabel: true,
+      },
 
-                    normal: {
-                        barBorderRadius: 50,
-                        color: new echarts.graphic.LinearGradient(
-                            0, 0, 1, 0,
-                            [
-                                {offset: 0, color: '#ff81c2'},
-                                {offset: 1, color: '#c55d93'}
-
-                            ]
-                        )
-                    }
-                },
-			   data: [47, 49.4, 45,]
-			    }
-			  ]
-			};
-			worldrank.setOption(option);
-		}
-	
-	}
+      xAxis: {
+        type: "category",
+        boundaryGap: false,
+        data: ["第一届", "第二届", "第三届", "第四届", "第五届"],
+      },
+      yAxis: {
+        type: "value",
+      },
+      series: [
+        {
+          name: "奖牌总数",
+          type: "line",
+          // 折线修饰为圆滑
+          smooth: true,
+          data: yearData[nob].data[0],
+        },
+        {
+          name: "金牌",
+          type: "line",
+          // 折线修饰为圆滑
+          smooth: true,
+          data: yearData[nob].data[1],
+        },
+        {
+          name: "银牌",
+          type: "line",
+          // 折线修饰为圆滑
+          smooth: true,
+          data: yearData[nob].data[2],
+        },
+        {
+          name: "铜牌",
+          type: "line",
+          // 折线修饰为圆滑
+          smooth: true,
+          data: yearData[nob].data[3],
+        },
+      ],
+    };
+    worldrank.setOption(option);
+  },
+};
 </script>
 
 <style>
-	#worldrank {
-		width: 300px;
-		height:100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+#worldrank {
+  width: 98%;
+  height: 97%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>

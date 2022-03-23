@@ -40,33 +40,5 @@ body {
   // margin-top: 70px;
   margin-bottom: 50px;
   border-radius: 10px;
-  .search {
-    float: left;
-    width: 150px;
-    height: 600px;
-    .daohang {
-      width: 150px;
-      height: 520px;
-      background-color: #6199dd;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      ul {
-        // padding-top: 10px;
-        li {
-          width: 150px;
-          height: 30px;
-          line-height: 30px;
-          /* background-color: pink; */
-          margin-top: 10px;
-          text-align: center;
-          cursor: pointer;
-          color: white;
-        }
-        li:hover {
-          background-color: rgb(163, 161, 161);
-        }
-      }
-    }
-  }
 }
 </style>
