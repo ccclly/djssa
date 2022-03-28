@@ -1,5 +1,8 @@
 <template>
 <div class="map" ref="map"></div>
+  <el-dialog v-model="dialogTableVisible" title="{{url}}" fullscreen="true" >
+    <iframe src={{url}}></iframe>
+  </el-dialog>
 </template>
 
 <script>
@@ -9,7 +12,8 @@
 
 		data() {
 			return {
-
+        dialogTableVisible: false,
+        url: ''
 			}
 		},
 		mounted() {
@@ -40,7 +44,7 @@ var data = [
      {name: '成都西岭雪山滑雪场',  value: 1, url:"http://www.xiling.cn/"},
      {name: '金佛山滑雪场',  value: 1, url:"https://mp.weixin.qq.com/s/W13FUxIBGwHmbOz9nD_5YA"},
 
-   
+
 ];
 var geoCoordMap = {
     '北大壶滑雪场':[126.647898,43.432911],
@@ -67,7 +71,7 @@ var geoCoordMap = {
     '成都西岭雪山滑雪场':[103.196367,30.705004],
     '金佛山滑雪场':[116.889343,40.479233],
 
- 
+
 };
 var convertData = function (data) {
     var res = [];
@@ -86,7 +90,7 @@ var convertData = function (data) {
 };
 
 option = {
-  
+
     geo: {
         map: 'china',
         label: {
@@ -133,7 +137,7 @@ option = {
 					                color: "white", //  颜色
 								   // areaColor: 'rgba(2,37,101,.5)',
 								   // borderColor: 'rgba(112,187,252,.5)'
-	
+
                 },
                 emphasis: {
                     show: true
@@ -147,14 +151,18 @@ option = {
     ]
 };
 			map.setOption(option);
+      var url = this.url
+      var d = this.dialogTableVisible
 			 map.on("click", function(params) {
-			        console.log(params.data.url);
-			          window.location.href = params.data.url;
-			        
+			        // console.log(params.data.url);
+			        //   window.location.href = params.data.url;
+         d = true
+         console.log(url)
+         url=params.data.url
 			      });
 
 		}
-	
+
 	}
 </script>
 
