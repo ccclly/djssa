@@ -1,6 +1,6 @@
 <template>
 	<div class="topbar">
-		<img class="img1" :src="leftimg" @mouseenter="mouseenter1" @mouseleave="mouseleave1">
+		<img class="img1" :src="leftimg" @mouseenter="mouseenter1" @mouseleave="mouseleave1" @click="img1To">
 		<div class="txt">
 			<text class="txt1">北京冬奥会可视化</text>
 			<text class="txt2">
@@ -10,7 +10,7 @@
 				<router-link to="/page4">科普答题</router-link>
 			</text>
 		</div>
-		<img :src="rightimg" @mouseenter="mouseenter2" @mouseleave="mouseleave2">
+		<img :src="rightimg" @mouseenter="mouseenter2" @mouseleave="mouseleave2" @click="img2To">
 	</div>
 </template>
 
@@ -38,6 +38,12 @@
 			// 5、离开元素
 			mouseleave2() {
 				this.rightimg = require('../assets/wuhuan2.png')
+			},
+			img1To() {
+				window.location.href = 'https://www.beijing2022.cn/';
+			},
+			img2To() {
+				window.location.href = 'https://olympics.com/en/';
 			}
 		}
 	}
@@ -59,6 +65,7 @@
 		justify-content: center;
 
 		img {
+			cursor: pointer;
 			
 		}
 

@@ -2,9 +2,7 @@
 	import topbar from "../components/topbar.vue";
 	import china from "../components/china.vue";
 	import chinamain from "../components/chinamain.vue";
-	import {
-		goSnow
-	} from "@/assets/js/snow.js";
+	import {goSnow} from "@/assets/js/snow.js";
 
 	export default {
 		data() {
@@ -20,7 +18,7 @@
 		},
 		methods: {
 			getPathFun() {
-				if (this.$route.path === '/') {
+				if (this.$route.path === '/page2') {
 					var snowBox = 'contain', //雪花容器
 						src = "/img/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
 						num = 40, //雪花数量
@@ -87,10 +85,10 @@
 				margin-top: 10px;
 				display: flex;
 				justify-content: center;
-				background-image: url(../assets/top1.png);
-				background-repeat: no-repeat;
-				background-size: 100% 100%;
-				-moz-background-size: 100% 100%;
+				// background-image: url(../assets/top1.png);
+				// background-repeat: no-repeat;
+				// background-size: 100% 100%;
+				// -moz-background-size: 100% 100%;
 			}
 
 			.min_two {
