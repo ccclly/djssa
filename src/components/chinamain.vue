@@ -5,7 +5,7 @@
           <div class="daohang">
               <ul>
                   <li>中国滑雪场分布</li>
-                  <li>中国冬奥设计</li>
+                  <li>中国冬奥创意</li>
                   <li>中国冬奥防疫</li>
                   <li>中国冬奥黑科技</li>
                   <li>中国冬奥成绩</li>
@@ -20,9 +20,7 @@
           </div>
           <div class="item">
               <div class="music">
-				  <div class="medal">
-				  	<img src="../assets/medal.png" >
-				  </div>
+				  	<design></design>
               </div>
           </div>
           <div class="item">
@@ -32,6 +30,7 @@
           </div>
           <div class="item">
               <div class="life">
+				  <technology></technology>
               </div>
           </div>
           <div class="item">
@@ -45,13 +44,16 @@
 
 <script>
 	import china from "../components/china.vue";
+	import design from "../components/design.vue"
+	import technology from "../components/technology.vue"
 export default {
 		data() {
 			return {};
 		},
 		components: {
 			china,
-
+            design,
+			technology,
 		},
 mounted() {
 	//获取元素
@@ -60,15 +62,20 @@ mounted() {
 	var items = document.querySelectorAll('.item');
 	var imgs = document.querySelector('.bj').querySelectorAll('img');
 	//注册事件
+	items[0].style.display = 'block';
+	lis[0].style.backgroundColor = 'rgb(163, 161, 161)';
 	for(var i = 0; i < lis.length; i++){
 	    lis[i].setAttribute('index',i);//自定义属性
 	    lis[i].onclick = function (){
 	         var index = this.getAttribute('index');
 	         for(var i = 0; i < items.length; i++){
 	             items[i].style.display = 'none';
+				 lis[i].style.backgroundColor="#6199DD"
 	         }
 	         //留下点击的
 	         items[index].style.display = 'block';
+			 
+			 lis[index].style.backgroundColor="rgb(163, 161, 161)"
 	    }
 	}
 }
@@ -130,6 +137,8 @@ body{
 	    float: left;
 		.item{
 		    display: none;
+			width: 850px;
+			height: 520px;
 			.oneself{
                 width: 800px;
 			     height: 400px;
@@ -138,14 +147,8 @@ body{
 				 position:relative;
 				}
 				.music{
-	      .medal{
-				// position: absolute;
-				// left: 0;
-				// top: 0;
-				img{
-					width: 50%;
-				}
-			}
+				
+				 
 				}
 				.cartoon{
 				    float: left;
@@ -160,16 +163,10 @@ body{
 					}
 				}
 				.life{
-				    float: left;
-				    font-size: 20px;
-				    margin-top: 30px;
-				    margin-left: 30px;
+
 				}
 				.bj{
-				    float: left;
-				    font-size: 20px;
-				    margin-top: 30px;
-				    margin-left: 30px;
+
 				}
 		}
 	}
