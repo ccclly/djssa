@@ -1,19 +1,18 @@
 <script>
-import * as echarts from 'echarts';
-import 'echarts-gl';
-import { onMounted } from 'vue';
-import world from '../assets/world.json';
-import medalrank from './medalrank.vue';
-import router from '@/router/index.js';
+import * as echarts from "echarts";
+import "echarts-gl";
+import { onMounted } from "vue";
+import world from "../assets/world.json";
+import medalrank from "./medalrank.vue";
+import router from "@/router/index.js";
 
 export default {
   components: {
     medalrank,
   },
-  setup () {
-
+  setup() {
     const initTexture = () => {
-      const canvas = document.createElement('canvas');
+      const canvas = document.createElement("canvas");
       const baseTexture = echarts.init(canvas, null, {
         width: 4096,
         height: 2048,
@@ -25,61 +24,62 @@ export default {
       // baseTexture.on('geoselected', (e) => {
       //   console.log(e)
       // });
-      echarts.registerMap('world', world);
+      echarts.registerMap("world", world);
       baseTexture.setOption({
         // 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
 
         visualMap: {
-          left: 'right',
+          left: "right",
           min: 0,
           max: 30,
           inRange: {
-            color: [
-              '#79b3fc',
-              '#5faef8',
-              '#419dfb',
-              '#1f86f1',
-              '#0669d2',
-            ],
+            color: ["#79b3fc", "#5faef8", "#419dfb", "#1f86f1", "#0669d2"],
           },
-          text: ['High', 'Low'],
+          text: ["High", "Low"],
           calculable: true,
         },
         series: [
           {
-            type: 'map',
-            name: '世界地图',
-            map: 'world',
+            type: "map",
+            name: "世界地图",
+            map: "world",
             geoIndex: 0,
             data: [
               {
-                name: 'China',
+                name: "China",
                 value: 32,
+                num: 0,
               },
               {
-                name: 'Norway',
+                name: "Norway",
                 value: 47,
+                num: 1,
               },
               {
-                name: 'Germany',
-                value: '27',
+                name: "Germany",
+                value: "27",
+                num: 2,
               },
               {
-                name: 'United States',
+                name: "United States",
                 value: 25,
+                num: 3,
               },
               {
-                name: 'Sweden',
+                name: "Sweden",
                 value: 18,
+                num: 4,
               },
               {
-                name: 'Netherlands',
-                value: 17
+                name: "Netherlands",
+                value: 17,
+                num: 5,
               },
               {
-                name: 'Austria',
-                value: 18
-              }
+                name: "Austria",
+                value: 18,
+                num: 6,
+              },
             ],
             left: 0,
             top: 0,
@@ -90,29 +90,29 @@ export default {
               [180, -90],
             ],
             tooltip: {
-              show: false
+              show: false,
             },
-            itemStyle:{
-              areaColor: '#6AABFB'
+            itemStyle: {
+              areaColor: "#6AABFB",
             },
             select: {
               // itemStyle: {
               //   areaColor: '#419dfb'
               // }
-              disable: true
+              disable: true,
             },
             emphasis: {
               itemStyle: {
-                areaColor: '#4976fe',
+                areaColor: "#4976fe",
               },
               label: {
                 show: true,
-                color: 'black',
+                color: "black",
                 fontSize: 28,
               },
               disable: false,
             },
-            selectedMode: false
+            selectedMode: false,
           },
           //   {
           // 	type: 'scatter',
@@ -134,11 +134,11 @@ export default {
         ],
       });
 
-      baseTexture.on('click', (e) => {
+      baseTexture.on("click", (e) => {
         console.log(e.data);
         router.push({
-          name: 'page1',
-          params: { name: e.data.name, value: e.data.value },
+          name: "page5",
+          params: { name: e.data.name, value: e.data.value, num: e.data.num },
         });
       });
       return baseTexture;
@@ -154,7 +154,7 @@ export default {
           globeOuterRadius: 10,
           globeRadius: 80,
           displacementScale: 0.1,
-          shading: 'color',
+          shading: "color",
 
           viewControl: {
             autoRotate: true,
@@ -169,7 +169,7 @@ export default {
         },
       };
 
-      const myChart = echarts.init(document.getElementById('container'));
+      const myChart = echarts.init(document.getElementById("container"));
       myChart.clear();
       myChart.setOption(option, true);
     };

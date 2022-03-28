@@ -261,13 +261,13 @@ export default {
       ) {
         status = false;
         $(".welcomePage .start").css("box-shadow", "none");
-        setTimeout(function () {
-          $(".welcomePage").fadeOut(500);
-          $(".mainPage").fadeIn(500);
-          player = "1";
-          refresh();
-          delayDone();
-        }, 300);
+        // setTimeout(function () {
+        //   $(".welcomePage").fadeOut(500);
+        //   $(".mainPage").fadeIn(500);
+        //   player = "1";
+        //   refresh();
+        //   delayDone();
+        // }, 300);
       }
     });
 
@@ -288,7 +288,7 @@ export default {
         )[0];
         //开始新题目时重置时间
         timeleft = 15;
-        $(".mainPage .timeout").html("15");
+        // $(".mainPage .timeout").html("15");
         $(".mainPage .qno").html(`
 		<div class="question"
   style="
@@ -359,13 +359,13 @@ style=" width: 330px;
 		`);
         let countDown = setInterval(function () {
           timeleft--;
-          $(".mainPage .timeout").html(`${timeleft}`);
-          if (timeleft == 0) {
-            clearInterval(countDown);
-            $(".mainPage .qno").off("click");
-            $("#a" + question.answer).css("background-color", "#92d050");
-            setTimeout(refresh, 2000);
-          }
+          // $(".mainPage .timeout").html(`${timeleft}`);
+          // if (timeleft == 0) {
+          //   clearInterval(countDown);
+          //   $(".mainPage .qno").off("click");
+          //   $("#a" + question.answer).css("background-color", "#92d050");
+          //   setTimeout(refresh, 2000);
+          // }
         }, 1000);
         $(".mainPage .qno").click(function (e) {
           if (e.target.className == "answer") {
@@ -461,7 +461,7 @@ style=" width: 330px;
 .welcomePage {
   width: 375px;
   height: 100%;
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -526,7 +526,7 @@ style=" width: 330px;
   transition: box-shadow 0.3s;
 }
 .welcomePage .foot {
-  position: fixed;
+  position: absolute;
   top: calc(100% - 50px);
   width: 375px;
   text-align: center;
@@ -536,7 +536,7 @@ style=" width: 330px;
 .mainPage {
   width: 375px;
   height: 100%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   background-color: rgb(0, 191, 255, 0.5);
@@ -550,7 +550,7 @@ style=" width: 330px;
   width: 375px;
   height: 40px;
   color: red;
-  background-image: url("@/assets/img/time.png");
+  // background-image: url("@/assets/img/time.png");
   background-repeat: no-repeat;
   background-size: auto 35px;
   background-position: 330px center;
@@ -594,9 +594,9 @@ style=" width: 330px;
   }
 }
 .scorePage {
-  width: 375px;
+  width: 50%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   background-color: deepskyblue;
