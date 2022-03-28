@@ -4,14 +4,16 @@
 			<div class="it1">
 				<div class="img">
 					<div class="itname">
-						冬奥会会徽
+						{{item.title}}
 					</div>
 					<div class="image">
 						<img :src="item.img">
 					</div>
 				</div>
-				<div class="introduce" v-html="dataList[0].txt">
+				<div class="introduce_outer">
+					<div class="introduce" v-html="item.txt">
 
+					</div>
 				</div>
 			</div>
 		</el-carousel-item>
@@ -34,52 +36,69 @@
 				.img {
 					width: 50%;
 					margin-top: 20px;
-                    margin-bottom: 20px;
+					margin-bottom: 20px;
 					overflow: hidden;
+
 					.itname {
-                         margin: 0 auto;
+						margin: 0 auto;
 						width: 50%;
 						height: 10vh;
-						font-size: 27px;
-						font-family: LiSu;
-                        text-align: center; 
-						line-height:10vh;   
-						background-image: url(../assets/kk2.png);
+						font-size: 20px;
+						font-family: KJ;
+						text-align: center;
+						line-height: 10vh;
+						color: white;
+						background-image: url(../assets/header.png);
 						background-repeat: no-repeat;
 						background-size: 100% 100%;
 						-moz-background-size: 100% 100%;
 					}
 
 					.image {
-						height: 60vh;
+						height: 50vh;
 						overflow: hidden;
+						margin-top: 10px;
+						width: 100%;
 						display: flex;
 						justify-content: center;
-						align-items: center;
-
+						align-items: center;   
+						
 						img {
-							width: 80%;
+							margin-top: 10px;
+							width: 75%;
+			                border-radius: 20px;
+
 						}
 					}
 				}
 
-				.introduce {
+				.introduce_outer {
 					flex: 1;
 					width: 50%;
 					font-size: 20px;
 					line-height: 30px;
 					font-family: KJ;
-					color: #5673C8;
+					color: #004660;
 					padding: 20px;
 					margin: 20px 0;
 					margin-right: 10px;
-					box-shadow: 0 0 10px black;
-					border-radius: 12px;
-					// background-image: url(../assets/kkk.png);
-					// background-repeat: no-repeat;
-					// background-size: 100% 104%;
-					// -moz-background-size: 100% 100%;
+					background-image: url(../assets/kkl.png);
+					background-repeat: no-repeat;
+					background-size: 100% 104%;
+					-moz-background-size: 100% 100%;
+					// background-color: yellow;
+					.introduce {
+				    padding-top: 10px;
+					margin-top: 30px;
 					overflow: hidden;
+                     width: 90%;
+					 margin-left: 20px;
+					 margin-top: 30px;
+					 height: 85%;
+					 border-radius: 12px;
+					 background-color: rgba(99, 188, 255, 0.4);
+					 padding-left: 7px;
+					}
 				}
 			}
 
@@ -91,13 +110,41 @@
 	export default {
 		data() {
 			return {
-				dataList: [{
-						img: '/img/dah.png',
-						txt: '<p>&nbsp; &nbsp; 会徽以汉字“冬”为灵感来源，运用中国书法的艺术形态,将厚重的东方文化底蕴与国际化的现代风格融为一体，呈现出新时代的中国新形象、新梦想，传递出新时代中国为办好北京冬奥会，圆冬奥之梦，实现“三亿人参与冰雪运动”目标，圆体育强国之梦，推动世界冰雪运动发展,为国际奥林匹克运动做出新贡献的不懈努力和美好追求。</p><p>&nbsp; &nbsp; 会徽图形上半部分展现滑冰运动员的造型，下半部分表现滑雪运动员的英姿。中间舞动的线条流畅且充满韵律，代表举办地起伏的山峦、赛场、冰雪滑道和节日飘舞的丝带，为会徽增添了节日喜庆的视觉感受，也象征着北京冬奥会将在中国春节期间举行。</p><p>&nbsp; &nbsp; 会徽以蓝色为主色调，寓意梦想与未来，以及冰雪的明亮纯洁。红黄两色源自中国国旗，代表运动的激情、青春与活力。</p><p>&nbsp; &nbsp; 在“BEIJING 2022”字体的形态上汲取了中国书法与剪纸的特点，增强了字体的文化内涵和表现力，也体现了与会徽图形的整体感和统一性。</p>'
+				dataList: [
+					{
+						title:'机器人黑科技',
+						img: '/img/jq1.gif',
+						txt: '<p>&nbsp; &nbsp; 在本次冬奥会餐厅中，没有了我们以前常见的餐厅厨师和服务员，而忙活的身影都是这些智能机器人。餐厅中共设置了120台机器人，可以24小时的工作，能够为上千人服务。它们能够完成中餐、西餐、鸡尾酒的配制，烹饪、包装、上菜可以一体化完成。在这里无需排队，不用接触、屋顶送餐，机器人可以直接将你的饭菜吊到你的手里，极大了方便了奥运会人员用餐。</p>'
 					},
 					{
-						img: '/img/dah.png',
-						txt: "会徽以汉字“冬”为灵感来源，运用中国书法的艺术形态,将厚重的东方文化底蕴与国际化的现代风格融为一体，呈现出新时代的中国新形象、新梦想，传递出新时代中国为办好北京冬奥会，圆冬奥之梦，实现“三亿人参与冰雪运动”目标，圆体育强国之梦，推动世界冰雪运动发展,为国际奥林匹克运动做出新贡献的不懈努力和美好追求。"
+						title:'转播黑科技',
+						img: '/img/sxtt.gif',
+						txt: '<p>&nbsp; &nbsp; 在现场转播方面，传统的转播方式需要大量的工作人员以及庞大的制作团队，以及高昂的设备，由于新冠疫情的影响，尽量的减少人群流动，因此在本次北京冬奥会中用到了像是“高自由视角观赛特效”一样的360度VR技术。不仅可以对整个场馆中高速度的目标进行精准锁定并跟踪，还有多台全景摄影机可以对整个赛事进行360度无死角的播放，让“黑手”无处可逃。</p>'
+					},
+					{
+						title:'防疫黑科技',
+						img: '/img/ffy.jpg',
+						txt: '<p>&nbsp; &nbsp; 防疫黑科技。奥运会期间大量的外国运动员、媒体记者进入中国，为做好防疫工作，中国除了在赛场配置了高能“人脸识别”系统，消杀机器人之外，还开发了“创可贴”式的测温计，随时可以检测人员体温，检测身体状况，为防疫工作提供重要支持。更为神奇的，北京冬奥会可以对场馆内的空气进行核酸检测，通过气溶胶检测系统就能知道现场空气中是否有新冠病毒。</p>'
+					},
+					{   
+						title:'交通黑科技',
+						img: '/img/gt.jpg',
+						txt: '<p>&nbsp; &nbsp; 冬奥会专属列车：无人驾驶的智能高铁“复兴号”，时速高达每小时350公里，最远的赛场可以一小时内到达。全车每个车厢设置了5G华为设备，即便是列车在高速行驶状态中，或者是通过隧道、桥梁、屏蔽区时也可以保持信号稳定。</p>'
+					},
+					{
+						title:'睡眠黑科技',
+						img: '/img/bed.jpg',
+						txt: '<p>&nbsp; &nbsp; 运动员公寓内配备了记忆功能的床，在这个床垫中安放有传感器，运动员可以用遥控器调节腿部、头部的不同角度，达到舒适的标准。北京奥运村的智能床，不仅不是20年日本奥运会的纸板床，而且是一种令人更加舒适，人性化，更具科技含量的智能床，可以提供看“零重力”，看电视，看书，休息等几个模式的身体姿势，特别符合人体工程学的标准。</p>'
+					},
+					{
+						title:'AI手语主播',
+						img: '/img/aii.jpg',
+						txt: '<p>&nbsp; &nbsp; AI手语主播采用语音识别、机器翻译等人工智能技术，她搭载的手语翻译引擎和自然动作引擎能自动翻译文字、音频和视频内容并将手语实时演绎为表情动作，基于这些技术AI手语主播具备高可懂度的手语表达能力和精准连贯的手语呈现效果，AI手语主播掌握的手语词汇规范来自《国家通用手语词典》标准，她学习了百万量级的标准手语平行语料数据和超8500条影视级手语动作数据，手语动作精准度达95%以上。</p>'
+					},
+					{
+						title:'基建黑科技',
+						img: '/img/jj.jpg',
+						txt: '<p>&nbsp; &nbsp; 基建黑科技。这次比赛的19个场馆百分之百的使用风电、太阳能、光伏发电等绿色可再生能源。同时在场地转换中实现了“水立方”到“冰立方”的成功转换，为场馆持续性使用树立了典范。同时为了致力于“碳中和”，在冰丝带及首都体育馆等四个冰上场馆首次使用了碳排放趋于零的二氧化碳制冷剂技术，使得碳排放量减少900吨。</p>'
 					},
 				]
 			};

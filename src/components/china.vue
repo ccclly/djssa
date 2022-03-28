@@ -38,6 +38,7 @@ var data = [
      {name: '美林谷滑雪场',  value: 1, url:"http://www.mylinvalley.com/"},
      {name: '大同万龙白登山国际滑雪场',  value: 1, url:"https://mp.weixin.qq.com/s/U_8YdntKxi9p71SW9MVU7A"},
      {name: '成都西岭雪山滑雪场',  value: 1, url:"http://www.xiling.cn/"},
+     {name: '金佛山滑雪场',  value: 1, url:"https://mp.weixin.qq.com/s/W13FUxIBGwHmbOz9nD_5YA"},
 
    
 ];
@@ -64,6 +65,7 @@ var geoCoordMap = {
     '美林谷滑雪场':[118.252523,41.686002],
     '大同万龙白登山国际滑雪场':[113.397066,40.132253],
     '成都西岭雪山滑雪场':[103.196367,30.705004],
+    '金佛山滑雪场':[116.889343,40.479233],
 
  
 };
