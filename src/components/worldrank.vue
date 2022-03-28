@@ -41,20 +41,22 @@ export default {
     var option;
     option = {
       title: {
-        text: name,
+        text: "\n"+yearData[nob].nation+"近五年冬奥会奖牌情况",
+        x: "center",
+        textStyle: {
+          fontSize: 18,
+          color: "#333333",
+        },
       },
       tooltip: {
         trigger: "axis",
-      },
-      legend: {
-        data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"],
       },
       grid: {
         top: "20%",
         left: "3%",
         right: "4%",
         bottom: "3%",
-        show: true, // 显示边框
+        show: false, // 显示边框
         borderColor: "#012f4a", // 边框颜色
         containLabel: true,
       },

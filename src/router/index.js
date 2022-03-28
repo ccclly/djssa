@@ -3,13 +3,14 @@ import {
   createWebHashHistory
 } from 'vue-router'
 import game from '@/components/question-game'
-
+import test2 from '@/components/test2'
 import mainPage from '@/views/mainPage'
 import page1 from '@/views/page1'
 import page2 from '@/views/page2'
 import page3 from '@/views/page3'
 import page4 from '@/views/page4'
 import page5 from '@/views/page5'
+import page6 from '@/views/page6'
 
 const routes = [{
     path: '/',
@@ -38,8 +39,17 @@ const routes = [{
     component: page5
   },
   {
+    name: 'page6',
+    path: '/page6',
+    component: page6
+  },
+  {
     path: '/game',
     component: game
+  },
+  {
+    path: '/test2',
+    component: test2
   }
 ]
 

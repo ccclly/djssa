@@ -54,14 +54,13 @@ export default {
     ];
     let i = 0;
     let values = [
-      330, 186, 167, 135, 72, 71, 63, 58, 70, 58, 49, 47, 45, 44, 38, 39, 31,
+      330, 186, 135, 72, 71, 63, 58, 70, 58, 49, 47, 45, 44, 38, 39, 31,
       30, 26, 26, 23, 17, 15, 18, 14, 13, 13, 13, 13, 13, 13, 11, 11, 11, 10,
       10, 10, 10, 10, 10, 10, 10,
     ];
     let names = [
       "冰墩墩",
       "排面",
-      "雪容融",
       "中国",
       "开幕式",
       "可以",
@@ -110,7 +109,7 @@ export default {
     let bgColor = "#fffcf9";
     let canDraggable = true; //可以拖动
     option = {
-      backgroundColor: "#fffcf9",
+      backgroundColor: "",
       color: ["#37A2DA", "#32C5E9", "#67E0E3"],
       title: {
         show: true,
@@ -138,7 +137,7 @@ export default {
         trigger: "item", //触发类型,'item'数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。 'axis'坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。
         triggerOn: "mousemove", //提示框触发的条件,'mousemove'鼠标移动时触发。'click'鼠标点击时触发。'mousemove|click'同时鼠标移动和点击时触发。'none'不在 'mousemove' 或 'click' 时触发
         showContent: true, //是否显示提示框浮层
-        alwaysShowContent: true, //是否永远显示提示框内容
+        alwaysShowContent: false, //是否永远显示提示框内容
         showDelay: 0, //浮层显示的延迟，单位为 ms
         hideDelay: 100, //浮层隐藏的延迟，单位为 ms
       },
@@ -581,314 +580,6 @@ export default {
                 fontSize: values[i++] * 0.5,
               },
             },
-
-            // {
-            //   name: "排面",
-            //   value: 186,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "雪容融",
-            //   value: 167,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "中国",
-            //   value: 135,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "开幕式",
-            //   value: 72,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "可以",
-            //   value: 71,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "大哭",
-            //   value: 63,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "冬奥会",
-            //   value: 58,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "浪漫",
-            //   value: 49,
-            //   draggable: canDraggable,
-            //   itemStyle: {
-            //     color: bgColor,
-            //   },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "喜欢",
-            //   value: 47,
-            //   draggable: canDraggable,
-            //   // itemStyle: {
-            //   //     color: bgColor
-            //   // },
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "绒花",
-            //   value: 45,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "支持",
-            //   value: 44,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "文化",
-            //   value: 39,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "节气",
-            //   value: 31,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "梦幻",
-            //   value: 30,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "北京",
-            //   value: 26,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "滑雪",
-            //   value: 26,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "点赞",
-            //   value: 23,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "太帅",
-            //   value: 17,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "漂亮",
-            //   value: 15,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "谷爱凌",
-            //   value: 18,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "张艺谋",
-            //   value: 14,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "传统",
-            //   value: 13,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "闭幕式",
-            //   value: 13,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "苏翊鸣",
-            //   value: 13,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "五环",
-            //   value: 13,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "速滑",
-            //   value: 13,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "期待",
-            //   value: 11,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
-            // {
-            //   name: "震撼",
-            //   value: 11,
-            //   draggable: canDraggable,
-            //   label: {
-            //     color: colorList[Math.floor(Math.random() * colorListLen)],
-            //     fontSize:
-            //       fontSizeList[Math.floor(Math.random() * fontSizeListLen)],
-            //   },
-            // },
           ],
         },
       ],
@@ -900,10 +591,10 @@ export default {
 
 <style scoped>
 #cloud {
-  width: 600px;
-  height: 600px;
+  width: 50%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }

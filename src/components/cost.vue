@@ -1,6 +1,5 @@
 <template>
 	<div id="cost" ref="cost">
-
 	</div>
 </template>
 
