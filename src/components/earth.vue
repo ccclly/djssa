@@ -11,58 +11,6 @@ export default {
     medalrank,
   },
   setup () {
-    // https://zh.wikipedia.org/wiki/%E5%86%AC%E5%AD%A3%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%BF%90%E5%8A%A8%E4%BC%9A
-    const placeData = [
-      {
-        name: '北京',
-        value: [116.4, 40],
-      },
-      {
-        name: '平昌',
-        value: [128.4, 37.36],
-      },
-      {
-        name: '索契',
-        value: [40, 44],
-      },
-      {
-        name: '温哥华',
-        value: [-123, 50],
-      },
-
-      {
-        name: '都灵',
-        value: [7.7, 45.07],
-      },
-      {
-        name: '盐湖城',
-        value: [-112, 40.75],
-      },
-      {
-        name: '长野',
-        value: [138.19, 36.6],
-      },
-      {
-        name: '利勒哈默尔',
-        value: [10.467, 61.114],
-      },
-      {
-        name: '阿尔贝维尔',
-        value: [6.39, 45.676],
-      },
-      {
-        name: '卡尔加里',
-        value: [-114.05, 51.0333],
-      },
-      {
-        name: '萨拉热窝',
-        value: [18.413, 43.856],
-      },
-      {
-        name: '普莱西德湖',
-        value: [-73.985, 44.285],
-      },
-    ];
 
     const initTexture = () => {
       const canvas = document.createElement('canvas');
@@ -81,45 +29,10 @@ export default {
       baseTexture.setOption({
         // 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
 
-        // 地图设置 https://echarts.apache.org/zh/option-gl.html#geo3D
-        // geo: {
-        // 	type: 'map',
-        // 	map: 'world',
-        // 	left: 0,
-        // 	top: 0,
-        // 	right: 0,
-        // 	bottom: 0,
-        // 	boundingCoords: [
-        // 		[-180, 90],
-        // 		[180, -90]
-        // 	],
-        //
-        // 	tooltip: {
-        // 		show: false
-        // 	},
-        //
-        // 	itemStyle: {
-        // 		areaColor: '#419dfb',
-        // 		borderColor: '#564fc2',
-        // 		borderWidth: '1'
-        // 	},
-        //
-        // 	// 鼠标放到地球上的高亮显示
-        // 	emphasis: {
-        // 		itemStyle: {
-        // 			areaColor: '#4976fe'
-        // 		},
-        // 		label: {
-        // 			show: true,
-        // 			color: 'black',
-        // 			fontSize: 28
-        // 		}
-        // 	}
-        // },
         visualMap: {
           left: 'right',
           min: 0,
-          max: 40,
+          max: 30,
           inRange: {
             color: [
               '#79b3fc',
@@ -149,7 +62,23 @@ export default {
               },
               {
                 name: 'Germany',
-                value: '27'
+                value: '27',
+              },
+              {
+                name: 'United States',
+                value: 25,
+              },
+              {
+                name: 'Sweden',
+                value: 18,
+              },
+              {
+                name: 'Netherlands',
+                value: 17
+              },
+              {
+                name: 'Austria',
+                value: 18
               }
             ],
             left: 0,
