@@ -1,7 +1,7 @@
 <template>
 <div class="map" ref="map"></div>
-  <el-dialog v-model="dialogTableVisible" title="{{url}}" fullscreen="true" >
-    <iframe src={{url}}></iframe>
+  <el-dialog v-model="dialogTableVisible" :title="url" fullscreen="true" >
+    <iframe class="vrview" :src="url"></iframe>
   </el-dialog>
 </template>
 
@@ -13,7 +13,7 @@
 		data() {
 			return {
         dialogTableVisible: false,
-        url: ''
+        url: 'http://www.beidahuski.com/'
 			}
 		},
 		mounted() {
@@ -151,14 +151,17 @@ option = {
     ]
 };
 			map.setOption(option);
-      var url = this.url
-      var d = this.dialogTableVisible
-			 map.on("click", function(params) {
+      // var url = this.url
+      // var d = this.dialogTableVisible
+			 map.on("click", (params)=> {
 			        // console.log(params.data.url);
 			        //   window.location.href = params.data.url;
-         d = true
-         console.log(url)
-         url=params.data.url
+		 // this.url=params.data.url
+   //       this.dialogTableVisible = true
+         this.url = params.data.url
+		 this.dialogTableVisible = true
+		 console.log(this.url)
+		 console.log(this.dialogTableVisible)
 			      });
 
 		}
@@ -174,5 +177,9 @@ option = {
 		align-items: center;
 		width:700px;
 		height: 470px;
+	}
+	.vrview{
+		height: 85vh;
+		width: 100%;
 	}
 </style>

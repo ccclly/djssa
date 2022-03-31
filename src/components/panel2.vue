@@ -1,6 +1,11 @@
 <template>
   <div class="Box">
-    <game></game>
+	  <div class="left">
+	  	
+	  </div>
+	  <div class="right">
+	  	    <game></game>
+	  </div>
   </div>
 </template>
 
@@ -32,6 +37,7 @@ body {
   background-attachment: fixed;
 }
 .Box {
+	background-color: red;
   margin: 0 auto;
   width: 1000px;
   height: 520px;
@@ -43,5 +49,11 @@ body {
   // margin-top: 70px;
   margin-bottom: 50px;
   border-radius: 10px;
+  .left{
+	  width: 625px;
+  }
+  .right{
+	  width: 375px;
+  }
 }
 </style>

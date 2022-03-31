@@ -1,43 +1,38 @@
 <template>
-  <div class="welcomePage">
-    <!-- <div class="input">
-      <input type="text" placeholder="输入您的姓名" />
-    </div> -->
-    <div class="snow4"></div>
-    <div class="snow1"></div>
-    <div class="snow2"></div>
-    <div class="snow3"></div>
-    <div class="snow4"></div>
-    <div class="ice">冰雪知识问答</div>
+	<div class="box">
+		<div class="welcomePage">
+		  <div class="ice">冰雪知识问答</div>
+		
+		  <div class="start">开始答题</div>
+		  <!-- <div class="foot">© 2019-现在 C & C 版权所有</div> -->
+		</div>
+		<div class="mainPage">
+		  <div class="timeout"></div>
+		  <div class="qno"></div>
+		  <div class="again"></div>
+		</div>
+		<div class="scorePage">
+		  <div class="score">
+		    <h3>您的分数为:</h3>
+		    <h1></h1>
+		  </div>
+		  <!-- <div class="rank">
+		    <h2>排行榜</h2>
+		    <div class="player1 list"></div>
+		    <div class="player2 list"></div>
+		    <div class="player3 list"></div>
+		    <div class="player4 list"></div>
+		    <div class="player5 list"></div>
+		    <div class="player6 list"></div>
+		    <div class="player7 list"></div>
+		    <div class="player8 list"></div>
+		    <div class="player9 list"></div>
+		    <div class="player10 list"></div>
+		  </div> -->
+		  <div class="again">再试一次</div>
+		</div>
+	</div>
 
-    <div class="start">开始答题</div>
-    <!-- <div class="foot">© 2019-现在 C & C 版权所有</div> -->
-  </div>
-  <div class="mainPage">
-    <div class="timeout"></div>
-    <div class="qno"></div>
-    <div class="again"></div>
-  </div>
-  <div class="scorePage">
-    <div class="score">
-      <h3>您的分数为:</h3>
-      <h1></h1>
-    </div>
-    <!-- <div class="rank">
-      <h2>排行榜</h2>
-      <div class="player1 list"></div>
-      <div class="player2 list"></div>
-      <div class="player3 list"></div>
-      <div class="player4 list"></div>
-      <div class="player5 list"></div>
-      <div class="player6 list"></div>
-      <div class="player7 list"></div>
-      <div class="player8 list"></div>
-      <div class="player9 list"></div>
-      <div class="player10 list"></div>
-    </div> -->
-    <div class="again">再试一次</div>
-  </div>
 </template>
 
 <script>
@@ -458,6 +453,10 @@ style=" width: 330px;
   padding: 0;
   box-sizing: border-box;
 }
+.box{
+	width: 100%;
+	height: 100%;
+	position: relative;
 .welcomePage {
   width: 375px;
   height: 100%;
@@ -470,7 +469,7 @@ style=" width: 330px;
   left: 0%;
   top: 0;
   //  rgb(5, 48, 63)
-  background-color: #ddf6f2;
+  // background-color: #ddf6f2;
   background-image: url("@/assets/img/aa.png");
 
   // background-image: url("@/assets/img/Quiz-Time.png"),
@@ -495,7 +494,7 @@ style=" width: 330px;
   width: 170px;
   outline: none;
   border: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+  // background-color: rgba(0, 0, 0, 0);
   font-size: 25px;
   line-height: 40px;
   color: white;
@@ -539,8 +538,8 @@ style=" width: 330px;
   position: absolute;
   left: 0;
   top: 0;
-  background-color: rgb(0, 191, 255, 0.5);
-  background-image: url("@/assets/bdd.png");
+  background-color: rgb(255, 255, 255);
+  // background-image: url("@/assets/bdd.png");
   background-repeat: no-repeat;
   background-size: 375px auto;
   background-position: bottom;
@@ -594,13 +593,13 @@ style=" width: 330px;
   }
 }
 .scorePage {
-  width: 50%;
+  width: 375px;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   background-color: deepskyblue;
-  background-image: url("@/assets/img/score.png");
+  // background-image: url("@/assets/img/score.png");
   background-repeat: no-repeat;
   background-size: 375px auto;
   background-position: top;
@@ -665,75 +664,6 @@ style=" width: 330px;
   box-shadow: 0px 6px 10px dimgrey;
   transition: box-shadow 0.3s;
 }
-
-.snow1 {
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  transform-origin: 0 0;
-  -webkit-animation: snow1 3s linear 0s infinite;
 }
 
-.snow2 {
-  width: 5px;
-  height: 5px;
-  background: white;
-  border-radius: 50%;
-  transform-origin: 50 0;
-  -webkit-animation: snow2 2s linear 0s infinite;
-}
-
-.snow3 {
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 50%;
-  transform-origin: 20 0;
-  -webkit-animation: snow3 3s linear 0s infinite;
-}
-
-.snow4 {
-  width: 5px;
-  height: 5px;
-  background: white;
-  border-radius: 50%;
-  transform-origin: 50 0;
-  -webkit-animation: snow4 2s linear 0s infinite;
-}
-@-webkit-keyframes snow1 {
-  0% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate3d(0, 500px, 0) rotate(360deg);
-  }
-}
-
-@-webkit-keyframes snow2 {
-  0% {
-    transform: translate3d(100px, 0, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate3d(100px, 500px, 0) rotate(360deg);
-  }
-}
-
-@-webkit-keyframes snow3 {
-  0% {
-    transform: translate3d(300px, 20, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate3d(300px, 500px, 0) rotate(180deg);
-  }
-}
-
-@-webkit-keyframes snow4 {
-  0% {
-    transform: translate3d(100px, 100px, 0) rotate(0deg);
-  }
-  100% {
-    transform: translate3d(100px, 500px, 0) rotate(360deg);
-  }
-}
 </style>

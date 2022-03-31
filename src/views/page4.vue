@@ -83,10 +83,10 @@ export default {
       margin-top: 10px;
       display: flex;
       justify-content: center;
-      background-image: url(../assets/top1.png);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      -moz-background-size: 100% 100%;
+      // background-image: url(../assets/top1.png);
+      // background-repeat: no-repeat;
+      // background-size: 100% 100%;
+      // -moz-background-size: 100% 100%;
     }
 
     .min_two {
@@ -94,6 +94,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+			
       height: 100%;
       flex: 6;
       position: relative;

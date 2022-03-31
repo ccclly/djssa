@@ -293,7 +293,7 @@ background: url(@/assets/bj4.jpg);
   /* flex 子元素 纵向排列 */
   flex-direction: column;
   /* 增加个阴影 */
-  box-shadow: 0 0 30px #2c2c2c;
+  box-shadow: 0 0 15px #2c2c2c;
   /* 同意给字体价格颜色 */
   color: var(--font_color)
 }
