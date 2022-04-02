@@ -181,12 +181,12 @@
       </div>
     </div>
   </div>
-  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisible">
+  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisible" destroy-on-close>
     <iframe class="vrview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
             oallowfullscreen="true" msallowfullscreen="true" name="mapFrame" scrolling="no" frameborder="0"
             src="https://720yun.com/t/7f2jOzyyvu0?scene_id=3170830"></iframe>
   </el-dialog>
-  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisiblezhangjiakou">
+  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisiblezhangjiakou" destroy-on-close>
     <iframe class="vrview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
             oallowfullscreen="true" msallowfullscreen="true" name="mapFrame" scrolling="no" frameborder="0"
             src="https://720yun.com/t/f0vkzwiq0rq?scene_id=80663427"></iframe>
@@ -255,6 +255,7 @@ background: url(@/assets/bj4.jpg);
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    //transform: translateY(15px);
   }
 }
 
@@ -281,11 +282,13 @@ background: url(@/assets/bj4.jpg);
   flex-shrink: 0;
   flex-grow: 0;
   position: relative;
-  width: 600px;
-  height: 500px;
+  //width: 600px;
+  width: 80vw;
+  //height: 500px;
+  height: 60vh;
   overflow: hidden;
   margin: 20px auto;
-  background-color: var(--border-color);
+  background-color: #FFFFFF;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -293,7 +296,7 @@ background: url(@/assets/bj4.jpg);
   /* flex 子元素 纵向排列 */
   flex-direction: column;
   /* 增加个阴影 */
-  box-shadow: 0 0 15px #2c2c2c;
+  //box-shadow: 0 0 30px #2c2c2c;
   /* 同意给字体价格颜色 */
   color: var(--font_color)
 }
