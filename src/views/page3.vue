@@ -181,12 +181,12 @@
       </div>
     </div>
   </div>
-  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisible">
+  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisible" destroy-on-close>
     <iframe class="vrview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
             oallowfullscreen="true" msallowfullscreen="true" name="mapFrame" scrolling="no" frameborder="0"
             src="https://720yun.com/t/7f2jOzyyvu0?scene_id=3170830"></iframe>
   </el-dialog>
-  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisiblezhangjiakou">
+  <el-dialog class="view-dialog" fullscreen="true" v-model="dialogTableVisiblezhangjiakou" destroy-on-close>
     <iframe class="vrview" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
             oallowfullscreen="true" msallowfullscreen="true" name="mapFrame" scrolling="no" frameborder="0"
             src="https://720yun.com/t/f0vkzwiq0rq?scene_id=80663427"></iframe>
