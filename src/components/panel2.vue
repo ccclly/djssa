@@ -66,7 +66,8 @@ body {
       left: 50%;
 	  transform: translateX(-50%);
 	  top: 20px;
-	  font-family: STHeiti;
+	  // font-family: STHeiti;
+     font-family:KJ;
 	  font-weight: bold;
 	  color: #5470C6;
 	  font-size: 35px;

@@ -30,6 +30,15 @@ export default {
     var sportsIcon = {};
     option = {
       silent: true,
+      title: {
+        show: true,
+        text: "情感分析结果",
+        x: "center",
+        y: "bottom",
+        // 文字的颜色,默认 #333。
+        color: "#666",
+        fontSize: 24,
+      },
       series: [
         // 主要展示层的
         {
@@ -62,7 +71,7 @@ export default {
                   case "体质健康":
                     str =
                       "{rate|18}" +
-                      "{nameStyle1| %|普通评论 }\n{nameStyle| \xa0\xa0\xa0\xa0 aaaa }";
+                      "{nameStyle1| %|普通评论 }\n{nameStyle| \xa0\xa0\xa0\xa0 }";
                     break;
                 }
                 return str;
@@ -240,14 +249,14 @@ export default {
             },
           },
           tooltip: {
-        //提示框组件
-        trigger: "item", //触发类型,'item'数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。 'axis'坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。
-        triggerOn: "mousemove", //提示框触发的条件,'mousemove'鼠标移动时触发。'click'鼠标点击时触发。'mousemove|click'同时鼠标移动和点击时触发。'none'不在 'mousemove' 或 'click' 时触发
-        showContent: true, //是否显示提示框浮层
-        alwaysShowContent: false, //是否永远显示提示框内容
-        showDelay: 0, //浮层显示的延迟，单位为 ms
-        hideDelay: 100, //浮层隐藏的延迟，单位为 ms
-      },
+            //提示框组件
+            trigger: "item", //触发类型,'item'数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。 'axis'坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。
+            triggerOn: "mousemove", //提示框触发的条件,'mousemove'鼠标移动时触发。'click'鼠标点击时触发。'mousemove|click'同时鼠标移动和点击时触发。'none'不在 'mousemove' 或 'click' 时触发
+            showContent: true, //是否显示提示框浮层
+            alwaysShowContent: false, //是否永远显示提示框内容
+            showDelay: 0, //浮层显示的延迟，单位为 ms
+            hideDelay: 100, //浮层隐藏的延迟，单位为 ms
+          },
           itemStyle: {
             normal: {
               color: function (params) {
