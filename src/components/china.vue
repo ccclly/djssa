@@ -175,11 +175,11 @@ option = {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width:700px;
-		height: 470px;
+		width:500px;
+		height: 520px;
 	}
 	.vrview{
-		height: 85vh;
+		height: 520px;
 		width: 100%;
 	}
 </style>

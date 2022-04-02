@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     getPathFun() {
-      if (this.$route.path === "/") {
+      if (this.$route.path === "/page4") {
         var snowBox = "contain", //雪花容器
           src = "/img/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
           num = 40, //雪花数量
