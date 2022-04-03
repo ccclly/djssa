@@ -13,7 +13,7 @@
 
 	  </div>
 	  <div class="right">
-	  	    <game></game>
+	  	 <game></game>
 	  </div>
   </div>
 </template>

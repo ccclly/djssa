@@ -456,7 +456,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 #sf {
   width: 300px;
   height: 520px;
