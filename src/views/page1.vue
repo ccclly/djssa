@@ -1,28 +1,41 @@
 <template>
 	<div class="body">
+		<audio src="/xh.mp3" ref="music">
+			Your browser does not support the audio element.
+		</audio>
+
 		<div class="stars" ref="starsRef">
 			<div class="star" v-for="(item, index) in starsCount" :key="index"></div>
 		</div>
-		<div class="bigsnow">
-			<img src="../assets/bs.png" >
-			<div class="hj" @click="dianhuo">
-				<img :src="isfire" >
-			</div>
+		<div id="wuhuan">
+			<img src="../assets/wuhuan78.gif">
 		</div>
-		 <div>
-		    {{ this.$route.params.name }}
-		  </div>
+		<transition name="fade">
+			<div class="bigsnow" v-show="show">
+				<img src="../assets/bs.png">
+				<div class="hj" @click="dianhuo">
+					<img :src="isfire">
+				</div>
+			</div>
+		</transition>
+
+		<div>
+			{{ this.$route.params.name }}
+		</div>
 	</div>
 </template>
 
 <script>
+	import $ from "jquery";
 	export default {
 		data() {
 			return {
-				 count:"",//倒计时
+				isplay: false,
+				show: true,
+				count: "", //倒计时
 				starsCount: 800, //星星数量
 				distance: 900, //间距
-				isfire:require('../assets/hynull.png'),
+				isfire: require('../assets/hynull.png'),
 			}
 		},
 		mounted() {
@@ -40,40 +53,69 @@
 		        scale(${speed},${speed})`;
 			});
 		},
-		methods:{
-			dianhuo(){
-				this.isfire=require('../assets/hy.gif')
-				       const timejump = 1;
-				        if(!this.timer){
-				            this.count = timejump ;
-				            this.show = false;
-				            this.timer = setInterval(()=>{
-				            if(this.count > 0 && this.count <= timejump ){
-				                this.count--;
-				            }else{
-				                this.show = true;
-				                clearInterval(this.timer);
-				                this.timer = null;
-				                //跳转的页面写在此处
-				                this.$router.push({path: '/mainPage'});
-				            }
-				          },1000)
-				        }
+		methods: {
+			dianhuo() {
+				this.isfire = require('../assets/hy.gif')
+				this.$refs.music.play()
+				this.$refs.music.volume =0.1;
+				const timejump = 1;
+				if (!this.timer) {
+					this.count = timejump;
+					this.timer = setInterval(() => {
+						this.show = false;
+						$("#wuhuan").fadeIn(3000);
+					}, 1000)
+					this.timer = setInterval(() => {
+						if (this.count > 0 && this.count <= timejump) {
+							this.count--;
+						} else {
+							clearInterval(this.timer);
+							this.timer = null;
+							//跳转的页面写在此处
+							this.$router.push({
+								path: '/mainPage'
+							});
+						}
+						// this.show = false
+
+					}, 4000)
+				}
 			}
 		}
 	}
 </script>
 
 <style lang="less" scoped>
+	.fade-leave-to {
+		opacity: 0;
+	}
+
+	.fade-leave-active {
+		transition: opacity 3s;
+	}
+
+
 	.body {
+		cursor: url(../assets/hj22.png), auto;
 		position: absolute;
+		background: url(../assets/bj15.jpg);
+		position: fixed;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
-		margin: 0;
-		padding: 0;
-		background: url(../assets/bjbj.jpg);
-		background-attachment: fixed;
-		overflow: hidden;
+		min-width: 1000px;
+		z-index: -10;
+		zoom: 1;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-o-background-size: cover;
+		background-position: center 0;
+		align-items: center;
+		min-height: 70vh;
+
 		.stars {
 			transform: perspective(500px);
 			transform-style: preserve-3d;
@@ -82,6 +124,7 @@
 			left: 45%;
 			animation: rotate 90s infinite linear;
 			bottom: 0;
+
 			.star {
 				width: 2px;
 				height: 2px;
@@ -92,7 +135,8 @@
 				backface-visibility: hidden;
 			}
 		}
-		.bigsnow{
+
+		.bigsnow {
 			width: 800px;
 			height: 800px;
 			position: relative;
@@ -100,11 +144,12 @@
 			top: 50%;
 			margin-top: -400px;
 			margin-left: -400px;
-			img{
+
+			img {
 				width: 100%;
 			}
-			.hj{
-				cursor: url(../assets/hj22.png), auto;
+
+			.hj {
 				width: 100px;
 				height: 100px;
 				position: absolute;
@@ -112,9 +157,27 @@
 				top: 50%;
 				margin-top: -18px;
 				margin-left: -47px;
-				img{
+
+				img {
 					width: 100%;
 				}
+			}
+		}
+
+		#wuhuan {
+			width: 650px;
+			position: absolute;
+			transform: translate(-50%);
+			left: 50%;
+			top: 10%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			display: none;
+			// background-color: red;
+
+			img {
+				width: 100%;
 			}
 		}
 	}
@@ -128,6 +191,4 @@
 			transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
 		}
 	}
-
 </style>
-
