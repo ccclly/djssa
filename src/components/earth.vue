@@ -135,7 +135,6 @@ export default {
       });
 
       baseTexture.on("click", (e) => {
-        console.log(e.data);
         router.push({
           name: "page5",
           params: { name: e.data.name, value: e.data.value, num: e.data.num },

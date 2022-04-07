@@ -39,8 +39,7 @@
 			<div class="min_one">
 				<topbar></topbar>
 			</div>
-			<div class="min_two">
-              
+			<div class="min_two"> 
 				<world></world>
 			</div>
 		</div>

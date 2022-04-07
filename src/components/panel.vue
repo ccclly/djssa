@@ -14,7 +14,7 @@ export default {
   },
   components: {
     clouds,
-    pie
+    pie,
   },
   mounted() {},
 };
