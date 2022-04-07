@@ -71,7 +71,7 @@ export default {
                   case "体质健康":
                     str =
                       "{rate|18}" +
-                      "{nameStyle1| %|普通评论 }\n{nameStyle| \xa0\xa0\xa0\xa0 }";
+                      "{nameStyle1| %|消极评论 }\n{nameStyle| \xa0\xa0\xa0\xa0 }";
                     break;
                 }
                 return str;
@@ -296,6 +296,7 @@ export default {
   width: 50%;
   height: 100%;
   display: flex;
+  /* background-color: white; */
   flex-direction: row;
   justify-content: center;
   align-items: center;

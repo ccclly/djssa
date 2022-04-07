@@ -50,14 +50,41 @@ export default {
     let colorListLen = colorList.length;
     let fontSizeList = [
       12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19,
-      19.5, 20, 20.5, 21, 22, 23, 24,
+      19.5, 20, 20.7, 21, 22, 23, 24,
     ];
     let i = 0;
+    // let values = [
+    //   101, 87, 76, 68, 60, 59, 52, 50, 49, 48, 44, 44, 40, 35, 35, 31, 31, 27,
+    //   26, 25, 25,
+    // ];
     let values = [
-      330, 186, 135, 72, 71, 63, 58, 70, 58, 49, 47, 45, 44, 38, 39, 31,
-      30, 26, 26, 23, 17, 15, 18, 14, 13, 13, 13, 13, 13, 13, 11, 11, 11, 10,
-      10, 10, 10, 10, 10, 10, 10,
+      330, 186, 135, 72, 71, 63, 58, 70, 49, 47, 45, 44, 38, 39, 31, 30, 26,
+      26, 23, 17, 15, 18, 14, 13, 13, 13, 13, 13, 13, 11, 11, 11, 10, 10, 10,
+      10, 10, 10, 10, 10,
     ];
+    // let names = [
+    //   "减肥",
+    //   "轻食",
+    //   "健康",
+    //   "喜欢",
+    //   "饮食",
+    //   "减脂",
+    //   "瘦",
+    //   "热量",
+    //   "蔬菜",
+    //   "碳水",
+    //   "好吃",
+    //   "运动",
+    //   "减脂餐",
+    //   "鸡胸肉",
+    //   "外卖",
+    //   "营养",
+    //   "胖",
+    //   "素食",
+    //   "脂肪",
+    //   "坚持",
+    //   "体重",
+    // ];
     let names = [
       "冰墩墩",
       "排面",
@@ -67,7 +94,7 @@ export default {
       "大哭",
       "冬奥会",
       "知识",
-      "心心",
+
       "浪漫",
       "喜欢",
       "绒花",
@@ -241,7 +268,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -253,7 +280,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -265,7 +292,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -277,7 +304,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -289,7 +316,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -301,7 +328,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -313,7 +340,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -325,7 +352,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -337,7 +364,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -349,7 +376,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -361,7 +388,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -373,7 +400,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -385,7 +412,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -397,7 +424,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -409,7 +436,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -421,7 +448,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -433,7 +460,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -445,7 +472,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -457,7 +484,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -469,7 +496,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -481,7 +508,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -493,7 +520,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -505,7 +532,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -517,7 +544,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -529,7 +556,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -541,7 +568,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -553,7 +580,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -565,7 +592,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
             {
@@ -577,7 +604,7 @@ export default {
               },
               label: {
                 color: colorList[Math.floor(Math.random() * colorListLen)],
-                fontSize: values[i++] * 0.5,
+                fontSize: values[i++] * 0.7,
               },
             },
           ],
@@ -595,6 +622,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: row;
+  /* background-color: white; */
   justify-content: center;
   align-items: center;
 }
