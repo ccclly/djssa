@@ -14,7 +14,7 @@ export default {
   },
   mounted() {
     var nob = this.$route.params.name;
-    console.log("这里收到了：" + nob);
+    // console.log("这里收到？了：" + nob);
   },
 };
 </script>
