@@ -1,6 +1,6 @@
 <template>
 	<div class="body">
-		<audio src="/xh.mp3" ref="music">
+		<audio :src="xhmusic" ref="music">
 			Your browser does not support the audio element.
 		</audio>
 
@@ -30,6 +30,7 @@
 	export default {
 		data() {
 			return {
+				xhmusic:require("../assets/xh.mp3"),
 				isplay: false,
 				show: true,
 				count: "", //倒计时
@@ -57,7 +58,7 @@
 			dianhuo() {
 				this.isfire = require('../assets/hy.gif')
 				this.$refs.music.play()
-				this.$refs.music.volume =0.1;
+				this.$refs.music.volume =1;
 				const timejump = 1;
 				if (!this.timer) {
 					this.count = timejump;

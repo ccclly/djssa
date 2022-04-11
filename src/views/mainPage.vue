@@ -33,7 +33,7 @@ export default {
     getPathFun() {
       if (this.$route.path === "/mainPage") {
         var snowBox = "contain", //雪花容器
-          src = "/img/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
+          src = "/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
           num = 40, //雪花数量
           style = 2; //图片种类数
         goSnow(snowBox, src, num, style);
@@ -53,7 +53,7 @@ export default {
         <sex></sex>
       </div>
       <div class="left_two">
-        <div class="left_two_title">中国队冬奥强项</div>
+        <div class="left_two_title">中国队得牌分布</div>
         <radar></radar>
       </div>
       <div class="left_three">
@@ -151,7 +151,7 @@ a {
         linear-gradient(white, white) right bottom,
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .left_one_title {
         font-size: 15px;
@@ -183,7 +183,7 @@ a {
         linear-gradient(white, white) right bottom,
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .left_two_title {
         font-size: 15px;
@@ -214,7 +214,7 @@ a {
         linear-gradient(white, white) right bottom,
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .left_three_title {
         font-size: 15px;
@@ -255,7 +255,6 @@ a {
       height: 100%;
       flex: 4;
       border: 1px solid white;
-      background-color: rgba(236, 249, 255, 0.4);
       border-radius: 12px;
       position: relative;
       background: linear-gradient(white, white) left top,
@@ -267,7 +266,7 @@ a {
         linear-gradient(white, white) right bottom,
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .min_two_title {
         font-size: 15px;
@@ -313,7 +312,7 @@ a {
         linear-gradient(white, white) right bottom,
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .min_three_title {
         font-size: 15px;
@@ -349,7 +348,7 @@ a {
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
       position: relative;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .right_one_title {
         font-size: 15px;
@@ -381,7 +380,7 @@ a {
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
       position: relative;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .right_two_title {
         font-size: 15px;
@@ -412,7 +411,7 @@ a {
         linear-gradient(white, white) right bottom;
       background-repeat: no-repeat;
       position: relative;
-      background-color: rgba(236, 249, 255, 0.2);
+      background-color: rgba(236, 249, 255, 0.1);
       background-size: 5px 20px, 20px 5px;
       .right_three_title {
         font-size: 15px;

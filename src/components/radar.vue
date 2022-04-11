@@ -15,8 +15,8 @@ export default {
     option = {
       radar: {
         center: ["50%", "50%"],
-        nameGap: 10,
-        shape: "radar",
+        nameGap: 6,
+        shape: "circle",
         axisLine: {
           lineStyle: {
             color: "#6BD3F2",
@@ -68,9 +68,9 @@ export default {
           textStyle: {
             color: "#fff",
             backgroundColor: "rgba(11,89,140,0.4)",
-            fontSize: 10,
+            fontSize: 13,
             borderRadius: 3,
-            padding: [3, 5],
+            padding: [5, 5],
           },
         },
       },
