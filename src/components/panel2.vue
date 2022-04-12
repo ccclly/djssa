@@ -4,11 +4,8 @@
 		  <div class="title">
 		  	冬奥知识大科普
 		  </div>
-	  	<video width="625" height="520" controls>
-	  	                <source src="/kp.mp4" type="video/mp4">
-	  	                <object data="movie.mp4" width="320" height="240">
-	  	                    <embed width="625" height="520" src="/kp.mp4">
-	  	                </object>
+	  	<video width="625" height="520" controls autoplay>
+	  	                <source src="../assets/kp.mp4" type="video/mp4">
 	  	            </video>
 
 	  </div>
@@ -66,8 +63,7 @@ body {
       left: 50%;
 	  transform: translateX(-50%);
 	  top: 20px;
-	  // font-family: STHeiti;
-     font-family:KJ;
+	  font-family: STHeiti;
 	  font-weight: bold;
 	  color: #5470C6;
 	  font-size: 35px;
