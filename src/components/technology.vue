@@ -210,6 +210,9 @@ export default {
     };
   },
   methods: {
+    zi() {
+      console.log("父组件调用了我的方法");
+    },
     suspended() {
       var ttsAudio = this.$refs.music[0];
       ttsAudio.pause(); // 这个就是暂停
@@ -241,11 +244,11 @@ export default {
       audio_ctr.className = "play"; //动态更改标签的类名
     },
     myplay(e) {
-    //   console.log("到这来了" + e);
+      //   console.log("到这来了" + e);
       var ttsAudio = this.$refs.music[e];
       var audio_ctr = this.$refs.audio_ctr[e]; //获取按钮
-    //   console.log(this.$refs.music);
-    //   console.log(this.$refs.audio_ctr);
+      //   console.log(this.$refs.music);
+      //   console.log(this.$refs.audio_ctr);
       if (ttsAudio !== null) {
         //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
         if (ttsAudio.paused) {
