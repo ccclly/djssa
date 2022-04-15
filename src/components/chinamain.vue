@@ -50,6 +50,7 @@ import technology from "../components/technology.vue";
 import medaltime from "../components/medaltime.vue";
 import snowfield from "../components/Snowfield.vue";
 import xi from "../components/xi.vue";
+import book from "../components/book.vue";
 export default {
   data() {
     return {};
@@ -61,6 +62,7 @@ export default {
     medaltime,
     snowfield,
     xi,
+    book,
   },
   mounted() {
     //获取元素
