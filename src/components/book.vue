@@ -4,77 +4,45 @@
       <a class="lastBtn">《</a>
       <a class="nextBtn">》</a>
       <div class="bookPage frist">
-        <!-- <img src="../assets/bookimg/情缘.png" /> -->
-        <img src="../assets/bookimg/情缘2.png" />
+        <img src="../assets/bookimg/dataImg1.png" />
       </div>
       <div class="bookPage runPage">
         <div class="bookWord">
-          <span>绿色办奥</span>
-          <p>
-            就要坚持生态优先、资源节约、环境友好，为冬奥会打下美丽中国底色。<br /><br />
-          </p>
-          <span>共享办奥</span>
-          <p>
-            就要坚持共同参与、共同局力、共同享有，使冬奥会产生良好社会效应。
-          </p>
-          <span>开放办奥</span>
-          <p>
-            就要坚持面向世界、面向未来、面向现代化，使冬奥会成为对外开放的助推器。<br /><br />
-          </p>
-
-          <span>廉洁办奥</span>
-          <p>
-            廉洁办奥就要勤俭节约、杜绝腐败、提高效率，坚持对兴奋剂问题零容忍，把冬奥会办得像冰雪一样纯洁无瑕。<br />
-          </p>
-
+          <span>Glacier</span> is the polar or alpine areas exist on the surface
+          for many years and has a natural ice body along the ground motions.
+          Ice snow for many years, after compaction, recrystallization, then
+          freeze into ice. About 1/10 of the land area of glaciers on earth, and
+          4/5 of the fresh water resource is stored in the glacier.
           <span class="pageNumber">1</span>
         </div>
         <img src="../assets/bookimg/dataImg1.png" />
       </div>
       <div class="bookPage runPage">
         <div class="bookWord">
-          <span>习主席鼓励</span>
-          <p>
-            <br />
-            <br />
-            “好风凭借力，送我上青云。”少 年强则中国强，体育强则中国强。
-            希望以北京冬奥会为契机，把冰雪运动各个
-            项目开展起来，让冰上项目强项更强，
-            同时抓紧补上雪地项目短板，把没有开
-            展的项目开展起来，促进冰雪运动在我国全面开展。
-          </p>
-          <p>
-            -2017年2月24日，在北京市海淀区首都体育馆，同刚刚结束亚冬会比赛回国的短道速滑队队员进行交流时的讲话
-          </p>
+          <span>Surface</span> water is the floorboard of the dynamic water and
+          static water on land surface, which belongs to dynamic water lakes,
+          rivers, and marshes, is the most important and most direct source of
+          water supply, the earth's ecosystem system is to maintain stable
+          operation of the blood.
           <span class="pageNumber">2</span>
-        </div>
-        <img src="../assets/bookimg/精神.png" />
-      </div>
-      <div class="bookPage runPage">
-        <div class="bookWord">
-          <span>冬奥精神</span>
-          <p>
-            <br/>
-            <br/>
-            胸怀大局、自信开放、迎难而上、追求卓越、共创未来的北京冬奥精神，这是伟大的事业孕育出的伟大的精神，伟大的精神也必定能推进伟大的事业。我们要大力弘扬北京冬奥精神，踔厉奋发，笃行不怠，以实际行动迎接党的二十大胜利召开，向第二个百年奋斗目标奋勇前进，向实现中华民族伟大复兴奋勇前进！
-          </p>
-          <span class="pageNumber">3</span>
         </div>
         <img src="../assets/bookimg/dataImg1.png" />
       </div>
-
       <div class="bookPage runPage">
         <div class="bookWord">
-          <span>开放办奥</span
-          >就要坚持面向世界、面向未来、面向现代化，使冬奥会成为对外开放的助推器。
+          <span>Groundwater</span> as an important bodies of water, the earth
+          has close relationship with human society. Groundwater storage is in
+          the ground to form a large reservoir, with its stable water supply
+          conditions, good water quality, become the human society of water less
+          than nuuk.
           <span class="pageNumber">3</span>
         </div>
         <img src="../assets/bookimg/dataImg1.png" />
       </div>
       <div class="bookPage last">
         <div class="bookWord">
-          <span>廉洁办奥</span> is the world's most extensive water, center part
-          of the ocean called the, edges as the sea, and communicate with each
+          <span>Ocean</span> is the world's most extensive water, center part of
+          the ocean called the, edges as the sea, and communicate with each
           other of unified bodies of water. Contains more than one billion three
           hundred million and five thousand cubic kilometers of sea water,
           accounting for about 97% of the total water on the earth, and can be

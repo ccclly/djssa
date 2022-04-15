@@ -9,6 +9,7 @@
           <li>冬奥黑科技</li>
           <li>中国获奖日历</li>
           <li>习大大的冬奥情缘</li>
+          <li>book</li>
         </ul>
       </div>
     </div>
@@ -39,6 +40,11 @@
           <xi></xi>
         </div>
       </div>
+      <div class="item">
+        <div class="cartoon">
+          <book></book>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +56,7 @@ import technology from "../components/technology.vue";
 import medaltime from "../components/medaltime.vue";
 import snowfield from "../components/Snowfield.vue";
 import xi from "../components/xi.vue";
+import book from "../components/book.vue";
 export default {
   data() {
     return {};
@@ -61,6 +68,7 @@ export default {
     medaltime,
     snowfield,
     xi,
+    book,
   },
   mounted() {
     //获取元素
