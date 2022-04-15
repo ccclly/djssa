@@ -8,6 +8,7 @@ import cloudword from "../components/cloudword.vue";
 import favour from "../components/favour.vue";
 import scroll from "../components/scroll.vue";
 import first from "../components/first.vue";
+import poor from "../components/poor.vue";
 // import game from "../components/question-game.vue";
 import { goSnow } from "@/assets/js/snow.js";
 
@@ -25,6 +26,7 @@ export default {
     favour,
     first,
     scroll,
+    poor,
   },
   watch: {
     $route: "getPathFun",
@@ -88,7 +90,8 @@ export default {
       </div>
       <div class="right_three">
         <div class="right_three_title">冬奥网友热搜词云图</div>
-        <cloudword></cloudword>
+        <!-- <cloudword></cloudword> -->
+        <poor></poor>
       </div>
     </div>
   </div>
