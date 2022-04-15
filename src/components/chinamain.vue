@@ -1,13 +1,14 @@
 <template>
   <div class="Box">
+    <!-- <input type="button" value="调用子组件的方法" @click="ziff()" /> -->
     <div class="search">
       <div class="daohang">
         <ul>
           <li>滑雪场分布</li>
           <li>冬奥创意</li>
-          <li>冬奥防疫</li>
           <li>冬奥黑科技</li>
           <li>中国获奖日历</li>
+          <li>习大大的冬奥情缘</li>
         </ul>
       </div>
     </div>
@@ -20,20 +21,22 @@
       </div>
       <div class="item">
         <div class="music">
-          <design></design>
+          <design ref="design"></design>
         </div>
       </div>
       <div class="item">
-        <div class="cartoon"></div>
-      </div>
-      <div class="item">
         <div class="life">
-          <technology></technology>
+          <technology ref="technology"></technology>
         </div>
       </div>
       <div class="item">
         <div class="bj">
           <medaltime></medaltime>
+        </div>
+      </div>
+      <div class="item">
+        <div class="cartoon">
+          <xi></xi>
         </div>
       </div>
     </div>
@@ -46,6 +49,7 @@ import design from "../components/design.vue";
 import technology from "../components/technology.vue";
 import medaltime from "../components/medaltime.vue";
 import snowfield from "../components/Snowfield.vue";
+import xi from "../components/xi.vue";
 export default {
   data() {
     return {};
@@ -56,9 +60,11 @@ export default {
     technology,
     medaltime,
     snowfield,
+    xi,
   },
   mounted() {
     //获取元素
+    var that = this;
     var list = document.querySelector(".daohang");
     var lis = list.querySelectorAll("li");
     var items = document.querySelectorAll(".item");
@@ -70,6 +76,8 @@ export default {
       lis[i].setAttribute("index", i); //自定义属性
       lis[i].onclick = function () {
         var index = this.getAttribute("index");
+        // console.log("点击侧边栏++++————————");
+        that.ziff();
         for (var i = 0; i < items.length; i++) {
           items[i].style.display = "none";
           lis[i].style.backgroundColor = "#6199DD";
@@ -80,6 +88,12 @@ export default {
         lis[index].style.backgroundColor = "rgb(163, 161, 161)";
       };
     }
+  },
+  methods: {
+    ziff() {
+      this.$refs.technology.suspended();
+      this.$refs.design.suspended();
+    },
   },
 };
 </script>
