@@ -42,26 +42,43 @@
 					axisLabel: {
 						interval: 0,
 						// rotate: 40
+						color: 'black',
+						fontSize: 12,
+						margin: 10,
 					}
 				}],
 				yAxis: [{
 						type: 'value',
 						name: '比赛项目数量',
+						nameTextStyle: {
+						    color: 'black',
+						    fontSize: 12,
+						},
 						min: 0,
 						max: 150,
 						interval: 30,
 						axisLabel: {
-							formatter: '{value} 项'
+							formatter: '{value} 项',
+							color: 'black',
+							fontSize: 12,
+							margin: 10,
 						}
 					},
 					{
 						type: 'value',
 						name: '花费',
+						nameTextStyle: {
+						    color: 'black',
+						    fontSize: 12,
+						},
 						min: 0,
 						max: 550,
 						interval: 110,
 						axisLabel: {
-							formatter: '{value} 亿美元'
+							formatter: '{value} 亿美元',
+							color: 'black',
+							fontSize: 12,
+							margin: 10,
 						}
 					}
 				],
@@ -100,7 +117,7 @@
 								return value + ' 亿美元';
 							}
 						},
-						data: [4.2, 14, 36, 17, 186, 19, 27, 64, 510, 130, 30]
+						data: [4.2, 14, 36, 17, 186, 19, 27, 64, 510, 130, 31]
 					}
 				]
 			};

@@ -32,9 +32,19 @@ export default {
       },
       xAxis: {
         type: "value",
+		axisLabel: {
+		    color: 'black',
+		    fontSize: 12,
+		    margin: 10,
+		},
       },
       yAxis: {
         type: "category",
+				axisLabel: {
+				    color: 'black',
+				    fontSize: 13,
+				    margin: 10,
+				},
         data: ["奥地利", "荷兰", "瑞典", "美国", "中国", "德国", "挪威"],
       },
       series: [

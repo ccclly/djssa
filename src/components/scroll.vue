@@ -137,6 +137,7 @@ nextTick(() => {
     background-color: rgba(26, 128, 235, 0.2);
     margin-top: 15px;
     padding: 4px;
+	padding-left: 6px;
     border-radius: 10px;
     align-items: center;
   }
