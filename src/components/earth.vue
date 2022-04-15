@@ -25,6 +25,11 @@ export default {
       //   console.log(e)
       // });
       echarts.registerMap("world", world);
+      const tooltipEl = document.querySelector('#tooltip')
+      const tooltipNameEl = document.querySelector('#tooltip-name')
+      const gold = document.querySelector('#gold')
+      const silver = document.querySelector('#silver')
+      const copper = document.querySelector('#copper')
       baseTexture.setOption({
         // 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
 
@@ -38,6 +43,26 @@ export default {
           text: ["High", "Low"],
           calculable: true,
         },
+        tooltip: {
+          show: true,
+          trigger: 'item',
+          showDelay: 0,
+          transitionDuration: 1,
+          showContent: true,
+          backgroundColor: 'rgba(50,50,50,0.7)',
+          extraCssText: 'width: 170px',
+          textStyle: { // 提示框浮层的文本样式。
+            color: '#fff',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            fontFamily: 'sans-serif',
+            fontSize: 14,
+          },
+        },
+        label: {
+          formatter: '',
+          fontSize: 20
+        },
         series: [
           {
             type: "map",
@@ -49,36 +74,57 @@ export default {
                 name: "China",
                 value: 32,
                 num: 0,
+                label: {
+                  formatter: '中国',
+                }
               },
               {
                 name: "Norway",
                 value: 47,
                 num: 1,
+                label: {
+                  formatter: '挪威',
+                }
               },
               {
                 name: "Germany",
                 value: "27",
                 num: 2,
+                label: {
+                  formatter: '德国',
+                }
               },
               {
                 name: "United States",
                 value: 25,
                 num: 3,
+                label: {
+                  formatter: '美国',
+                }
               },
               {
                 name: "Sweden",
                 value: 18,
                 num: 4,
+                label: {
+                  formatter: '瑞典',
+                }
               },
               {
                 name: "Netherlands",
                 value: 17,
                 num: 5,
+                label: {
+                  formatter: '芬兰',
+                }
               },
               {
                 name: "Austria",
                 value: 18,
                 num: 6,
+                label: {
+                  formatter: '奥地利',
+                }
               },
             ],
             left: 0,
@@ -89,11 +135,62 @@ export default {
               [-180, 90],
               [180, -90],
             ],
-            tooltip: {
-              show: false,
-            },
             itemStyle: {
               areaColor: "#6AABFB",
+            },
+            tooltip: {
+              formatter: function (params) {
+                if (params.data) {
+                  tooltipEl.style.opacity = 1;
+                  tooltipNameEl.innerText = params.data.label.formatter;
+                  const ev = event || window.event;
+                  tooltipEl.style.left = ev.pageX + 20 + 'px';
+                  tooltipEl.style.top = ev.pageY + 20 + 'px';
+                  switch (params.name) {
+                    case 'China':
+                      gold.innerHTML = '9';
+                      silver.innerHTML = '4';
+                      copper.innerHTML = '2';
+                      break;
+                    case 'Norway':
+                      gold.innerHTML = '16';
+                      silver.innerHTML = '8';
+                      copper.innerHTML = '13';
+                      break;
+                    case 'Germany':
+                      gold.innerHTML = '12';
+                      silver.innerHTML = '10';
+                      copper.innerHTML = '5';
+                      break;
+                    case 'United States':
+                      gold.innerHTML = '8';
+                      silver.innerHTML = '10';
+                      copper.innerHTML = '7';
+                      break;
+                    case 'Sweden':
+                      gold.innerHTML = '8';
+                      silver.innerHTML = '5';
+                      copper.innerHTML = '5';
+                      break;
+                    case 'Netherlands':
+                      gold.innerHTML = '8';
+                      silver.innerHTML = '5';
+                      copper.innerHTML = '4';
+                      break;
+                    case 'Austria':
+                      gold.innerHTML = '7';
+                      silver.innerHTML = '7';
+                      copper.innerHTML = '4';
+                      break;
+                  }
+                } else {
+                  tooltipEl.style.opacity = 0;
+                }
+              },
+              borderColor: '#333',
+              borderWidth: 200,
+              extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);',
+              position: 'right'
             },
             select: {
               // itemStyle: {
@@ -135,11 +232,15 @@ export default {
       });
 
       baseTexture.on("click", (e) => {
+        tooltipEl.style.opacity = 0;
         router.push({
           name: "page5",
           params: { name: e.data.name, value: e.data.value, num: e.data.num },
         });
       });
+      baseTexture.on('globalout', function (e) {
+        tooltipEl.style.opacity = 0;
+      })
       return baseTexture;
     };
 
