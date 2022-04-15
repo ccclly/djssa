@@ -9,7 +9,6 @@
           <li>冬奥黑科技</li>
           <li>中国获奖日历</li>
           <li>习大大的冬奥情缘</li>
-          <li>book</li>
         </ul>
       </div>
     </div>
@@ -38,11 +37,6 @@
       <div class="item">
         <div class="cartoon">
           <xi></xi>
-        </div>
-      </div>
-      <div class="item">
-        <div class="cartoon">
-          <book></book>
         </div>
       </div>
     </div>

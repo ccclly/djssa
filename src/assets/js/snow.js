@@ -24,8 +24,7 @@
 	CreateSnow.prototype = {
 		createEle: function(baseSrc) { //生成雪花元素
 			var srcIndex = baseSrc.lastIndexOf('.'), //获取最后一个'.'
-				src = baseSrc.substring(0, srcIndex) + this.snowStyle + baseSrc.substring(srcIndex, baseSrc
-				.length);
+				src = baseSrc
 			var image = new Image();
 			image.src = src;
 			this.ele = document.createElement("img");
@@ -82,9 +81,9 @@
 	//初始化加载
 	window.onload = function() {
 		var snowBox = 'contain', //雪花容器
-			src = "/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
+			src = 'https://s1.ax1x.com/2022/04/11/LZgood.png', //雪花图基本命名<图片名就是snow+1/2/3/4...>
 			num = 40, //雪花数量
-			style = 2; //图片种类数
+			style = 1; //图片种类数
 		goSnow(snowBox, src, num, style);
 	};
 	

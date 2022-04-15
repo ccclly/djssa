@@ -1,173 +1,352 @@
 <template>
-  <div class="shell">
-    <label for="button1" class="button" style="--i: 0">Grace</label>
-    <input type="radio" id="button1" name="page" checked />
-    <div class="page">
-      <div class="page_content">
-        <h1>Grace</h1>
-        <p>Fashion women wear clothes, not clothes.</p>
-        <span>
-          Designers are reimagining soignée staples for spring and summer─skirt
-          suits, twin sets, below-the-knee dresses, kitten heels and frame
-          bags─that appear anything but moth-eaten. in fact, fashion's
-          neoconservative coup d'état feels deliciously defiant, given the
-          excessively revealing styles pop culture celebrates. a quick flip
-          through any supermarket tabloid yields an onslaught of oversexed stars
-          and their indelicate fashion choices.
-        </span>
-      </div>
-    </div>
+  <section id="knowledge" class="viewBlock">
+    <div class="bookBox">
+      <a class="lastBtn">《</a>
+      <a class="nextBtn">》</a>
 
-    <label for="button2" class="button" style="--i: 1">Trend</label>
-    <input type="radio" id="button2" name="page" />
-    <div class="page">
-      <div class="page_content">
-        <h1>Trend</h1>
-        <p>
-          Fashion is like a colorful screen. In a flash, it becomes its color.
-        </p>
-        <span
-          >Is conservative the new radical? the fashion world certainly seems to
-          think so. this season, designers filled their runways with restrained
-          silhouettes that echo the graceful, showing-less-is-more aesthetic of
-          generations past.
-        </span>
+      <!-- 首页的图片 -->
+      <div class="bookPage frist">
+        <img src="../assets/bookimg/习近平闭幕式.png" />
       </div>
-    </div>
+      <!-- 第一页的内容 -->
+      <div>
+        <div class="bookPage runPage">
+          <div class="bookWord">
+            <p>
+              2015年7月31日，世界选择了北京。
+              <br />
+              2022年2月4日，北京惊艳了世界。
+              <br />
+              “从无到有啊！2015年申办成功，奔着当时提出的愿景目标，我们按计划一件事一件事地办，都办成了。走到今天不容易。”北京冬奥会开幕前夕，习近平总书记这样感慨。
+              <br />
+              “北京冬奥会可以说已经非常成功了。运动员们非常开心，也感到非常满意。”国际奥委会主席巴赫也由衷点赞。
+              <br />
+              一步步走来，一个个瞬间镌刻在中国人民的记忆深处。
+              回首中国的冬奥之路，从申办到筹办，习近平总书记一路引领。
+            </p>
+            <span class="pageNumber">1</span>
+          </div>
+          <img src="../assets/bookimg/带动冰雪运动.png" />
+        </div>
+      </div>
+      <!-- 第二页的内容 -->
+      <div>
+        <div class="bookPage runPage">
+          <div class="bookWord">
+            <p>
+              习近平总书记指出：“北京冬奥会是我国重要历史节点的重大标志性活动，是展现国家形象、促进国家发展、振奋民族精神的重要契机，对京津冀协同发展有着强有力的牵引作用。”
+            </p>
+            <p>
+              “办好北京冬奥会、冬残奥会是党和国家的一件大事，是我们对国际社会的庄严承诺，做好北京冬奥会、冬残奥会筹办工作使命光荣、意义重大。”
+            </p>
+            <p>
+              “成功举办北京冬奥会、冬残奥会，不仅可以增强我们实现中华民族伟大复兴的信心，而且有利于展示我们国家和民族致力于推动构建人类命运共同体，阳光、富强、开放的良好形象，增进各国人民对中国的了解和认识。”
+            </p>
+            <span class="pageNumber">2</span>
+          </div>
+          <img src="../assets/bookimg/习近平视察.png" />
+        </div>
+      </div>
+      <!-- 第三页的内容 -->
+      <div>
+        <div class="bookPage runPage">
+          <div class="bookWord">
+            <p>
+              这些年，习近平总书记先后5次实地考察冬奥筹办工作。北京、延庆、张家口三个赛区都留下了他的“冬奥足迹”。
+              在北京冬奥会场馆总体规划的沙盘前，他看得细、想得细：“要用节约、绿色、廉洁的理念去规划好场馆的建设和利用。”
+              在北京冬奥会、冬残奥会主媒体中心，他仔细了解“双闭环”管理模式：“闭环管理很有必要，设计必须科学合理，不能因管理的生硬和简单粗放而影响冬奥的顺利举办。”
+            </p>
+            <p>
+              在冬奥村，他同来自高校的志愿者亲切交流：“给各国参赛人员讲述一个古老而现代的北京，让他们感受到中国人民的热情好客，这会是一段难忘的人生经历。”
+            </p>
+            <span class="pageNumber">3</span>
+          </div>
 
-    <label for="button3" class="button" style="--i: 2">Design</label>
-    <input type="radio" id="button3" name="page" />
-    <div class="page">
-      <div class="page_content">
-        <h1>Design</h1>
-        <p>I need to be different and irreplaceable.</p>
-        <span>
-          Designers appreciate it when attendees wear their brand to their show.
-          most design houses will even ensure that the celebrities are
-          “appropriately” dressed in designer wear once they agree to attend.
-        </span>
+          <img src="../assets/bookimg/闭幕式.png" />
+        </div>
+      </div>
+      <div class="bookPage last">
+        <div class="bookWord">
+          <p>
+            从担任2008年北京奥运会、残奥会筹备工作领导小组组长，助力中国百年奥运梦圆，到领导新时代中国成功举办2014年南京青奥会，再到亲自推动申办、筹办2022年北京冬奥会、冬残奥会，习近平与奥林匹克运动有着特别的缘分。
+            “我真希望给习主席颁发一枚金牌！”正如国际奥委会主席巴赫所言，就推动奥林匹克运动而言，习近平主席是当之无愧的冠军。
+          </p>
+          <span class="pageNumber">4</span>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-export default {};
+import $ from "jquery";
+export default {
+  mounted() {
+    $(function () {
+      var pageNum = 0;
+      console.log("数量为：" + $(".runPage").length);
+      for (var i = 0; i < $(".runPage").length; i++) {
+        $(".runPage")
+          .eq(i)
+          .css("z-index", 7 - 2 * i);
+        $(".runPage")
+          .eq(i)
+          .children("div")
+          .css("z-index", 7 - 2 * i);
+        $(".runPage")
+          .eq(i)
+          .children("img")
+          .css("z-index", 6 - 2 * i);
+      }
+
+      $(".nextBtn").bind("click", function () {
+        if (pageNum <= 2) {
+          runNext(pageNum);
+          pageNum++;
+        }
+        console.log(pageNum);
+      });
+
+      function runNext(index) {
+        $(".runPage").eq(index).addClass("runClass");
+        zIndexNext(index, $(".runPage").eq(index));
+      }
+
+      function zIndexNext(index, element) {
+        if (index >= 1) {
+          element.css("z-index", 3 + 2 * index);
+        }
+        setTimeout(function () {
+          if (index == 0) {
+            element.css("z-index", 3 + 2 * index);
+          }
+          element.children("div").css("z-index", 2 + 2 * index);
+          element.children("img").css("z-index", 3 + 2 * index);
+        }, 1000);
+      }
+
+      $(".lastBtn").bind("click", function () {
+        if (pageNum >= 1) {
+          pageNum--;
+          runLast(pageNum);
+        }
+        console.log(pageNum);
+      });
+
+      function runLast(index) {
+        $(".runPage").eq(index).removeClass("runClass");
+        zIndexLast(index, $(".runPage").eq(index));
+      }
+
+      function zIndexLast(index, element) {
+        if (index == 0) {
+          element.css("z-index", 7 - 2 * index);
+        }
+        setTimeout(function () {
+          element.css("z-index", 7 - 2 * index);
+          element.children("div").css("z-index", 7 - 2 * index);
+          element.children("img").css("z-index", 6 - 2 * index);
+        }, 1000);
+      }
+    });
+  },
+};
 </script>
 
-<style scoped>
-body {
-  background-color: rgb(0, 0, 0);
-  width: 100%;
-  display: flex;
-  height: 100%;
+<style  scoped>
+* {
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  color: #333;
+  font-family: "Microsoft YaHei";
 }
-.shell {
-  width: 100%;
-  height: 50%;
-  background-color: #000;
-  overflow: hidden;
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
-.page {
-  transform: translateX(-110%);
-  position: relative;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  transition: 0.5s;
-  background-size: cover;
+::-moz-selection {
+  background: #338fff;
+  color: #fff;
 }
-.button {
+::-webkit-selection {
+  background: #338fff;
+  color: #fff;
+}
+::selection {
+  background: #338fff;
+  color: #fff;
+}
+.clear::after {
+  content: "";
   display: block;
-  width: 10%;
-  color: #fff;
-  font-size: 30px;
-  border-bottom: #fff solid 4px;
-  text-align: center;
-
-  position: relative;
-  display: flex;
-  bottom: 10px;
-  margin: 50px;
-  left: calc(50% + (var(--i) * 17%));
-  z-index: 999;
-  transition: 0.3s;
+  height: 0px;
+  clear: both;
+  visibility: hidden;
 }
-.page_content {
-  box-sizing: border-box;
-  height: 100%;
-  padding: 50px;
-  color: #fff;
-  position: relative;
-  display: flex;
-  left: 100%;
-
-  animation-name: fade;
-  animation-duration: 0.7s;
-  animation-iteration-count: 1;
-  opacity: 1;
+.response-img {
+  display: block;
+  max-width: 100%;
 }
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-input {
-  display: flex;
-}
-input:checked + .page {
-  transform: translateX(0px);
-  transition: 0.4s;
-}
-input:checked + .page .page_content {
+body {
   width: 100%;
-  display: flex;
+  max-width: 1920px;
+  min-width: 1200px;
 }
-.page:nth-child(3) {
-  background-image: url("../assets/img/t1.png");
+#knowledge {
+  width: 100%;
+  position: relative;
+  background-color: #ccc;
+  padding: 40px 0;
 }
-.page:nth-child(3) .page_content {
-  background-color: rgb(185, 130, 130);
+.bookBox {
+  width: 1000px;
+  height: 500px;
+  position: relative;
+  margin: 30px auto;
+  -webkit-perspective-origin: 50% 60%;
+  perspective-origin: 50% 60%;
+  -webkit-perspective: 1500px;
+  perspective: 1500px;
+  background: white no-repeat 0 0;
+  background-size: 100% 100%;
+}
+.bookBox:hover .lastBtn {
+  display: block;
+}
+.bookBox:hover .nextBtn {
+  display: block;
+}
+.bookPage {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all linear 2s;
+  -moz-transition: all linear 2s;
+  -ms-transition: all linear 2s;
+  -o-transition: all linear 2s;
+  transition: all linear 2s;
+  background: url(../assets/bookimg/bookLeft.png) no-repeat;
+  background-size: 479.26px 483.33px;
+  background-position: 20.74px 8.3px;
+}
+.bookPage img {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: inline-block;
+  width: 400px;
+}
+.bookWord {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: inline-block;
+  width: 360px;
+  height: 360px;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 27px;
+  backface-visibility: visible;
+  background-color: #f0f0f0;
+  /* word-break: break-all;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 40px;
+  -moz-column-count: 2;
+  -moz-column-gap: 40px;
+  -ms-column-count: 2;
+  -ms-column-gap: 40px;
+  column-count: 2;
+  column-gap: 10px; */
 }
 
-.page:nth-child(6) {
-  background-image: url("../assets/img/t3.png");
-}
-.page:nth-child(6) .page_content {
-  background-color: rgb(173, 170, 226);
-}
-
-.page:nth-child(9) {
-  background-image: url("../assets/img/t2.png");
-}
-.page:nth-child(9) .page_content {
-  background-color: rgb(236, 180, 110);
-}
-.page h1 {
-  font-size: 70px;
-}
-.page p {
+/* .bookWord span {
   font-size: 30px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  margin: 30px 0;
+  font-weight: 600;
+  line-height: 40px;
+} */
+.frist {
+  left: 0;
+  z-index: 1;
 }
-.page span {
-  font-size: 26px;
-  letter-spacing: 2px;
-  color: rgb(56, 56, 56);
+.frist img {
+  z-index: 1;
 }
-label:hover {
+.last {
+  right: 0;
+  z-index: 1;
+}
+.last p {
+  z-index: 1;
+}
+.runPage {
+  right: 0;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.runPage,
+.bookPage:last-child {
+  background: url(../assets/bookimg/bookRight.png) no-repeat;
+  background-size: 479.26px 483.33px;
+  background-position: 0 8.3px;
+}
+.runClass {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.lastBtn,
+.nextBtn {
+  display: none;
+  position: absolute;
+  top: 200px;
   cursor: pointer;
-  border-bottom: solid 4px rgb(35, 35, 35);
+  z-index: 999;
+  font-size: 50px;
+  line-height: 100px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.lastBtn {
+  left: 0;
+}
+.nextBtn {
+  right: 0;
+}
+.canvasBox {
+  display: block;
+  width: 158px;
+  height: 158px;
+}
+.pageNumber {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  font-size: 20px !important;
+  line-height: 30px;
 }
 </style>
