@@ -54,6 +54,9 @@
 					name: '(%)',
 					type: 'value',
 					axisLabel: {
+						fontSize: 12,
+						margin: 10,
+						color: 'black',
 					formatter: value => {
 							if (value < 0) return -value;
 							//这里是针对取负值
@@ -69,6 +72,11 @@
 			      axisTick: {
 			        show: false
 			      },
+				  axisLabel: {
+				      color: 'black',
+				      fontSize: 13,
+				      margin: 10,
+				  },
 			      data: ['中国获奖', '中国参赛', '全球参赛']
 			    }
 			  ],
