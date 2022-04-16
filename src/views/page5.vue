@@ -1,9 +1,7 @@
 <script>
 	import topbar from "../components/topbar.vue";
 	import world from "../components/world.vue";
-	import {
-		goSnow
-	} from "@/assets/js/snow.js";
+	import { goSnow } from "@/assets/js/snow.js";
 
 	export default {
 		data() {
@@ -14,14 +12,15 @@
 		 topbar,
 		 world
 		},
-		watch: {
-			'$route': 'getPathFun'
-		},
+		// watch: {
+		// 	'$route': 'getPathFun'
+		// },
 		methods: {
 			getPathFun() {
-				if (this.$route.path === '/') {
+				if (this.$route.path === '/page5') {
+					console.log("fuck")
 					var snowBox = 'contain', //雪花容器
-						src = "/img/snow.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
+						src = 'https://s1.ax1x.com/2022/04/11/LZgood.png', //雪花图基本命名<图片名就是snow+1/2/3/4...>
 						num = 40, //雪花数量
 						style = 2; //图片种类数
 					goSnow(snowBox, src, num, style);
@@ -85,10 +84,6 @@
 				margin-top: 10px;
 				display: flex;
 				justify-content: center;
-				background-image: url(../assets/top1.png);
-				background-repeat: no-repeat;
-				background-size: 100% 100%;
-				-moz-background-size: 100% 100%;
 			}
 
 			.min_two {

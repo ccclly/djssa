@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div id="contain">
     <topbar class="topb"/>
     <div class="main">
       <!--      <div class="control-bar">-->
@@ -235,6 +235,7 @@
 <script>
 import topbar from '@/components/topbar';
 import { ref } from 'vue';
+import { goSnow } from "@/assets/js/snow.js";
 
 const dialogTableVisible = ref(false);
 
@@ -253,6 +254,18 @@ export default {
     handleTabs (tab) {
       console.log(tab);
     },
+		getPathFun() {
+			if (this.$route.path === '/page3') {
+				var snowBox = 'contain', //雪花容器
+					src = "https://s1.ax1x.com/2022/04/11/LZgood.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
+					num = 40, //雪花数量
+					style = 2; //图片种类数
+				goSnow(snowBox, src, num, style);
+			}
+		}
+  },
+  mounted() {
+  	this.getPathFun()
   },
   components: {
     topbar: topbar,
@@ -261,7 +274,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content {
+#contain {
   font-family: 'KJ';
   background: url(@/assets/bj4.jpg);
   position: fixed;

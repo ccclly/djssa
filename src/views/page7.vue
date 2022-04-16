@@ -49,18 +49,34 @@
 				videoList: require('../assets/1.mp4'),
 				video1: require('../assets/1.mp4'),
 				video2: require('../assets/2.mp4'),
+				video3: require('../assets/3.mp4'),
+				video4: require('../assets/4.mp4'),
+				video5: require('../assets/5.mp4'),
+				video6: require('../assets/6.mp4'),
 				name: "",
 				itemImg: require('../assets/img/a.png'),
 				itemImg1: require('../assets/img/a.png'),
 				itemImg2: require('../assets/img/b.png'),
+				itemImg3: require('../assets/img/c.png'),
+				itemImg4: require('../assets/img/d.png'),
+				itemImg5: require('../assets/img/e.png'),
+				itemImg6: require('../assets/img/f.png'),
 				name2: "",
 				Title: "",
 				title1: "自由式滑雪集锦",
 				title2: "短道速滑集锦",
+				title3: "钢架雪车集锦",
+				title4: "花样滑冰集锦",
+				title5: "单板滑雪集锦",
+				title6: "速度滑冰集锦",
 				name3: "",
-				medalnum:[4,2,0],
-				medalnum1:[4,2,0],
-				medalnum2:[2,1,1],
+				medalnum: [4, 2, 0],
+				medalnum1: [4, 2, 0],
+				medalnum2: [2, 1, 1],
+				medalnum3: [0, 0, 1],
+				medalnum4: [1, 0, 0],
+				medalnum5: [1, 1, 0],
+				medalnum6: [1, 0, 0],
 			};
 		},
 		methods: {
@@ -84,15 +100,38 @@
 					this.itemImg = this.itemImg1
 					this.Title = this.title1
 					this.medalnum = this.medalnum1
-					console.log("111")
 					break;
 				case '短道速滑':
 					this.videoList = this.video2
 					this.itemImg = this.itemImg2
 					this.Title = this.title2
 					this.medalnum = this.medalnum2
-					console.log("2222")
 					break;
+				case '钢架雪车':
+					this.videoList = this.video3
+					this.itemImg = this.itemImg3
+					this.Title = this.title3
+					this.medalnum = this.medalnum3
+					break;
+				case '花样滑冰':
+					this.videoList = this.video4
+					this.itemImg = this.itemImg4
+					this.Title = this.title4
+					this.medalnum = this.medalnum4
+					break;
+				case '单板滑雪':
+					this.videoList = this.video5
+					this.itemImg = this.itemImg5
+					this.Title = this.title5
+					this.medalnum = this.medalnum5
+					break;
+				case '速度滑冰':
+					this.videoList = this.video6
+					this.itemImg = this.itemImg6
+					this.Title = this.title6
+					this.medalnum = this.medalnum6
+					break;
+
 			}
 			console.log(this.Title)
 		},
@@ -153,7 +192,7 @@
 
 					video {
 						width: 100%;
-						background-color:#5470C6;
+						background-color: #5470C6;
 						border-radius: 10px;
 					}
 				}
