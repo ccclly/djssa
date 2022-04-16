@@ -65,8 +65,8 @@ echarts.graphic.registerShape('CubeLeft', CubeLeft);
 echarts.graphic.registerShape('CubeRight', CubeRight);
 echarts.graphic.registerShape('CubeTop', CubeTop);
 
-let xData = ['2016', '2017', '2018', '2019', '2020', '2021', '2022'];
-let yData = [350.7, 425.2, 454.3, 487.5, 445.2, 594.9, 713.9];
+let xData = ['2015','2016', '2017', '2018', '2019', '2020', '2021', '2022'];
+let yData = [568, 646, 703, 742, 770, 715, 803,1000];
 var option = {
     tooltip: {
         trigger: 'axis',
@@ -83,13 +83,13 @@ var option = {
             let item = '';
             item += params[0].name;
             $(params).each(function (idx, itm) {
-                item += ': ' + itm.value + '亿元';
+                item += '年: ' + itm.value + '个';
             });
             return item;
         },
     },
     grid: {
-        top: '16%',
+        top: '18%',
         left: '0%',
         bottom: '0%',
         right: '0%',
@@ -128,12 +128,12 @@ var option = {
         },
     },
     yAxis: {
-        name: '市场规模：亿元',
+        name: '中国滑雪场数量（单位：个）',
         type: 'value',
         nameTextStyle: {
             color: 'black',
             fontSize: 13,
-			padding:[20,-80,-10,0]
+			padding:[20,-150,-10,0]
         },
         axisLine: {
             show: true,
