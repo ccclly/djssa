@@ -311,7 +311,7 @@ export default {
       flex: 0 1 auto;
       transition: all 0.5s;
       margin: 0 5px;
-      border: 5px solid #3f8df1;
+      border: 5px solid #6E98D8;
       border-radius: 10px;
 
       .tab {
@@ -345,7 +345,7 @@ export default {
     }
     .my-tab-active {
       flex: 1 1 auto;
-      border: 5px solid #3f8df1;
+      border: 5px solid #6E98D8;
       transition: all 0.5s;
 
       .tab {
@@ -432,7 +432,7 @@ export default {
     }
 
     .el-tabs--border-card{
-      background-color: #3f8df1;
+      background-color: #6E98D8;
       border: none;
       box-shadow: none;
       opacity: 0.8;
