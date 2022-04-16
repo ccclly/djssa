@@ -157,9 +157,9 @@ export default {
 * {
   padding: 0px;
   margin: 0px;
-  font-size: 16px;
-  color: #333;
-  font-family: "Microsoft YaHei";
+  font-size: 20px;
+  color: black;
+  font-family: "LS";
 }
 a,
 a:link,
@@ -250,7 +250,7 @@ body {
   position: absolute;
   top: 50px;
   left: 50px;
-  display: inline-block;
+/*  display: inline-block; */
   width: 400px;
 }
 .bookWord {

@@ -56,7 +56,7 @@
           width: 50%;
           height: 10vh;
           font-size: 27px;
-          font-family: LiSu;
+          font-family: LS;
           text-align: center;
           line-height: 10vh;
           background-image: url(../assets/kk2.png);
