@@ -10,7 +10,7 @@
       <div class="my-tabs">
         <div :class="['my-tab', curTab===1?'my-tab-active':'my-tab-bgc1']">
           <div class="tab-title"><span>北京赛区</span></div>
-          <el-tabs class="tab" @click="switchRegion(1)">
+          <el-tabs type="border-card" class="tab" @click="switchRegion(1)">
             <el-tab-pane label="鸟巢">
               <div class="test">
                 <div class="card">
@@ -120,7 +120,7 @@
         </div>
         <div :class="['my-tab', curTab===2?'my-tab-active':'my-tab-bgc2']">
           <div class="tab-title"><span>张家口赛区</span></div>
-          <el-tabs class="tab" @click="switchRegion(2)">
+          <el-tabs type="border-card" class="tab" @click="switchRegion(2)">
             <el-tab-pane label="国家跳台滑雪中心">
               <div class="card">
                 <div class="photo">
@@ -183,7 +183,7 @@
         </div>
         <div :class="['my-tab', curTab===3?'my-tab-active':'my-tab-bgc3']">
           <div class="tab-title"><span>延庆赛区</span></div>
-          <el-tabs class="tab" @click="switchRegion(3)">
+          <el-tabs type="border-card" class="tab" @click="switchRegion(3)">
             <el-tab-pane label="国家高山滑雪中心">
               <div class="card">
                 <div class="photo">
@@ -305,15 +305,14 @@ export default {
     }
 
     .my-tab {
+      box-shadow: 5px 5px 12px #7b7b7b;
       position: relative;
       width: 200px;
       flex: 0 1 auto;
-      transition: all 1s;
+      transition: all 0.5s;
       margin: 0 5px;
-      padding: 5px;
-      border: 3px solid #3f8df1;
+      border: 5px solid #3f8df1;
       border-radius: 10px;
-
 
       .tab {
         opacity: 0;
@@ -331,26 +330,35 @@ export default {
       span{
         color: white;
         font-size: 24px;
-        transition: 0.5s;
+        transition: 0.8s;
+      }
+      p, button{
+        opacity: 0;
+        transition: 0.8s;
       }
     }
     .my-tab:hover{
       span{
         font-size: 33px;
-        transition: 0.5s;
+        transition: 0.8s;
       }
     }
     .my-tab-active {
       flex: 1 1 auto;
       border: 5px solid #3f8df1;
-      transition: all 1s;
+      transition: all 0.5s;
 
       .tab {
         opacity: 1;
-        //transition: 0.5s;
+        //transition: 0.8s;
       }
       .tab-title{
         opacity: 0;
+      }
+
+      p, button{
+        opacity: 1;
+        transition: 0.8s 0.8s;
       }
 
     }
@@ -359,12 +367,12 @@ export default {
       background: url("../assets/page3/北京赛区/1鸟巢.png") no-repeat center;
       background-size: auto 100%;
       opacity: 0.8;
-      transition: 1s;
+      transition: 0.8s;
       cursor: pointer;
     }
     .my-tab-bgc1:hover{
       background-size: auto 120%;
-      transition: 0.5s;
+      transition: 0.8s;
       cursor: pointer;
     }
     .my-tab-bgc1::before {
@@ -372,7 +380,7 @@ export default {
       position: absolute;
       content: '';
       width: 100%;
-      height: 99%;
+      height: 100%;
       border-radius: 5px;
       left: 0;
       background-image: linear-gradient(to top, #333, transparent);
@@ -381,13 +389,13 @@ export default {
       background: url("../assets/page3/张家口赛区/3国家跳台滑雪中心.png") no-repeat -450px 0;
       background-size: auto 100%;
       opacity: 0.8;
-      transition: 1s;
+      transition: 0.8s;
       cursor: pointer;
     }
     .my-tab-bgc2:hover{
       background: url("../assets/page3/张家口赛区/3国家跳台滑雪中心.png") no-repeat -570px 0;
       background-size: auto 120%;
-      transition: 0.5s;
+      transition: 0.8s;
       cursor: pointer;
     }
     .my-tab-bgc2::before {
@@ -395,7 +403,7 @@ export default {
       position: absolute;
       content: '';
       width: 100%;
-      height: 99%;
+      height: 100%;
       border-radius: 5px;
       left: 0;
       background-image: linear-gradient(to top, #333, transparent);
@@ -404,12 +412,12 @@ export default {
       background: url("../assets/page3/延庆赛区/1国家高山滑雪中心.png") no-repeat center;
       background-size: auto 100%;
       opacity: 0.8;
-      transition: 1s;
+      transition: 0.8s;
       cursor: pointer;
     }
     .my-tab-bgc3:hover{
       background-size: auto 120%;
-      transition: 0.5s ease-in-out;
+      transition: 0.8s ease-in-out;
       cursor: pointer;
     }
     .my-tab-bgc3::before {
@@ -417,10 +425,21 @@ export default {
       position: absolute;
       content: '';
       width: 100%;
-      height: 99%;
+      height: 100%;
       border-radius: 5px;
       left: 0;
       background-image: linear-gradient(to top, #333, transparent);
+    }
+
+    .el-tabs--border-card{
+      background-color: #3f8df1;
+      border: none;
+      box-shadow: none;
+      opacity: 0.8;
+    }
+    .el-tabs--border-card>.el-tabs__header{
+      //border-radius: 10px !important;
+      background-color: red;
     }
   }
 }
