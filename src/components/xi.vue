@@ -205,13 +205,15 @@ body {
   width: 100%;
   position: relative;
   background-color: #ccc;
-  padding: 40px 0;
+  transform: scale(85%);
+  left: -10.5%;
+  bottom: 15px;
+   box-shadow: 6px 15px 10px #7f7f7f;
 }
 .bookBox {
   width: 1000px;
   height: 500px;
   position: relative;
-  margin: 30px auto;
   -webkit-perspective-origin: 50% 60%;
   perspective-origin: 50% 60%;
   -webkit-perspective: 1500px;
