@@ -141,7 +141,7 @@ export default {
             tooltip: {
               formatter: function (params) {
                 if (params.data) {
-                  tooltipEl.style.opacity = 1;
+                  tooltipEl.style.display = 'block';
                   tooltipNameEl.innerText = params.data.label.formatter;
                   const ev = event || window.event;
                   tooltipEl.style.left = ev.pageX + 20 + 'px';
@@ -184,7 +184,7 @@ export default {
                       break;
                   }
                 } else {
-                  tooltipEl.style.opacity = 0;
+                  tooltipEl.style.display = 'none';
                 }
               },
               borderColor: '#333',
@@ -232,14 +232,14 @@ export default {
       });
 
       baseTexture.on("click", (e) => {
-        tooltipEl.style.opacity = 0;
+        tooltipEl.style.display = 'none';
         router.push({
           name: "page5",
           params: { name: e.data.name, value: e.data.value, num: e.data.num },
         });
       });
       baseTexture.on('globalout', function (e) {
-        tooltipEl.style.opacity = 0;
+        tooltipEl.style.display = 'none';
       })
       return baseTexture;
     };
