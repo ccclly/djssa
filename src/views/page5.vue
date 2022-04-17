@@ -8,7 +8,6 @@
 			return {};
 		},
 		components: {
-        //  china,
 		 topbar,
 		 world
 		},

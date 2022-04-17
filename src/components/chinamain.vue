@@ -8,7 +8,7 @@
           <li>冬奥创意</li>
           <li>冬奥黑科技</li>
           <li>中国获奖日历</li>
-          <li>习大大的冬奥情缘</li>
+          <li>习主席的冬奥缘</li>
         </ul>
       </div>
     </div>
@@ -50,7 +50,6 @@ import technology from "../components/technology.vue";
 import medaltime from "../components/medaltime.vue";
 import snowfield from "../components/Snowfield.vue";
 import xi from "../components/xi.vue";
-import book from "../components/book.vue";
 export default {
   data() {
     return {};
@@ -62,7 +61,6 @@ export default {
     medaltime,
     snowfield,
     xi,
-    book,
   },
   mounted() {
     //获取元素
@@ -152,6 +150,10 @@ body {
           text-align: center;
           cursor: pointer;
           color: white;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -o-user-select: none;
+          user-select: none;
         }
 
         li:hover {

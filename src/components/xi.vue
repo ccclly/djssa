@@ -6,13 +6,31 @@
 
       <!-- 首页的图片 -->
       <div class="bookPage frist">
-        <img src="../assets/bookimg/习近平闭幕式.png" />
+        <img src="../assets/bookimg/带动冰雪.png" />
       </div>
       <!-- 第一页的内容 -->
       <div>
         <div class="bookPage runPage">
           <div class="bookWord">
-            <p>
+            <p style="margin-bottom: 8px">
+              &nbsp; 2015年7月31日，世界选择了北京。
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp; 2022年2月4日，北京惊艳了世界。
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp;
+              “从无到有啊！2015年申办成功，奔着当时提出的愿景目标，我们按计划一件事一件事地办，都办成了。走到今天不容易。”北京冬
+              奥会开幕前夕，习近平总书记这样感慨。
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp; 一步步走来，一个个瞬间镌刻在中国人民的记忆深处。
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp; 回首中国的冬奥之路，从申办到筹办，习近平总书记一路引领。
+            </p>
+
+            <!-- <p>
               2015年7月31日，世界选择了北京。
               <br />
               2022年2月4日，北京惊艳了世界。
@@ -23,17 +41,33 @@
               <br />
               一步步走来，一个个瞬间镌刻在中国人民的记忆深处。
               回首中国的冬奥之路，从申办到筹办，习近平总书记一路引领。
-            </p>
+            </p> -->
             <span class="pageNumber">1</span>
           </div>
-          <img src="../assets/bookimg/带动冰雪运动.png" />
+          <img src="../assets/bookimg/欢迎.png" />
         </div>
       </div>
       <!-- 第二页的内容 -->
       <div>
         <div class="bookPage runPage">
           <div class="bookWord">
-            <p>
+            <p style="margin-bottom: 8px">
+              &nbsp;
+              从2015年国际奥委会揭晓2022年冬奥会举办权，到2018年韩国平昌冬奥会闭幕式上中国向世界发出邀约，再到2022年中国做好了准备。
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp; 在习近平主席亲自关心推动下，2022年冬奥蓝图一步步变成现实。
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp;
+              “我和亿万中国人民，欢迎全世界的朋友，2022年相约北京！欢迎你们，欢迎朋友们！”
+            </p>
+            <p style="margin-bottom: 8px">
+              &nbsp;
+              习近平主席代表中国发出的“冬奥之约”，应者云集，91个国家和地区的近3000名运动员，同场竞技。
+            </p>
+
+            <!-- <p>
               习近平总书记指出：“北京冬奥会是我国重要历史节点的重大标志性活动，是展现国家形象、促进国家发展、振奋民族精神的重要契机，对京津冀协同发展有着强有力的牵引作用。”
             </p>
             <p>
@@ -41,7 +75,7 @@
             </p>
             <p>
               “成功举办北京冬奥会、冬残奥会，不仅可以增强我们实现中华民族伟大复兴的信心，而且有利于展示我们国家和民族致力于推动构建人类命运共同体，阳光、富强、开放的良好形象，增进各国人民对中国的了解和认识。”
-            </p>
+            </p> -->
             <span class="pageNumber">2</span>
           </div>
           <img src="../assets/bookimg/习近平视察.png" />
@@ -51,26 +85,46 @@
       <div>
         <div class="bookPage runPage">
           <div class="bookWord">
-            <p>
+            <p style="margin-bottom: 10px">
+              &nbsp;
               这些年，习近平总书记先后5次实地考察冬奥筹办工作。北京、延庆、张家口三个赛区都留下了他的“冬奥足迹”。
-              在北京冬奥会场馆总体规划的沙盘前，他看得细、想得细：“要用节约、绿色、廉洁的理念去规划好场馆的建设和利用。”
-              在北京冬奥会、冬残奥会主媒体中心，他仔细了解“双闭环”管理模式：“闭环管理很有必要，设计必须科学合理，不能因管理的生硬和简单粗放而影响冬奥的顺利举办。”
             </p>
-            <p>
+            <p style="margin-bottom: 10px">
+              &nbsp;
+              在北京冬奥会场馆总体规划的沙盘前，他看得细、想得细：“要用节约、绿色、廉洁的理念去规划好场馆的建设和利用。”
+            </p>
+            <p style="margin-bottom: 5px">
+              &nbsp;
               在冬奥村，他同来自高校的志愿者亲切交流：“给各国参赛人员讲述一个古老而现代的北京，让他们感受到中国人民的热情好客，这会是一段难忘的人生经历。”
             </p>
             <span class="pageNumber">3</span>
           </div>
 
-          <img src="../assets/bookimg/闭幕式.png" />
+          <img src="../assets/bookimg/颁奖.png" />
         </div>
       </div>
       <div class="bookPage last">
         <div class="bookWord">
-          <p>
-            从担任2008年北京奥运会、残奥会筹备工作领导小组组长，助力中国百年奥运梦圆，到领导新时代中国成功举办2014年南京青奥会，再到亲自推动申办、筹办2022年北京冬奥会、冬残奥会，习近平与奥林匹克运动有着特别的缘分。
-            “我真希望给习主席颁发一枚金牌！”正如国际奥委会主席巴赫所言，就推动奥林匹克运动而言，习近平主席是当之无愧的冠军。
+          <p style="margin-bottom: 5px">
+            &nbsp;
+            习近平总书记指出:“北京冬奥会是我国重要历史节点的重大标志性活动，是展现国家形象、促进国家发展、振奋民族精神的重要契机，对京津冀协同发展有着强有力的牵引作用
           </p>
+          <p style="margin-bottom: 10px">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;----习近平冬奥会表彰大会
+          </p>
+
+          <p>
+            &nbsp;
+            从担任2008年北京奥运会、残奥会筹备工作领导小组组长，助力中国百年奥运梦圆，到领导新时代中国成功举办2014年南京青奥会，再到亲自推动申办、筹办2022年北京冬奥会、冬残奥会，习近平与奥林匹克运动有着特别的缘分。
+          </p>
+
+          <!-- <p>
+            &nbsp;
+            习近平指出，历经7年艰辛努力，北京冬奥会、冬残奥会胜利举办，举国关注，举世瞩目。中国人民同各国人民一道，克服各种困难挑战，再一次共创了一场载入史册的奥运盛会，再一次共享奥林匹克的荣光。
+          </p>
+          <p>
+            ——<i>习近平在大会上北京冬奥会、冬残奥会总结表彰大会发表重要讲话</i>
+          </p> -->
           <span class="pageNumber">4</span>
         </div>
       </div>
@@ -208,7 +262,7 @@ body {
   transform: scale(85%);
   left: -10.5%;
   bottom: 15px;
-   box-shadow: 6px 15px 10px #7f7f7f;
+  box-shadow: 6px 15px 10px #7f7f7f;
 }
 .bookBox {
   width: 1000px;
@@ -250,7 +304,7 @@ body {
   position: absolute;
   top: 50px;
   left: 50px;
-/*  display: inline-block; */
+  /*  display: inline-block; */
   width: 400px;
 }
 .bookWord {
