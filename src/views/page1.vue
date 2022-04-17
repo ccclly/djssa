@@ -16,6 +16,9 @@
 				<div class="hj" @click="dianhuo">
 					<img :src="isfire">
 				</div>
+				<div class="tip" v-show="isclick">
+					<img src="../assets/tip2.gif">
+				</div>
 			</div>
 		</transition>
 
@@ -31,6 +34,7 @@
 		data() {
 			return {
 				xhmusic:require("../assets/xh.mp3"),
+				isclick:true,
 				isplay: false,
 				show: true,
 				count: "", //倒计时
@@ -56,6 +60,7 @@
 		},
 		methods: {
 			dianhuo() {
+				this.isclick = false
 				this.isfire = require('../assets/hy.gif')
 				this.$refs.music.play()
 				this.$refs.music.volume =1;
@@ -158,9 +163,21 @@
 				top: 50%;
 				margin-top: -18px;
 				margin-left: -47px;
-
+                z-index: 50;
 				img {
 					width: 100%;
+				}
+			}
+			.tip{
+				position: absolute;
+				width: 300px;
+				left: 50%;
+				top: 50%;
+				transform: translate(-25%,-25%);
+				z-index: 10;
+				img {
+					width: 50%;
+					
 				}
 			}
 		}
@@ -176,9 +193,10 @@
 			align-items: center;
 			display: none;
 			// background-color: red;
-
+            
 			img {
 				width: 100%;
+				 z-index: 200;
 			}
 		}
 	}
