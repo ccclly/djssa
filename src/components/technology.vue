@@ -62,6 +62,10 @@
           background-repeat: no-repeat;
           background-size: 100% 100%;
           -moz-background-size: 100% 100%;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -o-user-select: none;
+          user-select: none;
         }
 
         .image {

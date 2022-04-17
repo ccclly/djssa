@@ -150,6 +150,10 @@ body {
           text-align: center;
           cursor: pointer;
           color: white;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -o-user-select: none;
+          user-select: none;
         }
 
         li:hover {

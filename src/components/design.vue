@@ -63,6 +63,10 @@
           background-repeat: no-repeat;
           background-size: 100% 100%;
           -moz-background-size: 100% 100%;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -o-user-select: none;
+          user-select: none;
         }
 
         .image {
@@ -157,14 +161,14 @@ export default {
           txt: "<p>&nbsp; &nbsp; 2022年冬奥会火炬“飞扬”，向2008奥运火炬塔形致敬，犹如一个大卷轴。</p><p>&nbsp; &nbsp; “飞扬”设计灵感是受大自然中树叶的启发，遵循“道法自然”的东方哲学。红色和银色的外观，象征着冰与火的融合，寓意火炬照亮冰雪世界带来温暖和光明。</p><p>&nbsp; &nbsp; 为更好呼应友谊长久、团结一致的奥林匹克精神，两支火炬交接时，顶端完美结合，就像不同民族紧紧握在一起的双手。</p>",
         },
         {
-          img:require("../assets/img_page2/bdd.jpg"),
+          img: require("../assets/img_page2/bdd.jpg"),
           i: 1,
           no: require("../assets/voice/冬奥创意/冰墩墩.mp3"),
           title: "冬奥吉祥物",
           txt: "<p>&nbsp; &nbsp; “冰”象征纯洁、坚强，是冬奥会的特点。“墩墩”意喻敦厚、敦实、可爱，契合熊猫的整体形象，象征着冬奥会运动员强壮有力的身体、坚韧不拔的意志和鼓舞人心的奥林匹克精神。</p><p>&nbsp; &nbsp; 冰墩墩熊猫形象与冰晶外壳的结合将文化要素和冰雪运动融合并赋予了新的文化属性和特征，体现了冬季冰雪运动的特点。熊猫是世界公认的中国国宝，形象友好可爱、憨态可掬。这样设计既能代表举办冬奥的中国，又能代表中国味道的冬奥。头部彩色光环灵感源自于北京国家速滑馆——“冰丝带”，线条流动象征着冰雪运动的赛道和5G高科技。头部外壳造型取自冰雪运动头盔。熊猫整体造型像航天员，是一位来自未来的冰雪运动专家，寓意现代科技和冰雪运动的结合。</p><p>&nbsp; &nbsp; 冰墩墩抛弃了传统元素，充满未来感、时代感、速度感。</p>",
         },
         {
-          img:require("../assets/img_page2/bs.gif"),
+          img: require("../assets/img_page2/bs.gif"),
           i: 2,
           no: require("../assets/voice/冬奥创意/大雪花.mp3"),
           title: "冬奥大雪花",
@@ -233,11 +237,11 @@ export default {
       audio_ctr.className = "play"; //动态更改标签的类名
     },
     myplay1(e) {
-    //   console.log("到这来了" + e);
+      //   console.log("到这来了" + e);
       var ttsAudio = this.$refs.music[e];
       var audio_ctr = this.$refs.audio_ctr[e]; //获取按钮
-    //   console.log(this.$refs.music);
-    //   console.log(this.$refs.audio_ctr);
+      //   console.log(this.$refs.music);
+      //   console.log(this.$refs.audio_ctr);
       if (ttsAudio !== null) {
         //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
         if (ttsAudio.paused) {

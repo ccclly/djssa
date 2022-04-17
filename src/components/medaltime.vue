@@ -373,7 +373,12 @@ em {
   font-style: normal;
   text-decoration: none;
 }
-
+span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
 .fl {
   float: left;
 }

@@ -125,7 +125,8 @@ export default {
     </div>
     <div class="right">
       <div class="right_one">
-        <div class="right_one_title">北京冬奥亮点</div>
+        <!-- <div class="right_one_title">北京冬奥亮点</div> -->
+        <div class="right_one_title"></div>
         <el-tooltip
           content="<p>&nbsp; &nbsp; 本届冬奥会中有如下四大亮点，一是本届冬奥会</p><p>参赛女性运动比例达到<strong>45%</strong>以上，使得北京冬奥会</p><p>成为有史以来女性运动员人数最多、比例最高的一</p><p>届冬奥会。二是北京冬奥会创造了冬奥会史上最高</p><p>收视率，全球超过<strong>27亿</strong>人参与了冬奥互动。三是对</p><p>于北京冬奥会碳中和目标的实现，一个重要创举与</p><p>跨越是冬奥会全部场馆达到<strong>100%</strong>绿电供应。四是</p><p>北京冬奥会闭环内核酸检测阳性率仅为<strong>0.01%</strong>，防</p><p>疫措施与成效赢得国际社会广泛点赞。</p>"
           raw-content
@@ -137,13 +138,34 @@ export default {
         <first></first>
       </div>
       <div class="right_two">
-        <div class="right_two_title">冬奥网友热评</div>
+        <div
+          class="right_two_title"
+          style="
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+          "
+        >
+          冬奥网友热评
+        </div>
         <router-link to="/page6">
           <scroll></scroll>
         </router-link>
       </div>
       <div class="right_three">
-        <div class="right_three_title">中国冰雪运动发展趋势</div>
+        <!-- <div class="right_three_title">中国冰雪运动发展趋势</div> -->
+        <div
+          class="right_three_title"
+          style="
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+          "
+        >
+          冬奥助力发展
+        </div>
         <!-- zzf的代码 -->
         <!-- <el-tooltip
           content='<p>&nbsp; &nbsp; 统计调查报告显示,截至2021年10月,全国冰雪运动参与</p><p>人数为3.46亿人居民参与率达24.56%;全国已有654块标准</p><p>冰场、803个滑雪场,较2015年增幅达317%和41%。成功</p><p>筹办举办北京冬奥会、冬残奥会,极大激发了中国亿万人民</p><p>的体育热情,“<a target ="_blank" href="https://baike.baidu.com/item/%E2%80%9C%E5%B8%A6%E5%8A%A8%E4%B8%89%E4%BA%BF%E4%BA%BA%E5%8F%82%E4%B8%8E%E5%86%B0%E9%9B%AA%E8%BF%90%E5%8A%A8%E2%80%9D%E5%AE%9E%E6%96%BD%E7%BA%B2%E8%A6%81%EF%BC%882018-2022%E5%B9%B4%EF%BC%89"><strong>带动三亿人参与冰雪运动</strong></a>”目标的实现,开启</p><p>了中国乃至全球冰雪运动新时代。</p>'
@@ -164,8 +186,8 @@ export default {
           <img src="../assets/i.png" />
         </el-tooltip>
 
-    <!--    <trend></trend> -->
-       <poor></poor>
+        <!--    <trend></trend> -->
+        <poor></poor>
       </div>
     </div>
   </div>
