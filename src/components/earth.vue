@@ -25,11 +25,11 @@ export default {
       //   console.log(e)
       // });
       echarts.registerMap("world", world);
-      const tooltipEl = document.querySelector('#tooltip')
-      const tooltipNameEl = document.querySelector('#tooltip-name')
-      const gold = document.querySelector('#gold')
-      const silver = document.querySelector('#silver')
-      const copper = document.querySelector('#copper')
+      const tooltipEl = document.querySelector("#tooltip");
+      const tooltipNameEl = document.querySelector("#tooltip-name");
+      const gold = document.querySelector("#gold");
+      const silver = document.querySelector("#silver");
+      const copper = document.querySelector("#copper");
       baseTexture.setOption({
         // 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
 
@@ -45,23 +45,27 @@ export default {
         },
         tooltip: {
           show: true,
-          trigger: 'item',
+          trigger: "item",
           showDelay: 0,
           transitionDuration: 1,
           showContent: true,
-          backgroundColor: 'rgba(50,50,50,0.7)',
-          extraCssText: 'width: 170px',
-          textStyle: { // 提示框浮层的文本样式。
-            color: '#fff',
-            fontStyle: 'normal',
-            fontWeight: 'normal',
-            fontFamily: 'sans-serif',
+          alwaysShowContent: false, //是否永远显示提示框内容
+          showDelay: 0, //浮层显示的延迟，单位为 ms
+          hideDelay: 10, //浮层隐藏的延迟，单位为 ms
+          backgroundColor: "rgba(50,50,50,0.7)",
+          extraCssText: "width: 170px",
+          textStyle: {
+            // 提示框浮层的文本样式。
+            color: "#fff",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            fontFamily: "sans-serif",
             fontSize: 14,
           },
         },
         label: {
-          formatter: '',
-          fontSize: 20
+          formatter: "",
+          fontSize: 20,
         },
         series: [
           {
@@ -75,56 +79,56 @@ export default {
                 value: 32,
                 num: 0,
                 label: {
-                  formatter: '中国',
-                }
+                  formatter: "中国",
+                },
               },
               {
                 name: "Norway",
                 value: 47,
                 num: 1,
                 label: {
-                  formatter: '挪威',
-                }
+                  formatter: "挪威",
+                },
               },
               {
                 name: "Germany",
                 value: "27",
                 num: 2,
                 label: {
-                  formatter: '德国',
-                }
+                  formatter: "德国",
+                },
               },
               {
                 name: "United States",
                 value: 25,
                 num: 3,
                 label: {
-                  formatter: '美国',
-                }
+                  formatter: "美国",
+                },
               },
               {
                 name: "Sweden",
                 value: 18,
                 num: 4,
                 label: {
-                  formatter: '瑞典',
-                }
+                  formatter: "瑞典",
+                },
               },
               {
                 name: "Netherlands",
                 value: 17,
                 num: 5,
                 label: {
-                  formatter: '芬兰',
-                }
+                  formatter: "芬兰",
+                },
               },
               {
                 name: "Austria",
                 value: 18,
                 num: 6,
                 label: {
-                  formatter: '奥地利',
-                }
+                  formatter: "奥地利",
+                },
               },
             ],
             left: 0,
@@ -141,56 +145,56 @@ export default {
             tooltip: {
               formatter: function (params) {
                 if (params.data) {
-                  tooltipEl.style.display = 'block';
+                  tooltipEl.style.display = "block";
                   tooltipNameEl.innerText = params.data.label.formatter;
                   const ev = event || window.event;
-                  tooltipEl.style.left = ev.pageX + 20 + 'px';
-                  tooltipEl.style.top = ev.pageY + 20 + 'px';
+                  tooltipEl.style.left = ev.pageX + 20 + "px";
+                  tooltipEl.style.top = ev.pageY + 20 + "px";
                   switch (params.name) {
-                    case 'China':
-                      gold.innerHTML = '9';
-                      silver.innerHTML = '4';
-                      copper.innerHTML = '2';
+                    case "China":
+                      gold.innerHTML = "9";
+                      silver.innerHTML = "4";
+                      copper.innerHTML = "2";
                       break;
-                    case 'Norway':
-                      gold.innerHTML = '16';
-                      silver.innerHTML = '8';
-                      copper.innerHTML = '13';
+                    case "Norway":
+                      gold.innerHTML = "16";
+                      silver.innerHTML = "8";
+                      copper.innerHTML = "13";
                       break;
-                    case 'Germany':
-                      gold.innerHTML = '12';
-                      silver.innerHTML = '10';
-                      copper.innerHTML = '5';
+                    case "Germany":
+                      gold.innerHTML = "12";
+                      silver.innerHTML = "10";
+                      copper.innerHTML = "5";
                       break;
-                    case 'United States':
-                      gold.innerHTML = '8';
-                      silver.innerHTML = '10';
-                      copper.innerHTML = '7';
+                    case "United States":
+                      gold.innerHTML = "8";
+                      silver.innerHTML = "10";
+                      copper.innerHTML = "7";
                       break;
-                    case 'Sweden':
-                      gold.innerHTML = '8';
-                      silver.innerHTML = '5';
-                      copper.innerHTML = '5';
+                    case "Sweden":
+                      gold.innerHTML = "8";
+                      silver.innerHTML = "5";
+                      copper.innerHTML = "5";
                       break;
-                    case 'Netherlands':
-                      gold.innerHTML = '8';
-                      silver.innerHTML = '5';
-                      copper.innerHTML = '4';
+                    case "Netherlands":
+                      gold.innerHTML = "8";
+                      silver.innerHTML = "5";
+                      copper.innerHTML = "4";
                       break;
-                    case 'Austria':
-                      gold.innerHTML = '7';
-                      silver.innerHTML = '7';
-                      copper.innerHTML = '4';
+                    case "Austria":
+                      gold.innerHTML = "7";
+                      silver.innerHTML = "7";
+                      copper.innerHTML = "4";
                       break;
                   }
                 } else {
-                  tooltipEl.style.display = 'none';
+                  tooltipEl.style.display = "none";
                 }
               },
-              borderColor: '#333',
+              borderColor: "#333",
               borderWidth: 200,
-              extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);',
-              position: 'right'
+              extraCssText: "box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);",
+              position: "right",
             },
             select: {
               // itemStyle: {
@@ -232,15 +236,15 @@ export default {
       });
 
       baseTexture.on("click", (e) => {
-        tooltipEl.style.display = 'none';
+        tooltipEl.style.display = "none";
         router.push({
           name: "page5",
           params: { name: e.data.name, value: e.data.value, num: e.data.num },
         });
       });
-      baseTexture.on('globalout', function (e) {
-        tooltipEl.style.display = 'none';
-      })
+      baseTexture.on("globalout", function (e) {
+        tooltipEl.style.display = "none";
+      });
       return baseTexture;
     };
 
