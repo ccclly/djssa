@@ -13,6 +13,7 @@ import page4 from '@/views/page4'
 import page5 from '@/views/page5'
 import page6 from '@/views/page6'
 import page7 from '@/views/page7'
+import page8 from '@/views/page8'
 
 const routes = [{
     path: '/',
@@ -49,6 +50,11 @@ const routes = [{
     name: 'page7',
     path: '/page7',
     component: page7
+  },
+  {
+    name: 'page8',
+    path: '/page8',
+    component: page8
   },
   {
     path: '/game',
