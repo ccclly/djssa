@@ -186,7 +186,7 @@ export default {
           <img src="../assets/i.png" />
         </el-tooltip>
 
-        <!--    <trend></trend> -->
+           <!-- <trend></trend> -->
         <poor></poor>
       </div>
     </div>

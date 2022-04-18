@@ -20,59 +20,68 @@ export default {
         status: "success",
         data: [
           {
-            name: "贫困发生率下降",
-            value: 1000,
+            name: "0.038%",
+            value: 1200,
+            til: "贫困发生率下降",
             txt: "截至2019年底，崇礼区贫困发生率从2015年底的16.81%下降至0.038%",
             url: "https://baijiahao.baidu.com/s?id=1669027554612641321&wfr=spider&for=pc",
+            draggable: true,
           },
+          // {
+          //   name: "崇礼脱贫摘帽",
+          //   value: 850,
+          //   txt: "河北省政府正式批准崇礼区退出贫困县序列，彻底脱贫摘帽",
+          //   url: "https://baijiahao.baidu.com/s?id=1724248407312101952&wfr=spider&for=pc",
+          // },
           {
-            name: "崇礼脱贫摘帽",
-            value: 850,
-            txt: "河北省政府正式批准崇礼区退出贫困县序列，彻底脱贫摘帽",
-            url: "https://baijiahao.baidu.com/s?id=1724248407312101952&wfr=spider&for=pc",
-          },
-          {
-            name: "创造岗位",
+            name: "3万",
             value: 780,
+            til: "创造岗位",
             txt: "直接或间接从事冰雪产业和旅游服务人员达3万多人，其中贫困人口9000多人",
             url: "https://baijiahao.baidu.com/s?id=1729577042265489494&wfr=spider&for=pc",
+            draggable: true,
           },
           {
-            name: "冰雪运动全面普及",
+            name: "500万",
+            til: "冰雪运动全面普及",
             value: 1300,
             txt: "截至2020年底，张家口冰场、雪场达29个，2020－2021雪季参与冰雪运动人次累计突破500万",
             url: "https://zjk.focus.cn/zixun/007c2c8f0e7b6d9b.html",
+            draggable: true,
           },
           {
-            name: "拉动就业、助力脱贫",
+            name: "93.9万",
+            til: "拉动就业、助力脱贫",
             value: 1800,
             txt: "张家口12个贫困县区、1970个贫困村、93.9万贫困人口全部实现脱贫",
             url: "https://baijiahao.baidu.com/s?id=1722354796404105173&wfr=spider&for=pc",
+            draggable: true,
           },
+          // {
+          //   name: "推动发展",
+          //   value: 480,
+          //   txt: "大力推动冬奥＋产业高速发展",
+          //   url: "https://baijiahao.baidu.com/s?id=1722686808457532002&wfr=spider&for=pc",
+          // },
           {
-            name: "推动发展",
-            value: 480,
-            txt: "大力推动冬奥＋产业高速发展",
-            url: "https://baijiahao.baidu.com/s?id=1722686808457532002&wfr=spider&for=pc",
-          },
-          {
-            name: "冬奥会带动“冰雪热”",
+            name: "2亿",
+            til:"冬奥会带动“冰雪热”",
             value: 450,
             txt: "全民冰雪运动升温，市民踊跃参与滑冰、拔河、雪圈、冰车等冰雪运动及游戏项目",
             url: "http://news.youth.cn/qdc/pic_list/202202/t20220222_13469644.htm",
           },
-          {
-            name: "增强民族自信心",
-            value: 900,
-            txt: "在世界上提升我国的知名度，让世界其他的国家了解到我们。",
-            url: "http://www.yznews.com.cn/yzwzt/2022-02/12/content_7361875.htm",
-          },
-          {
-            name: "激活中国冰雪经济",
-            value: 1200,
-            txt: "冰天雪地是金山银山，北京冬奥会激活了中国的冰雪经济",
-            url: "https://baijiahao.baidu.com/s?id=1723704255322631956&wfr=spider&for=pc",
-          },
+          // {
+          //   name: "增强民族自信心",
+          //   value: 900,
+          //   txt: "在世界上提升我国的知名度，让世界其他的国家了解到我们。",
+          //   url: "http://www.yznews.com.cn/yzwzt/2022-02/12/content_7361875.htm",
+          // },
+          // {
+          //   name: "激活中国冰雪经济",
+          //   value: 1200,
+          //   txt: "冰天雪地是金山银山，北京冬奥会激活了中国的冰雪经济",
+          //   url: "https://baijiahao.baidu.com/s?id=1723704255322631956&wfr=spider&for=pc",
+          // },
         ],
         msg: "exercitation in",
       };
@@ -231,7 +240,7 @@ export default {
         e.label = {
           normal: {
             show: true,
-            color: "rgba(30,30,60)", //气泡的字体颜色
+            color:"rgba(23,124,231)",// "#fff",//"rgba(30,30,60)", //气泡的字体颜色
             fontWeight: "bold",
           },
         };
@@ -261,8 +270,8 @@ export default {
         if (randomCircleArr[i]) {
           e.x = randomCircleArr[i].x;
           e.y = randomCircleArr[i].y;
-          e.symbolSize = ((e.value + number) / max) * 40;
-          e.label.normal.fontSize = ((e.value + number) / max) * 8;
+          e.symbolSize = ((e.value + number) / max) * 50;
+          e.label.normal.fontSize = ((e.value + number) / max) * 15;
         } else {
           e.symbolSize = 0;
           e.x = 0;
@@ -277,7 +286,7 @@ export default {
             if (params["data"]["name"] !== "") {
               return (
                 "<b>" +
-                params["data"]["name"] +
+                params["data"]["til"] +
                 "</b>：<b>" +
                 params["data"]["txt"] +
                 " </b>"
@@ -294,7 +303,13 @@ export default {
           {
             name: "词条分布",
             type: "graph",
-            layout: "none",
+            layout: "force",
+            // layout: "none",
+            force: {
+              repulsion: 80,
+              edgeLength: 20,
+            },
+            roam: "scale",
             label: {
               show: true,
               normal: {

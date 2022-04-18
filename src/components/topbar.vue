@@ -11,8 +11,9 @@
       <text class="txt1">北京冬奥会可视化</text>
       <text class="txt2">
         <router-link exact to="/mainPage" ref="l1">首页</router-link>
-        <router-link exact to="/page2" ref="l2">中国专区</router-link>
+        <router-link exact to="/page2" ref="l2">知识专区</router-link>
         <router-link exact to="/page3" ref="l3">三大赛区</router-link>
+        <router-link exact to="/page8">冬奥情缘</router-link>
         <router-link exact to="/page4" ref="l4">科普答题</router-link>
       </text>
     </div>
