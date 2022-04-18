@@ -175,7 +175,7 @@ export default {
     var option;
     option = {
       title: {
-        text: "\n" + myData[nob].nation + "冬奥会奖牌情况",
+        text: "\n" + myData[nob].nation + "历届冬奥会获得奖牌情况",
         x: "center",
         textStyle: {
           fontSize: 18,

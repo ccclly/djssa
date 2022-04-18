@@ -40,7 +40,6 @@
 			</div>
 			<div class="min_two">
 				<chinamain></chinamain>
-
 			</div>
 		</div>
 	</div>

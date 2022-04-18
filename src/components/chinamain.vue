@@ -4,21 +4,15 @@
     <div class="search">
       <div class="daohang">
         <ul>
-          <li>滑雪场分布</li>
-          <li>冬奥创意</li>
-          <li>冬奥黑科技</li>
+          <li>冬奥新创意图鉴</li>
+          <li>冬奥黑科技图鉴</li>
           <li>中国获奖日历</li>
-          <li>习主席的冬奥缘</li>
+          <li>滑雪场分布图</li>
+          <li>滑雪场数量柱状图</li>
         </ul>
       </div>
     </div>
     <div class="content">
-      <div class="item">
-        <div class="oneself">
-          <china></china>
-          <snowfield></snowfield>
-        </div>
-      </div>
       <div class="item">
         <div class="music">
           <design ref="design"></design>
@@ -35,8 +29,16 @@
         </div>
       </div>
       <div class="item">
+        <div class="oneself">
+          <china></china>
+          <snowfield></snowfield>
+        </div>
+      </div>
+
+      <div class="item">
         <div class="cartoon">
-          <xi></xi>
+          <!-- <xi></xi> -->
+          <trend></trend>
         </div>
       </div>
     </div>
@@ -50,6 +52,7 @@ import technology from "../components/technology.vue";
 import medaltime from "../components/medaltime.vue";
 import snowfield from "../components/Snowfield.vue";
 import xi from "../components/xi.vue";
+import trend from "../components/trend.vue";
 export default {
   data() {
     return {};
@@ -61,6 +64,7 @@ export default {
     medaltime,
     snowfield,
     xi,
+    trend,
   },
   mounted() {
     //获取元素
