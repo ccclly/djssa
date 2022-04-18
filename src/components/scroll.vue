@@ -3,7 +3,9 @@
     <div @mousemove="testMove" @mouseleave="testMend">
       <div class="roll" ref="roll">
         <div v-for="item in listData" :key="item.id">
-          <div class="comments">{{ item.name }}</div>
+          <div class="comments">
+          <img src="../assets/火热.png"  class="alignleft"/>  {{ item.name }}
+          </div>
         </div>
       </div>
     </div>
@@ -137,9 +139,21 @@ nextTick(() => {
     background-color: rgba(26, 128, 235, 0.2);
     margin-top: 15px;
     padding: 4px;
-	padding-left: 6px;
+    padding-left: 6px;
     border-radius: 10px;
     align-items: center;
   }
+}
+
+//居右
+.alignright {
+  display: inline;
+  float: right;
+}
+
+//居左
+.alignleft { 
+display: inline; 
+float: left; 
 }
 </style>
