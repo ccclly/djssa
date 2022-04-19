@@ -4,7 +4,6 @@
       <div class="ice">冰雪知识问答</div>
 
       <div class="start">开始答题</div>
-      <!-- <div class="foot">© 2019-现在 C & C 版权所有</div> -->
     </div>
     <div class="mainPage">
       <div class="timeout"></div>
@@ -289,7 +288,7 @@ export default {
   margin: 30px auto;
   opacity:0.7;
   background-color: #ffc000;
-  color: white;
+  color: blcak;
    font-family:KJ;
   font-size: 22px;
   line-height: 28px;
@@ -523,8 +522,7 @@ style=" width: 330px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // font-family: Microsoft YaHei;
-    font-family: KJ;
+    // font-family: KJ;
     font-weight: bold;
     color: #5470c6;
     -webkit-text-stroke: 1px white; //边框色
