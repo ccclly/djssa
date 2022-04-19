@@ -12,7 +12,7 @@ export default {
   mounted() {
     // 绘制左侧面
     let trend = echarts.init(this.$refs.trend);
-    const wid = 24;
+    const wid = 54;
     const w1 = Math.sin(Math.PI / 6) * wid; //4
     const w2 = Math.sin(Math.PI / 3) * wid; // 6.8
     const snapHeight = wid / 2;

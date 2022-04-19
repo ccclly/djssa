@@ -252,17 +252,17 @@ a:active {
 }
 body {
   width: 100%;
-  max-width: 1920px;
-  min-width: 1200px;
+/*  max-width: 1920px;
+  min-width: 1200px; */
 }
 #knowledge {
-  width: 100%;
-  position: relative;
-  background-color: #ccc;
-  transform: scale(85%);
-  left: -10.5%;
-  bottom: 15px;
-  box-shadow: 6px 15px 10px #7f7f7f;
+/*  width: 100%; */
+ position:absolute;
+/*  background-color: #ccc; */
+  left: 18%;
+/*  transform: translateY(-50%); */
+  bottom: 13%;
+ box-shadow: 6px 15px 10px #7f7f7f;
 }
 .bookBox {
   width: 1000px;

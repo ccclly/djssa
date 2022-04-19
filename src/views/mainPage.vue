@@ -428,7 +428,7 @@ a {
       border: 1px solid white;
       height: 100%;
       background-color: green;
-      flex: 3.4;
+      flex: 3;
       background-color: rgba(236, 249, 255, 0.4);
       border-radius: 12px;
       width: 100%;

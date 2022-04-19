@@ -3,7 +3,6 @@
 		<audio :src="xhmusic" ref="music">
 			Your browser does not support the audio element.
 		</audio>
-
 		<div class="stars" ref="starsRef">
 			<div class="star" v-for="(item, index) in starsCount" :key="index"></div>
 		</div>
@@ -17,7 +16,7 @@
 					<img :src="isfire">
 				</div>
 				<div class="tip" v-show="isclick">
-					<img src="../assets/tip2.gif">
+					<img src="../assets/dj.gif">
 				</div>
 			</div>
 		</transition>
@@ -171,8 +170,8 @@
 			.tip{
 				position: absolute;
 				width: 300px;
-				left: 50%;
-				top: 50%;
+				left: 51%;
+				top: 52%;
 				transform: translate(-25%,-25%);
 				z-index: 10;
 				img {
