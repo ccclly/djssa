@@ -1,12 +1,7 @@
 <template>
   <div id="contain">
-    <topbar class="topb" />
+    <topbar class="topb"/>
     <div class="main">
-      <!--      <div class="control-bar">-->
-      <!--        <el-button type="primary" v-on:click="switchRegion(1)">北京赛区</el-button>-->
-      <!--        <el-button type="primary" v-on:click="switchRegion(2)">张家口赛区</el-button>-->
-      <!--        <el-button type="primary" v-on:click="switchRegion(3)">延庆赛区</el-button>-->
-      <!--      </div>-->
       <div class="my-tabs">
         <div
           :class="['my-tab', curTab === 1 ? 'my-tab-active' : 'my-tab-bgc1']"
@@ -17,15 +12,16 @@
               <div class="test">
                 <div class="card">
                   <div class="photo">
-                    <img src="../assets/page3/北京赛区/1鸟巢.png" />
+                    <img src="../assets/page3/北京赛区/1鸟巢.png"/>
                   </div>
                   <h1>鸟巢</h1>
                   <h2></h2>
                   <p>
                     鸟巢体育场位于北京奥林匹克公园中心区南部，为2008年北京奥运会的主体育场，占地20.4公顷，建筑面积25.8万平方米，可容纳观众9.1万人。根据规划，国家体育场成为北京冬奥会开、闭幕式的场馆。
                   </p>
-                  <el-button type="primary" @click="dialogTableVisible = true"
-                    >浏览全景图</el-button
+                  <el-button type="primary" @click="setVrViewSrc('niaochao')"
+                  >浏览全景图
+                  </el-button
                   >
                 </div>
               </div>
@@ -33,7 +29,7 @@
             <el-tab-pane label="五棵松体育馆">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/北京赛区/2五棵松体育中心.png" />
+                  <img src="../assets/page3/北京赛区/2五棵松体育中心.png"/>
                 </div>
                 <h1>五松湖体育馆</h1>
                 <h2></h2>
@@ -41,37 +37,33 @@
                   五棵松体育中心可在6小时内实现冰球、篮球两种比赛模式的转换，是国内首个在一块比赛场地同时举办篮球、冰球两种职业体育赛事的场馆。按超低能耗建筑标准设计建造的五棵松冰上运动中心在北京冬奥会期间将作为冰球训练馆使用，其特殊设计的多彩外幕墙体系，让场馆得名“冰菱花”。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    href="https://baike.baidu.com/item/%E4%BA%94%E6%A3%B5%E6%9D%BE%E4%BD%93%E8%82%B2%E9%A6%86/6524540?fr=aladdin"
-                    target="_blank"
-                    >去看看百科</a
-                  ></el-button
+                ><a
+                  href="https://baike.baidu.com/item/%E4%BA%94%E6%A3%B5%E6%9D%BE%E4%BD%93%E8%82%B2%E9%A6%86/6524540?fr=aladdin"
+                  target="_blank"
+                >去看看百科</a
+                ></el-button
                 >
               </div>
             </el-tab-pane>
             <el-tab-pane label="国家速滑馆">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/北京赛区/3国家速滑馆.png" />
+                  <img src="../assets/page3/北京赛区/3国家速滑馆.png"/>
                 </div>
                 <h1>国家速滑馆</h1>
                 <h2></h2>
                 <p>
                   国家速滑馆又称“冰丝带”，是本届赛事唯一新建冰上竞赛场馆，与“鸟巢”、“水立方”共同组成“双奥”之城的标志性建筑群。“冰丝带”是冬奥历史上第一个使用二氧化碳作为制冷剂的速滑场馆，将承担速度滑冰项目的比赛，产生14块金牌，是冬奥会产生金牌数量最多的单个场馆。
                 </p>
-                <el-button type="primary"
-                  ><a
-                    href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E9%80%9F%E6%BB%91%E9%A6%86/18241635?fr=aladdin"
-                    target="_blank"
-                    >去看看百科</a
-                  ></el-button
-                >
+                <el-button type="primary" @click="setVrViewSrc('suhuaguan')">
+                  浏览全景图
+                </el-button>
               </div>
             </el-tab-pane>
             <el-tab-pane label="国家体育馆">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/北京赛区/4国家体育馆.png" />
+                  <img src="../assets/page3/北京赛区/4国家体育馆.png"/>
                 </div>
                 <h1>国家体育馆</h1>
                 <h2></h2>
@@ -79,18 +71,18 @@
                   国家体育馆作为北京2008年奥运会及残奥会的竞赛场馆之一，曾经举办体操、蹦床等项目。改造后将举办北京2022年冬奥会男子冰球和女子冰球部分比赛、冬残奥会残疾人冰球比赛。场馆赛后除开展冰球运动外，还可以开展花样滑冰、短道速滑等项目，还具有开展夏季运动的多功能转换能力。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E4%BD%93%E8%82%B2%E9%A6%86/7481073?fr=aladdin"
-                    target="_blank"
-                    >去看看百科</a
-                  ></el-button
+                ><a
+                  href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E4%BD%93%E8%82%B2%E9%A6%86/7481073?fr=aladdin"
+                  target="_blank"
+                >去看看百科</a
+                ></el-button
                 >
               </div>
             </el-tab-pane>
             <el-tab-pane label="国家游泳中心">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/北京赛区/5国家游泳中心.png" />
+                  <img src="../assets/page3/北京赛区/5国家游泳中心.png"/>
                 </div>
                 <h1>国家游泳中心</h1>
                 <h2></h2>
@@ -98,18 +90,18 @@
                   “双奥场馆”国家游泳中心在2019年首次通过“水冰转换”制出4条冬奥标准的冰壶赛道。“水冰转换”让国家游泳中心可以在“水上功能”和“冰上功能”之间自由切换，可以同时具备开展水上运动、冰上运动，及各类大型活动的能力。场馆泳池正常向公众开放。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E6%B8%B8%E6%B3%B3%E4%B8%AD%E5%BF%83/1379581?fr=aladdin"
-                    target="_blank"
-                    >去看看百科</a
-                  ></el-button
+                ><a
+                  href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E6%B8%B8%E6%B3%B3%E4%B8%AD%E5%BF%83/1379581?fr=aladdin"
+                  target="_blank"
+                >去看看百科</a
+                ></el-button
                 >
               </div>
             </el-tab-pane>
             <el-tab-pane label="首都体育馆">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/北京赛区/6首都体育馆.png" />
+                  <img src="../assets/page3/北京赛区/6首都体育馆.png"/>
                 </div>
                 <h1>首都体育馆</h1>
                 <h2></h2>
@@ -117,18 +109,18 @@
                   1968年建成，国内第一座人工室内冰场，曾举办2008年北京奥运会排球比赛。2022年北京冬奥会期间将承担短道速滑和花样滑冰比赛任务，产生14枚金牌。这是北京冬奥会第一项完工的改扩建竞赛场馆工程：外观“修旧日如1日”，延续经典；场馆内着力打造“最美的冰”，营造更好观赛体验。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    target="_blank"
-                    href="https://baike.baidu.com/item/%E9%A6%96%E9%83%BD%E4%BD%93%E8%82%B2%E9%A6%86/7293811?fr=aladdin"
-                    >去看看百科</a
-                  >
+                ><a
+                  target="_blank"
+                  href="https://baike.baidu.com/item/%E9%A6%96%E9%83%BD%E4%BD%93%E8%82%B2%E9%A6%86/7293811?fr=aladdin"
+                >去看看百科</a
+                >
                 </el-button>
               </div>
             </el-tab-pane>
             <el-tab-pane label="首钢滑雪跳台">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/北京赛区/7首钢滑雪跳台.png" />
+                  <img src="../assets/page3/北京赛区/7首钢滑雪跳台.png"/>
                 </div>
                 <h1>首钢滑雪跳台</h1>
                 <h2></h2>
@@ -136,11 +128,11 @@
                   首钢滑雪大跳台将在北京冬奥会期间承担单板和自由式滑雪大跳台比赛项目，设计理念源自中国敦煌壁画中传统的飞天造型，从侧面看去又犹如一只灵动的“水晶鞋”。赛道结束区未来还可举办演唱会、发布会等大型户外活动。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    target="_blank"
-                    href="https://baike.baidu.com/item/%E9%A6%96%E9%92%A2%E6%BB%91%E9%9B%AA%E5%A4%A7%E8%B7%B3%E5%8F%B0/59560678?fr=aladdin"
-                    >去看看百科</a
-                  >
+                ><a
+                  target="_blank"
+                  href="https://baike.baidu.com/item/%E9%A6%96%E9%92%A2%E6%BB%91%E9%9B%AA%E5%A4%A7%E8%B7%B3%E5%8F%B0/59560678?fr=aladdin"
+                >去看看百科</a
+                >
                 </el-button>
               </div>
             </el-tab-pane>
@@ -154,7 +146,7 @@
             <el-tab-pane label="国家跳台滑雪中心">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/张家口赛区/3国家跳台滑雪中心.png" />
+                  <img src="../assets/page3/张家口赛区/3国家跳台滑雪中心.png"/>
                 </div>
                 <h1>国家跳台滑雪中心</h1>
                 <h2></h2>
@@ -163,15 +155,16 @@
                 </p>
                 <el-button
                   type="primary"
-                  @click="dialogTableVisiblezhangjiakou = true"
-                  >浏览全景图</el-button
+                  @click="setVrViewSrc('tiaotaihuaxve')"
+                >浏览全景图
+                </el-button
                 >
               </div>
             </el-tab-pane>
             <el-tab-pane label="云顶滑雪跳台">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/张家口赛区/1云顶滑雪跳台.png" />
+                  <img src="../assets/page3/张家口赛区/1云顶滑雪跳台.png"/>
                 </div>
                 <h1>云顶滑雪跳台</h1>
                 <h2></h2>
@@ -179,18 +172,18 @@
                   云顶滑雪公园包括U型场地技巧、坡面障碍技巧、雪上技巧、空中技巧、障碍追逐、平行大回转六条赛道，共计产生20块金牌。张家口山地媒体中心位于场馆群内，由云顶大酒店改建而成。云顶滑雪公园不仅是自由式滑雪及单板滑雪国家队的训练基地，也为大众冰雪运动提供了优质场地。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    target="_blank"
-                    href="https://baike.baidu.com/item/%E4%BA%91%E9%A1%B6%E6%BB%91%E9%9B%AA%E5%85%AC%E5%9B%AD/55513952?fr=aladdin"
-                    >去看看百科</a
-                  >
+                ><a
+                  target="_blank"
+                  href="https://baike.baidu.com/item/%E4%BA%91%E9%A1%B6%E6%BB%91%E9%9B%AA%E5%85%AC%E5%9B%AD/55513952?fr=aladdin"
+                >去看看百科</a
+                >
                 </el-button>
               </div>
             </el-tab-pane>
             <el-tab-pane label="国家冬季两项">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/张家口赛区/2国家冬季两项.png" />
+                  <img src="../assets/page3/张家口赛区/2国家冬季两项.png"/>
                 </div>
                 <h1>国家冬季两项</h1>
                 <h2></h2>
@@ -198,18 +191,18 @@
                   国家冬季两项中心位于张家口市崇礼区太子城区域东北侧山谷，依次布置靶场、赛道与起终点区、场馆技术楼等。国家冬季两项中心将承担北京冬奥会冬季两项以及冬残奥会冬季两项的比赛。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    target="_blank"
-                    href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E5%86%AC%E5%AD%A3%E4%B8%A4%E9%A1%B9%E4%B8%AD%E5%BF%83/53860972?fr=aladdin"
-                    >去看看百科</a
-                  >
+                ><a
+                  target="_blank"
+                  href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E5%86%AC%E5%AD%A3%E4%B8%A4%E9%A1%B9%E4%B8%AD%E5%BF%83/53860972?fr=aladdin"
+                >去看看百科</a
+                >
                 </el-button>
               </div>
             </el-tab-pane>
             <el-tab-pane label="国家越野滑雪中心">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/张家口赛区/4国家越野滑雪中心.png" />
+                  <img src="../assets/page3/张家口赛区/4国家越野滑雪中心.png"/>
                 </div>
                 <h1>国家越野滑雪中心</h1>
                 <h2></h2>
@@ -217,11 +210,11 @@
                   国家越野滑雪中心将承担北京冬奥会越野滑雪和北欧两项的比赛。越野滑雪是冬季项目中的马拉松，赛道路线长、运动员比赛时间长，是典型的耐力项目。
                 </p>
                 <el-button type="primary"
-                  ><a
-                    target="_blank"
-                    href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E8%B6%8A%E9%87%8E%E6%BB%91%E9%9B%AA%E4%B8%AD%E5%BF%83/54561862?fr=aladdin"
-                    >去看看百科</a
-                  >
+                ><a
+                  target="_blank"
+                  href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E8%B6%8A%E9%87%8E%E6%BB%91%E9%9B%AA%E4%B8%AD%E5%BF%83/54561862?fr=aladdin"
+                >去看看百科</a
+                >
                 </el-button>
               </div>
             </el-tab-pane>
@@ -235,38 +228,35 @@
             <el-tab-pane label="国家高山滑雪中心">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/延庆赛区/1国家高山滑雪中心.png" />
+                  <img src="../assets/page3/延庆赛区/1国家高山滑雪中心.png"/>
                 </div>
                 <h1>国家高山滑雪中心</h1>
                 <h2></h2>
                 <p>
                   高山滑雪被誉为“冬奥会皇冠上的明珠”。国家高山滑雪中心设7条雪道，雪道坡度大、落差大，建设难度极高，主要承担高山滑雪赛事。同时国家高山滑雪中心还包括山顶出发区、中间平台、竞技结束区、集散广场、索道等配套设施，最多同时容纳8000人观赛。
                 </p>
-                <el-button type="primary"
-                  ><a
-                    target="_blank"
-                    href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E9%AB%98%E5%B1%B1%E6%BB%91%E9%9B%AA%E4%B8%AD%E5%BF%83/19858093?fr=aladdin"
-                    >去看看百科</a
-                  >
+                <el-button type="primary" @click="setVrViewSrc('gaoshanhuaxve')">
+                  浏览全景图
                 </el-button>
               </div>
             </el-tab-pane>
             <el-tab-pane label="国家雪车雪橇中心">
               <div class="card">
                 <div class="photo">
-                  <img src="../assets/page3/延庆赛区/2国家学车雪橇中心.png" />
+                  <img src="../assets/page3/延庆赛区/2国家学车雪橇中心.png"/>
                 </div>
                 <h1>国家学车雪橇中心</h1>
                 <h2></h2>
                 <p>
                   国家雪车雪橇中心是北京冬奥会雪车、雪橇、钢架雪车项目比赛场地。场馆共有16个角度、坡度不同的弯道，2020年10月赛道制冰完成后，迎来国家队入驻训练，成为北京冬奥会首个国家队入驻训练的竞赛场馆。
                 </p>
-                <el-button type="primary"
-                  ><a
+                <el-button type="primary">
+                  <a
                     target="_blank"
                     href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E9%9B%AA%E8%BD%A6%E9%9B%AA%E6%A9%87%E4%B8%AD%E5%BF%83/19858100?fr=aladdin"
-                    >去看看百科</a
-                  >
+                    >
+                    去看看百科
+                  </a>
                 </el-button>
               </div>
             </el-tab-pane>
@@ -291,63 +281,56 @@
       name="mapFrame"
       scrolling="no"
       frameborder="0"
-      src="https://720yun.com/t/7f2jOzyyvu0?scene_id=3170830"
-    ></iframe>
-  </el-dialog>
-  <el-dialog
-    class="view-dialog"
-    fullscreen="true"
-    v-model="dialogTableVisiblezhangjiakou"
-    destroy-on-close
-  >
-    <iframe
-      class="vrview"
-      allowfullscreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      oallowfullscreen="true"
-      msallowfullscreen="true"
-      name="mapFrame"
-      scrolling="no"
-      frameborder="0"
-      src="https://720yun.com/t/f0vkzwiq0rq?scene_id=80663427"
+      :src=vrViewSrc
     ></iframe>
   </el-dialog>
 </template>
 
 <script>
-import topbar from "@/components/topbar";
-import { ref } from "vue";
-import { goSnow } from "@/assets/js/snow.js";
-
-const dialogTableVisible = ref(false);
+import topbar from '@/components/topbar';
+import { ref } from 'vue';
+import { goSnow } from '@/assets/js/snow.js';
 
 export default {
-  data() {
+  data () {
     return {
       curTab: 1,
       dialogTableVisible: false,
       dialogTableVisiblezhangjiakou: false,
+      vrViewSrc: '',
     };
   },
   methods: {
-    switchRegion(tab) {
+    switchRegion (tab) {
       this.curTab = tab;
     },
-    handleTabs(tab) {
+    handleTabs (tab) {
       console.log(tab);
     },
-    getPathFun() {
-      if (this.$route.path === "/page3") {
-        var snowBox = "contain", //雪花容器
-          src = "https://s1.ax1x.com/2022/04/11/LZgood.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
+    getPathFun () {
+      if (this.$route.path === '/page3') {
+        var snowBox = 'contain', //雪花容器
+          src = 'https://s1.ax1x.com/2022/04/11/LZgood.png', //雪花图基本命名<图片名就是snow+1/2/3/4...>
           num = 40, //雪花数量
           style = 2; //图片种类数
         goSnow(snowBox, src, num, style);
       }
     },
+    setVrViewSrc (name) {
+      let src = '';
+      if (name === 'niaochao')
+        src = 'https://720yun.com/t/7f2jOzyyvu0?scene_id=3170830';
+      else if (name === 'tiaotaihuaxve')
+        src = 'https://720yun.com/t/f0vkzwiq0rq?scene_id=80663427';
+      else if (name === 'suhuaguan')
+        src = 'https://720yun.com/t/4avkzb2ld2b?scene_id=88593623';
+      else if (name === 'gaoshanhuaxve')
+        src = 'https://720yun.com/t/07vkzq1ldp9?scene_id=83139514'
+      this.vrViewSrc = src;
+      this.dialogTableVisible = true;
+    },
   },
-  mounted() {
+  mounted () {
     this.getPathFun();
   },
   components: {
@@ -378,12 +361,14 @@ export default {
   justify-content: space-around;
   align-items: center;
   min-height: 70vh;
+
   p {
     -webkit-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
   }
+
   .topb {
     left: 50%;
     transform: translateX(-50%);
@@ -428,23 +413,27 @@ export default {
         transform: translate(-50%);
         text-align: center;
       }
+
       span {
         color: white;
         font-size: 24px;
         transition: 0.8s;
       }
+
       p,
       button {
         opacity: 0;
         transition: 0.8s;
       }
     }
+
     .my-tab:hover {
       span {
         font-size: 33px;
         transition: 0.8s;
       }
     }
+
     .my-tab-active {
       flex: 1 1 auto;
       border: 5px solid #6e98d8;
@@ -454,6 +443,7 @@ export default {
         opacity: 1;
         //transition: 0.8s;
       }
+
       .tab-title {
         opacity: 0;
       }
@@ -472,11 +462,13 @@ export default {
       transition: 0.8s;
       cursor: pointer;
     }
+
     .my-tab-bgc1:hover {
       background-size: auto 120%;
       transition: 0.8s;
       cursor: pointer;
     }
+
     .my-tab-bgc1::before {
       /* 通过before增加渐变背景实现遮罩，让文字默认看起来清晰一些 */
       position: absolute;
@@ -487,6 +479,7 @@ export default {
       left: 0;
       background-image: linear-gradient(to top, #333, transparent);
     }
+
     .my-tab-bgc2 {
       background: url("../assets/page3/张家口赛区/3国家跳台滑雪中心.png")
         no-repeat -450px 0;
@@ -495,6 +488,7 @@ export default {
       transition: 0.8s;
       cursor: pointer;
     }
+
     .my-tab-bgc2:hover {
       background: url("../assets/page3/张家口赛区/3国家跳台滑雪中心.png")
         no-repeat -570px 0;
@@ -502,6 +496,7 @@ export default {
       transition: 0.8s;
       cursor: pointer;
     }
+
     .my-tab-bgc2::before {
       /* 通过before增加渐变背景实现遮罩，让文字默认看起来清晰一些 */
       position: absolute;
@@ -512,19 +507,21 @@ export default {
       left: 0;
       background-image: linear-gradient(to top, #333, transparent);
     }
+
     .my-tab-bgc3 {
-      background: url("../assets/page3/延庆赛区/1国家高山滑雪中心.png")
-        no-repeat center;
+      background: url("../assets/page3/延庆赛区/1国家高山滑雪中心.png") no-repeat center;
       background-size: auto 100%;
       opacity: 0.8;
       transition: 0.8s;
       cursor: pointer;
     }
+
     .my-tab-bgc3:hover {
       background-size: auto 120%;
       transition: 0.8s ease-in-out;
       cursor: pointer;
     }
+
     .my-tab-bgc3::before {
       /* 通过before增加渐变背景实现遮罩，让文字默认看起来清晰一些 */
       position: absolute;
@@ -542,6 +539,7 @@ export default {
       box-shadow: none;
       opacity: 0.8;
     }
+
     .el-tabs--border-card > .el-tabs__header {
       //border-radius: 10px !important;
       background-color: red;
