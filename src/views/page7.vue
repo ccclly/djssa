@@ -6,7 +6,7 @@
 			</div>
 			<div class="min_two">
 				<div class="Box">
-					<video width="625" height="520" controls>
+					<video width="625" height="520" controls autoplay>
 						<source :src="videoList" type="video/mp4">
 						<object data="movie.mp4" width="320" height="240">
 							<embed width="625" height="520" src="/kp.mp4">

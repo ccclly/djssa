@@ -1,8 +1,8 @@
 <template>
 <div class="map" ref="map"></div>
-  <el-dialog v-model="dialogTableVisible" :title="url" fullscreen="true" >
+<!--  <el-dialog v-model="dialogTableVisible" :title="url" fullscreen="true" >
     <iframe class="vrview" :src="url"></iframe>
-  </el-dialog>
+  </el-dialog> -->
 </template>
 
 <script>
@@ -24,7 +24,7 @@ var data = [
      {name: '庙香山滑雪度假区',  value: 1, url:"http://www.mxsski.com/"},
      {name: '净月潭滑雪场',  value: 1, url:"http://www.jl.xinhuanet.com/shangye/jingyueski/"},
      {name: '天定山滑雪场',  value: 1, url:"https://www.j-j-j.cn/news/421.html"},
-     {name: '亚布力滑雪场',  value: 1, url:"http://www.yabuliski.cn/lyhx?nid=4"},
+     {name: '亚布力滑雪场',  value: 1, url:"http://www.yabuliski.com/"},
      {name: '奥悦滑雪场',  value: 1, url:"http://www.olympjoy.com/nd.jsp?id=89"},
      {name: '丝绸之路国际滑雪场',  value: 1, url:"http://www.silkroadresort.com/"},
      {name: '可可托海滑雪场',  value: 1, url:"http://www.esnow.com.cn/product/gsjj_97.html"},
@@ -43,6 +43,17 @@ var data = [
      {name: '大同万龙白登山国际滑雪场',  value: 1, url:"https://mp.weixin.qq.com/s/U_8YdntKxi9p71SW9MVU7A"},
      {name: '成都西岭雪山滑雪场',  value: 1, url:"http://www.xiling.cn/"},
      {name: '金佛山滑雪场',  value: 1, url:"https://mp.weixin.qq.com/s/W13FUxIBGwHmbOz9nD_5YA"},
+     {name: '鹧鸪山自然公园',  value: 1, url:"http://vjzmdwd.jianzhanmall.com/"},
+     {name: '伏牛山滑雪场',  value: 1, url:"http://www.fnsski.com/intro/1.html"},
+     {name: '神农架国际滑雪场',  value: 1, url:"http://www.snjhxc.cn/"},
+     {name: '英山大别山南武当滑雪场',  value: 1, url:"http://www.hbskiing.com/"},
+     {name: '全州天湖滑雪场',  value: 1, url:"https://gs.ctrip.com/html5/you/sight/quanzhou3040/4322341.html"},
+     {name: '金象山滑雪场',  value: 1, url:"http://www.jinxiangshan.com/news/5.html"},
+     {name: '海阳市林山滑雪场',  value: 1, url:"http://www.hylshxc.com/news_view.asp?newsid=53"},
+     {name: '七星岭滑雪场',  value: 1, url:"http://qxlhx.com/"},
+     {name: '大明山万松岭滑雪场',  value: 1, url:"http://www.dmshxc.com/"},
+     {name: '桐庐生仙里国际滑雪场',  value: 1, url:"http://www.tlnjl.com.cn/"},
+     {name: '江南天池滑雪场',  value: 1, url:"http://www.jntianchi.com/order/index.html"},
 
 
 ];
@@ -70,6 +81,17 @@ var geoCoordMap = {
     '大同万龙白登山国际滑雪场':[113.397066,40.132253],
     '成都西岭雪山滑雪场':[103.196367,30.705004],
     '金佛山滑雪场':[116.889343,40.479233],
+    '鹧鸪山自然公园':[102.676532,31.842824],
+    '伏牛山滑雪场':[111.490174,33.758475],
+    '神农架国际滑雪场':[110.391338,31.558252],
+    '英山大别山南武当滑雪场':[115.801988,31.097993],
+    '全州天湖滑雪场':[110.910637,26.145754],
+    '金象山滑雪场':[117.121612,36.481462],
+    '海阳市林山滑雪场':[121.131354,37.036006],
+    '七星岭滑雪场':[114.199959,28.44472],
+    '大明山万松岭滑雪场':[119.004154,30.030347],
+    '桐庐生仙里国际滑雪场':[119.2604,30.00051],
+    '江南天池滑雪场':[119.602373,30.475719],
 
 
 };
@@ -155,13 +177,13 @@ option = {
       // var d = this.dialogTableVisible
 			 map.on("click", (params)=> {
 			        // console.log(params.data.url);
-			        //   window.location.href = params.data.url;
+			          window.open(params.data.url);
 		 // this.url=params.data.url
    //       this.dialogTableVisible = true
-         this.url = params.data.url
-		 this.dialogTableVisible = true
-		 console.log(this.url)
-		 console.log(this.dialogTableVisible)
+   //       this.url = params.data.url
+		 // this.dialogTableVisible = true
+		 // console.log(this.url)
+		 // console.log(this.dialogTableVisible)
 			      });
 
 		}
