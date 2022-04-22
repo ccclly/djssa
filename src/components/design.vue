@@ -88,7 +88,7 @@
         width: 50%;
         font-size: 25px;
         line-height: 30px;
-        font-family: LiSu;
+        font-family: LS;
         padding-left: 15px;
         padding-right: 5px;
         margin: 20px 0;

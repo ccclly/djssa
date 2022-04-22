@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="chart"></div>
+    <div id="chart" ref="chart"></div>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     initchart() {
-      let myChart = echarts.init(document.querySelector("#chart"));
+			let myChart = echarts.init(this.$refs.chart);
       let resultData = {
         status: "success",
         data: [
