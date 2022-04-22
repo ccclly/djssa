@@ -524,8 +524,12 @@ style=" width: 330px;
     justify-content: center;
     // font-family: KJ;
     font-weight: bold;
-    color: #5470c6;
+    font: optional;
+    color: white; //#5470c6;
+    background-color: rgba(0, 120, 215, 0.5); //rgba(186, 280, 244);// c;
     -webkit-text-stroke: 1px white; //边框色
+    // broder-radius: 10px;
+    border-radius: 5px;
     font-size: 45px;
   }
 
