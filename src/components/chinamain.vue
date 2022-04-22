@@ -8,7 +8,7 @@
           <li>冬奥黑科技图鉴</li>
           <li>中国获奖日历</li>
           <li>滑雪场分布图</li>
-          <li>滑雪场数量柱状图</li>
+          <li>滑雪产业趋势</li>
         </ul>
       </div>
     </div>
@@ -147,10 +147,8 @@ body {
           width: 150px;
           height: 30px;
           line-height: 30px;
-          /* background-color: pink; */
+		  font-family: KJ;
           margin-top: 10px;
-          //   font-family: KJ;
-          font-family: Arial, Helvetica, sans-serif;
           text-align: center;
           cursor: pointer;
           color: white;
