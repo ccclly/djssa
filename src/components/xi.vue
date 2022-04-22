@@ -138,7 +138,7 @@ export default {
   mounted() {
     $(function () {
       var pageNum = 0;
-      console.log("数量为：" + $(".runPage").length);
+      // console.log("数量为：" + $(".runPage").length);
       for (var i = 0; i < $(".runPage").length; i++) {
         $(".runPage")
           .eq(i)
@@ -158,7 +158,7 @@ export default {
           runNext(pageNum);
           pageNum++;
         }
-        console.log(pageNum);
+        // console.log(pageNum);
       });
 
       function runNext(index) {
@@ -184,7 +184,7 @@ export default {
           pageNum--;
           runLast(pageNum);
         }
-        console.log(pageNum);
+        // console.log(pageNum);
       });
 
       function runLast(index) {
