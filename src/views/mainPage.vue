@@ -125,7 +125,17 @@ export default {
     </div>
     <div class="right">
       <div class="right_one">
-        <div class="right_one_title">北京冬奥亮点</div>
+        <div
+          class="right_one_title"
+          style="
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+          "
+        >
+          北京冬奥亮点
+        </div>
         <div class="right_one_title"></div>
         <el-tooltip
           content="<p>&nbsp; &nbsp; 本届冬奥会中有如下四大亮点，一是本届冬奥会</p><p>参赛女性运动比例达到<strong>45%</strong>以上，使得北京冬奥会</p><p>成为有史以来女性运动员人数最多、比例最高的一</p><p>届冬奥会。二是北京冬奥会创造了冬奥会史上最高</p><p>收视率，全球超过<strong>27亿</strong>人参与了冬奥互动。三是对</p><p>于北京冬奥会碳中和目标的实现，一个重要创举与</p><p>跨越是冬奥会全部场馆达到<strong>100%</strong>绿电供应。四是</p><p>北京冬奥会闭环内核酸检测阳性率仅为<strong>0.01%</strong>，防</p><p>疫措施与成效赢得国际社会广泛点赞。</p>"
@@ -186,7 +196,7 @@ export default {
           <img src="../assets/i.png" />
         </el-tooltip>
 
-           <!-- <trend></trend> -->
+        <!-- <trend></trend> -->
         <poor></poor>
       </div>
     </div>
