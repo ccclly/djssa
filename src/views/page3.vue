@@ -1,6 +1,6 @@
 <template>
   <div id="contain">
-    <topbar class="topb"/>
+    <topbar/>
     <div class="main">
       <div class="my-tabs">
         <div
@@ -367,11 +367,6 @@ export default {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
-  }
-
-  .topb {
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .main {
