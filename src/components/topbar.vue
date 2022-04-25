@@ -1,12 +1,14 @@
 <template>
   <div class="topbar">
-    <img
-      class="img1"
-      :src="leftimg"
-      @mouseenter="mouseenter1"
-      @mouseleave="mouseleave1"
-      @click="img1To"
-    />
+	  <div class="img_l">
+	  	<img
+	  	  class="img1"
+	  	  :src="leftimg"
+	  	  @mouseenter="mouseenter1"
+	  	  @mouseleave="mouseleave1"
+	  	  @click="img1To"
+	  	/>
+	  </div>
     <div class="txt">
       <text class="txt1">北京冬奥会可视化</text>
       <text class="txt2">
@@ -17,12 +19,14 @@
         <router-link exact to="/page4" ref="l4">科普答题</router-link>
       </text>
     </div>
-    <img
-      :src="rightimg"
-      @mouseenter="mouseenter2"
-      @mouseleave="mouseleave2"
-      @click="img2To"
-    />
+	<div class="img_r">
+		<img
+		  :src="rightimg"
+		  @mouseenter="mouseenter2"
+		  @mouseleave="mouseleave2"
+		  @click="img2To"
+		/>
+	</div>
   </div>
 </template>
 
@@ -79,14 +83,25 @@ export default {
 .topbar {
   position: absolute;
   top: 10px;
+  width: auto;
   height: 15vh;
   // background-color: rgba(236, 249, 255, 0.4);
   // border-radius: 12px;
   display: flex;
   justify-content: center;
-
-  img {
-    cursor: pointer;
+  .img_l{
+	  width: 6%;
+	  img {
+	    cursor: pointer;
+	  	width: 100%;
+	  }
+  }
+  .img_r{
+	   width: 7%;
+	  img {
+	    cursor: pointer;
+	  	width: 100%;
+	  }
   }
 
   .txt {
