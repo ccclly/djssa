@@ -157,5 +157,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		z-index: 10;
 	}
 </style>
