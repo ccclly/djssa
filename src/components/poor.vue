@@ -77,7 +77,7 @@ export default {
             name: "4亿元",
             til: "冰天雪地是金山银山",
             value: 1200,
-            txt: "数据显示，寒区试车产业每年冬季可为黑河带来超过4亿元的消费收入。",
+            txt: "数据显示，寒区试车产业每年冬季可为黑河带来超过 4亿元 的消费收入。",
             url: "https://baijiahao.baidu.com/s?id=1723704255322631956&wfr=spider&for=pc",
             draggable: true,
           },
@@ -321,9 +321,9 @@ export default {
             layout: "force",
             // layout: "none",
             force: {
-              repulsion: 89,
+              repulsion: 70,
               collideStrength:0.8,
-              edgeLength: 22,
+              edgeLength: 20,
             },
             roam: "scale",
             label: {
@@ -348,12 +348,12 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
+<style  scoped>
 #chart {
   position: relative;
-  top: 10px;
-  width: 300px;
-  height: 27vh;
+  top: 8px;
+  width: 330px;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
