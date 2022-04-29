@@ -22,7 +22,10 @@ export default {
       setDateTime: null,
     };
   },
-  mouted() {
+  watch: {
+    $route: "getPathFun",
+  },
+  mounted() {
     // console.log("+++++++++++++++" + this.data.mounted);
     this.setDateTimeInterval();
     this.name = this.$route.params.name;
@@ -41,7 +44,7 @@ export default {
       this.setDateTime = null;
     },
     getPathFun() {
-      if (this.$route.path === "/page7") {
+      if (this.$route.path === '/page8') {
         var snowBox = "contain", //雪花容器
           src = "https://s1.ax1x.com/2022/04/11/LZgood.png", //雪花图基本命名<图片名就是snow+1/2/3/4...>
           num = 40, //雪花数量
