@@ -97,57 +97,57 @@
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t2.png" alt="" /></a>
+          <img src="../assets/img/t2.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t3.png" alt="" /></a>
+          <img src="../assets/img/t3.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t4.png" alt="" /></a>
+          <img src="../assets/img/t4.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t5.png" alt="" /></a>
+          <img src="../assets/img/t5.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t6.png" alt="" /></a>
+          <img src="../assets/img/t6.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t7.png" alt="" /></a>
+          <img src="../assets/img/t7.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t8.png" alt="" /></a>
+          <img src="../assets/img/t8.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t9.png" alt="" /></a>
+          <img src="../assets/img/t9.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t10.png" alt="" /></a>
+          <img src="../assets/img/t10.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t11.png" alt="" /></a>
+          <img src="../assets/img/t11.png" alt="" />
         </li>
       </ul>
       <ul>
         <li>
-          <a href="#"><img src="../assets/img/t12.png" alt="" /></a>
+          <img src="../assets/img/t12.png" alt="" />
         </li>
       </ul>
     </div>

@@ -5,6 +5,7 @@ module.exports = {
 
   transpileDependencies: true,
   productionSourceMap: false,
+	publicPath: './',
   // publicPath: path.resolve(__dirname, './dist'),
   // lintOnSave: false,
   chainWebpack: config => {
