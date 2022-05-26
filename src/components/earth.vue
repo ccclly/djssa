@@ -41,9 +41,13 @@ export default {
 	    const gold = document.querySelector("#gold");
 	    const silver = document.querySelector("#silver");
 	    const copper = document.querySelector("#copper");
+      const et = document.querySelector('#et');
+      et.onmouseout = function (e) {
+        tooltipEl.style.display = "none";
+      };
 	    baseTexture.setOption({
 	      // 散点设置 https://echarts.apache.org/zh/option.html#series-scatter
-	  
+
 	      visualMap: {
 	        left: "right",
 	        min: 0,
@@ -245,7 +249,7 @@ export default {
 	        // }
 	      ],
 	    });
-	  
+
 	    baseTexture.on("click", (e) => {
 	      tooltipEl.style.display = "none";
 	      router.push({
@@ -258,11 +262,11 @@ export default {
 	    });
 	    return baseTexture;
 	  };
-	  
+
 	  // const initEarth = () => {
-	  	
+
 	    const baseTexture = initTexture();
-	  
+
 	    // 地球设置 https://echarts.apache.org/zh/option-gl.html#globe
 	    const option = {
 	      globe: {
@@ -271,7 +275,7 @@ export default {
 	        globeRadius: 80,
 	        displacementScale: 0.1,
 	        shading: "color",
-	  
+
 	        viewControl: {
 	          autoRotate: true,
 	          autoRotateAfterStill: 5,
@@ -289,7 +293,7 @@ export default {
 	    // myChart.clear();
 	    myChart.setOption(option, true);
 	  // };
-	  
+
 	  // onMounted(() => {
 	  //   initEarth();
 	  // });
