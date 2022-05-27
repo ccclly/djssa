@@ -174,7 +174,8 @@
 
 			.min_one {
 				width: 50%;
-				flex: 1;
+				//flex: 1;
+        height: 200px;
 				margin: 0 auto;
 				margin-top: 10px;
 				display: flex;

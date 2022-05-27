@@ -70,15 +70,17 @@
         }
 
         .image {
-          height: 60vh;
+          //height: 70%;
           margin-top: 5px;
-          overflow: hidden;
+          //overflow: hidden;
           display: flex;
           justify-content: center;
           align-items: center;
 
           img {
             width: 80%;
+            height: 70%;
+            object-fit: scale-down;
           }
         }
       }

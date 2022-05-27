@@ -132,7 +132,7 @@ nextTick(() => {
 .roll {
   height: 22vh;
   overflow: hidden;
-  width: 300px;
+  width: 20vw;
   position: relative;
   top: 10px;
   .comments {
@@ -152,8 +152,8 @@ nextTick(() => {
 }
 
 //居左
-.alignleft { 
-display: inline; 
-float: left; 
+.alignleft {
+display: inline;
+float: left;
 }
 </style>

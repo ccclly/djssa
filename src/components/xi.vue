@@ -256,13 +256,16 @@ body {
   min-width: 1200px; */
 }
 #knowledge {
-/*  width: 100%; */
- position:absolute;
-/*  background-color: #ccc; */
-  left: 18%;
-/*  transform: translateY(-50%); */
+  /*  width: 100%; */
+  position: absolute;
+  /*  background-color: #ccc; */
+  left: 50%;
+  /*transform: translateX(-50%);*/
+  /*top: 20%;*/
+  /*transform: translateY(50%);*/
+  transform: translate(-50%);
   bottom: 13%;
- box-shadow: 6px 15px 10px #7f7f7f;
+  box-shadow: 6px 15px 10px #7f7f7f;
 }
 .bookBox {
   width: 1000px;

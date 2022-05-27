@@ -352,8 +352,8 @@ export default {
 #chart {
   position: relative;
   top: 8px;
-  width: 330px;
-  height: 25vh;
+  width: 22vw;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

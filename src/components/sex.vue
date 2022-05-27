@@ -6,10 +6,10 @@
 <script>
 	import * as echarts from 'echarts'
 	export default {
-	
+
 		data() {
 			return {
-	
+
 			}
 		},
 		mounted() {
@@ -146,17 +146,23 @@
 			};
 			sex.setOption(option);
 		}
-	
+
 	}
 </script>
 
 <style>
 	#sex {
-		width: 300px;
+		width: 100%;
 		height:100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 	}
 </style>

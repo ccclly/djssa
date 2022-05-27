@@ -48,8 +48,11 @@
         margin-top: 20px;
         margin-bottom: 20px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
 
         .itname {
+
           margin: 0 auto;
           width: 50%;
           height: 10vh;
@@ -69,8 +72,9 @@
         }
 
         .image {
-          height: 50vh;
-          overflow: hidden;
+          flex: 1;
+          //height: 50vh;
+          //overflow: hidden;
           margin-top: 10px;
           width: 100%;
           display: flex;
@@ -78,8 +82,9 @@
           align-items: center;
 
           img {
-            margin-top: 10px;
+            //margin-top: 10px;
             width: 75%;
+            //height: 60%;
             border-radius: 20px;
           }
         }

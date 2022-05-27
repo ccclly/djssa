@@ -311,21 +311,23 @@ export default {
 }
 
 #main {
-  width: 770px;
-  height: 360px;
+  //width: 770px;
+  //height: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
 
+
   #mr {
     width: 400px;
     height: 380px;
+    flex: 1;
   }
 
   #et {
-    width: 500px;
-    height: 380px;
-
+    //width: 500px;
+    //height: 380px;
+    flex: 1;
     #container {
       width: 400px;
       height: 380px;

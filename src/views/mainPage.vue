@@ -227,7 +227,7 @@ a {
 
   .left {
     height: 100%;
-    flex: 0.7;
+    flex: 1 1 28vw;
     display: flex;
     flex-direction: column;
 
@@ -359,7 +359,7 @@ a {
   .min {
     width: 100%;
     height: 100%;
-    flex: 1.5;
+    flex: 0 1 50vw;
     display: flex;
     flex-direction: column;
 
@@ -475,7 +475,7 @@ a {
 
   .right {
     height: 100%;
-    flex: 0.9;
+    flex: 1 1 22vw;
     display: flex;
     flex-direction: column;
 

@@ -25,7 +25,7 @@
 				legend: {
 					data: ['Show', 'Click', 'Visit', 'Inquiry', 'Order']
 				},
-				
+
 	    color: ['#8ecfea', '#93daa4', '#fbd0a9', '#f0a8b5', '#cca3be', ],
 
 				series: [{
@@ -92,7 +92,7 @@
 
 <style>
 	#favour {
-		width: 360px;
+		width: 100%;
 		height:100%;
 		display: flex;
 		flex-direction: column;

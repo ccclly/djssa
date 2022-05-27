@@ -152,28 +152,6 @@ export default {
       width: 100%;
     }
 
-    .num {
-      width: 100%;
-      height: 20%;
-      display: flex;
-      font-family: SZ;
-      font-size: 100px;
-      text-align: center;
-
-      .gold {
-        flex: 1;
-        border-right: 1px solid #000000;
-      }
-
-      .silver {
-        flex: 1;
-        border-right: 1px solid #000000;
-      }
-
-      .copper {
-        flex: 1;
-      }
-    }
   }
 }
 </style>
