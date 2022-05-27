@@ -19,6 +19,7 @@ import {
   Search,
   Star,
 } from "@element-plus/icons-vue";
+
 export default {
   data() {
     return {};
@@ -280,7 +281,6 @@ a {
         right: 7px;
         top: 7px;
         z-index: 20;
-
       }
     }
 
